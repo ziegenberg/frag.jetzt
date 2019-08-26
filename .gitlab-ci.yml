@@ -35,21 +35,6 @@ unit_tests:
     - npm install
     - npm test
 
-sonarqube:
-    stage: test
-#    only:
-#      - master
-    tags:
-      - nodejs
-    allow_failure: true
-    dependencies: []
-    variables:
-      CHROME_BIN: /usr/bin/google-chrome
-    script:
-      - npm install
-      - npm test
-      - node sonar-analyse.ts
-
 ngbuild:
   stage: build
   tags:
@@ -92,6 +77,20 @@ ngbuild:
 #  tags:
 #    - nginx
 
+sonarqube:
+  stage: deploy
+  only:
+    - master
+  tags:
+    - nodejs
+  allow_failure: true
+  dependencies: []
+  variables:
+    CHROME_BIN: /usr/bin/google-chrome
+  script:
+    - npm install
+    - npm test
+    - node sonar-analyse.ts
 
 deploy:
   stage: deploy

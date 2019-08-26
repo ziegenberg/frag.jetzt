@@ -6,7 +6,7 @@ scanner(
     options: {
       'sonar.projectKey': 'de.thm.arsnova:frag.jetzt',
       'sonar.projectName': 'frag.jetzt',
-      'sonar.projectVersion': '1.0-SNAPSHOT',
+      'sonar.projectVersion': '1.2.1-SNAPSHOT',
       'sonar.sources': 'src',
       'sonar.tests': 'tests',
       'sonar.typescript.lcov.reportPaths': 'coverage/lcov.info',
