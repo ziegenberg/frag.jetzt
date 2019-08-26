@@ -47,7 +47,7 @@ sonarqube:
       CHROME_BIN: /usr/bin/google-chrome
     script:
       - npm install
-      - ng test --watch=false --code-coverage
+      - npm test
       - node sonar-analyse.ts
 
 ngbuild:
