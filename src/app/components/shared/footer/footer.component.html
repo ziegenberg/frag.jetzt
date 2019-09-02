@@ -6,7 +6,7 @@
         {{ 'footer.help' | translate }}
       </span>
     </button>
-    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'">
+    <button id="buttonOnDemond" title="Ondemand" mat-button (click)="showDemo()" *ngIf="router.url === '/home'">
       <mat-icon>ondemand_video</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.demo' | translate }}
@@ -14,7 +14,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="themeMenu">
+    <button id="buttonPalette" title="Palette" mat-button [matMenuTriggerFor]="themeMenu">
       <mat-icon>palette</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.style' | translate}}
@@ -22,22 +22,23 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="langMenu">
-      <mat-icon>language</mat-icon>
+    <button id="buttonLanguage" title="Language" mat-button [matMenuTriggerFor]="langMenu">
+      <mat-icon >language</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.language' | translate}}
+
         </span>
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToDSGVO()">
+    <button id="Security" title="security" mat-button (click)="navToDSGVO()">
       <mat-icon>security</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.dsgvo' | translate}}
       </span>
     </button>
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToImprint()">
+    <button id="buttonInfo" title="Info" mat-button (click)="navToImprint()">
       <mat-icon>info</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.imprint' | translate}}
