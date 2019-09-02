@@ -5,10 +5,10 @@
       <mat-icon class="header-icons" aria-label="Go back">keyboard_arrow_left</mat-icon>
     </button>
     <span class="fill-remaining-space"></span>
-    <h3 *ngIf="router.url.includes('comments') && user.role === 3 && deviceType === 'desktop'"
+    <h2 *ngIf="router.url.includes('comments') && user.role === 3 && deviceType === 'desktop'"
         fxLayoutAlign="center center">
       {{cTime}}
-    </h3>
+    </h2>
     <span class="fill-remaining-space"
           *ngIf="router.url.includes('comments') && user.role === 3 && deviceType === 'desktop'"></span>
     <span
@@ -19,9 +19,9 @@
       gavel
     </mat-icon>
   </span>
-    <h3 *ngIf="router.url.includes('comments')" fxLayoutAlign="center center">
+    <h2 *ngIf="router.url.includes('comments')" fxLayoutAlign="center center">
       {{'header.id' | translate}}: {{ shortId.slice(0, 4) }} {{  shortId.slice(4, 8) }}
-    </h3>
+    </h2>
     <span class="fill-remaining-space"></span>
 
     <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
@@ -40,7 +40,7 @@
       </button>
     </mat-menu>
 
-    <button mat-button *ngIf="user && deviceType === 'desktop'" [matMenuTriggerFor]="userMenu">
+    <button mat-button aria-label = "Bestätigen um login Verfahren zu starten" *ngIf="user && deviceType === 'desktop'" [matMenuTriggerFor]="userMenu">
       <div class="label-icon">
         <mat-icon *ngIf="!user.isGuest" class="header-icons">account_box</mat-icon>
         <mat-icon *ngIf="user.isGuest" class="header-icons">meeting_room</mat-icon>
@@ -49,19 +49,19 @@
       </div>
     </button>
 
-    <button mat-icon-button *ngIf="user && deviceType === 'mobile'" [matMenuTriggerFor]="userMenu">
+    <button mat-icon-button aria-label = "Bestätigen um login Verfahren zu starten" *ngIf="user && deviceType === 'mobile'" [matMenuTriggerFor]="userMenu">
       <mat-icon *ngIf="!user.isGuest" class="header-icons">account_box</mat-icon>
       <mat-icon *ngIf="user.isGuest" class="header-icons">meeting_room</mat-icon>
     </button>
 
-    <button mat-button *ngIf="!user && deviceType === 'desktop'" (click)=login(false)>
+    <button mat-button aria-label = "Bestätigen um login Verfahren zu starten" *ngIf="!user && deviceType === 'desktop'" (click)=login(false)>
       <div class="label-icon">
         <mat-icon class="header-icons">account_box</mat-icon>
-        <h3 *ngIf="deviceType === 'desktop'">{{'header.login' | translate}}</h3>
+        <h2 *ngIf="deviceType === 'desktop'">{{'header.login' | translate}}</h2>
       </div>
     </button>
 
-    <button mat-icon-button *ngIf="!user && deviceType === 'mobile'" (click)=login(false)>
+    <button mat-icon-button aria-label = "Bestätigen um login Verfahren zu starten" *ngIf="!user && deviceType === 'mobile'" (click)=login(false)>
       <mat-icon class="header-icons">account_box</mat-icon>
     </button>
   </mat-toolbar-row>
