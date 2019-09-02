@@ -54,14 +54,24 @@
       <mat-icon *ngIf="user.isGuest" class="header-icons">meeting_room</mat-icon>
     </button>
 
-    <button mat-button *ngIf="!user && deviceType === 'desktop'" (click)=login(false)>
+    <button
+      mat-button
+      *ngIf="!user && deviceType === 'desktop'"
+      (click)=login(false)
+      title="{{'header.login' | translate}}"
+    >
       <div class="label-icon">
         <mat-icon class="header-icons">account_box</mat-icon>
         <h3 *ngIf="deviceType === 'desktop'">{{'header.login' | translate}}</h3>
       </div>
     </button>
 
-    <button mat-icon-button *ngIf="!user && deviceType === 'mobile'" (click)=login(false)>
+    <button
+      mat-icon-button
+      *ngIf="!user && deviceType === 'mobile'"
+      (click)=login(false)
+      title="{{'header.login' | translate}}"
+    >
       <mat-icon class="header-icons">account_box</mat-icon>
     </button>
   </mat-toolbar-row>
