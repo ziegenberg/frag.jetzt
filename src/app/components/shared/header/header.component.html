@@ -1,14 +1,15 @@
 <mat-toolbar class="mat-elevation-z4">
   <mat-toolbar-row>
     <button mat-icon-button *ngIf="router.url !== '/home'" (click)="goBack()"
-            matTooltip="{{'header.back' | translate}}">
+            matTooltip="{{'header.back' | translate}}" aria-label="" aria-describeby="aria_desc_backDescription" id="BACKICONBTN">
+      <p style="display:none;" id="aria_desc_backDescription">GEHE EINE SEITE ZURÜCK</p>
       <mat-icon class="header-icons" aria-label="Go back">keyboard_arrow_left</mat-icon>
     </button>
     <span class="fill-remaining-space"></span>
-    <h3 *ngIf="router.url.includes('comments') && user.role === 3 && deviceType === 'desktop'"
+    <h1 *ngIf="router.url.includes('comments') && user.role === 3 && deviceType === 'desktop'"
         fxLayoutAlign="center center">
       {{cTime}}
-    </h3>
+    </h1>
     <span class="fill-remaining-space"
           *ngIf="router.url.includes('comments') && user.role === 3 && deviceType === 'desktop'"></span>
     <span
@@ -19,28 +20,28 @@
       gavel
     </mat-icon>
   </span>
-    <h3 *ngIf="router.url.includes('comments')" fxLayoutAlign="center center">
+    <h1 *ngIf="router.url.includes('comments')" fxLayoutAlign="center center">
       {{'header.id' | translate}}: {{ shortId.slice(0, 4) }} {{  shortId.slice(4, 8) }}
-    </h3>
+    </h1>
     <span class="fill-remaining-space"></span>
 
     <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
-      <button mat-menu-item *ngIf="user" routerLink="/user">
+      <button mat-menu-item *ngIf="user" routerLink="/user" aria-label="">
         <mat-icon class="sessions">work</mat-icon>
         <span *ngIf="!user.isGuest">{{'header.my-sessions' | translate}}</span>
         <span *ngIf="user.isGuest">{{'header.visited-sessions' | translate}}</span>
       </button>
-      <button mat-menu-item *ngIf="user && !user.isGuest" (click)="openDeleteUserDialog()">
+      <button mat-menu-item *ngIf="user && !user.isGuest" (click)="openDeleteUserDialog()" aria-label="Benutzer loeschen.">
         <mat-icon color="warn">delete_sweep</mat-icon>
         <span>{{'header.delete-account' | translate}}</span>
       </button>
-      <button mat-menu-item (click)="logout()">
+      <button mat-menu-item (click)="logout()" aria-label="Ausloggen.">
         <mat-icon color="warn">exit_to_app</mat-icon>
         <span>{{ 'header.logout' | translate }}</span>
       </button>
     </mat-menu>
 
-    <button mat-button *ngIf="user && deviceType === 'desktop'" [matMenuTriggerFor]="userMenu">
+    <button mat-button *ngIf="user && deviceType === 'desktop'" [matMenuTriggerFor]="userMenu" aria-label="TMP">
       <div class="label-icon">
         <mat-icon *ngIf="!user.isGuest" class="header-icons">account_box</mat-icon>
         <mat-icon *ngIf="user.isGuest" class="header-icons">meeting_room</mat-icon>
@@ -49,19 +50,19 @@
       </div>
     </button>
 
-    <button mat-icon-button *ngIf="user && deviceType === 'mobile'" [matMenuTriggerFor]="userMenu">
+    <button mat-icon-button *ngIf="user && deviceType === 'mobile'" [matMenuTriggerFor]="userMenu" aria-label="TMP">
       <mat-icon *ngIf="!user.isGuest" class="header-icons">account_box</mat-icon>
       <mat-icon *ngIf="user.isGuest" class="header-icons">meeting_room</mat-icon>
     </button>
 
-    <button mat-button *ngIf="!user && deviceType === 'desktop'" (click)=login(false)>
+    <button mat-button *ngIf="!user && deviceType === 'desktop'" (click)="login(false);" aria-label="TMP">
       <div class="label-icon">
         <mat-icon class="header-icons">account_box</mat-icon>
         <h3 *ngIf="deviceType === 'desktop'">{{'header.login' | translate}}</h3>
       </div>
     </button>
 
-    <button mat-icon-button *ngIf="!user && deviceType === 'mobile'" (click)=login(false)>
+    <button mat-icon-button *ngIf="!user && deviceType === 'mobile'" (click)=login(false) aria-label="TMP">
       <mat-icon class="header-icons">account_box</mat-icon>
     </button>
   </mat-toolbar-row>
