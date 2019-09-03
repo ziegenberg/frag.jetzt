@@ -6,7 +6,7 @@
         {{ 'footer.help' | translate }}
       </span>
     </button>
-    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'" aria-label="Demovideo im Dialog Fenster anzeigen">
+    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'" title="Demovideo im Dialog Fenster anzeigen">
       <mat-icon>ondemand_video</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.demo' | translate }}
@@ -14,7 +14,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="themeMenu" aria-label="Menü zum wechseln des Theme anzeigen">
+    <button mat-button [matMenuTriggerFor]="themeMenu" title="Menü zum wechseln des Theme anzeigen">
       <mat-icon>palette</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.style' | translate}}
@@ -22,7 +22,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="langMenu" aria-label="Menü zum wechseln der Sprache anzeigen">
+    <button mat-button [matMenuTriggerFor]="langMenu" title="Menü zum wechseln der Sprache anzeigen">
       <mat-icon>language</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.language' | translate}}
@@ -30,14 +30,14 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToDSGVO()" aria-label="Snackbar mit Button zur DSGVO anzeigen">
+    <button mat-button (click)="navToDSGVO()" title="Snackbar mit Button zur DSGVO anzeigen">
       <mat-icon>security</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.dsgvo' | translate}}
       </span>
     </button>
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToImprint()" aria-label="Snackbar mit Button zum Impressum anzeigen">
+    <button mat-button (click)="navToImprint()" title="Snackbar mit Button zum Impressum anzeigen">
       <mat-icon>info</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.imprint' | translate}}
