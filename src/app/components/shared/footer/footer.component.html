@@ -14,7 +14,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="themeMenu" aria-label="palette erstmal">
+    <button mat-button [matMenuTriggerFor]="themeMenu" aria-label="change theme">
       <mat-icon>palette</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.style' | translate}}
@@ -22,7 +22,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="langMenu" aria-label="language erstmal">
+    <button mat-button [matMenuTriggerFor]="langMenu" aria-label=" change language">
       <mat-icon>language</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.language' | translate}}
@@ -30,14 +30,14 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToDSGVO()" aria-label="security erstmal">
+    <button mat-button (click)="navToDSGVO()" aria-label="security">
       <mat-icon>security</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.dsgvo' | translate}}
       </span>
     </button>
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToImprint()">
+    <button mat-button (click)="navToImprint()" aria-label="info">
       <mat-icon>info</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.imprint' | translate}}
