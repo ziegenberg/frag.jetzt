@@ -15,7 +15,9 @@
     "really-delete-account": "Do you really want to irrevocably delete your account with the associated sessions?",
     "account-deleted": "Your account has been deleted successfully.",
     "abort": "Cancel",
-    "delete": "Delete"
+    "delete": "Delete",
+    "accessibility-account_box_user": "Opens user menu with functions",
+    "accessibility-account_box_guest": "Opens login and registration dialog"
 	},
 	"login-page": {
 		"creator": "Professor",
@@ -103,6 +105,14 @@
     "style": "Style",
     "language": "Language",
     "english": "English",
-    "german": "German"
+    "german": "German",
+    "accessibility-ondemand_video": "Show demo video in dialog window",
+    "accessibility-palette": "Show menu to change theme",
+    "accessibility-language": "Show menu to change language",
+    "accessibility-security": "Show snack bar with button for DSGVO",
+    "accessibility-info": "Show snack bar with button to imprint"
+  },
+  "room-join": {
+    "accessibility-input": "Open entered session ID"
   }
 }

@@ -15,7 +15,9 @@
 		"really-delete-account": "Willst du dein Konto mit den zugehörigen Sessions wirklich unwiderruflich löschen?",
 		"account-deleted": "Dein Konto wurde erfolgreich gelöscht.",
 		"abort": "Abbrechen",
-		"delete": "Löschen"
+		"delete": "Löschen",
+    "accessibility-account_box_user": "Öffnet Benutzermenü mit Funktionen",
+    "accessibility-account_box_guest": "Öffnet Login und Registrierungs Dialog"
 	},
 	"login-page": {
 		"creator": "Dozent/in",
@@ -103,6 +105,14 @@
     "style": "Stil",
     "language": "Sprache",
     "english": "Englisch",
-    "german": "Deutsch"
+    "german": "Deutsch",
+    "accessibility-ondemand_video": "Demovideo im Dialog Fenster anzeigen",
+    "accessibility-palette": "Menü zum wechseln des Theme anzeigen",
+    "accessibility-language": "Menü zum wechseln der Sprache anzeigen",
+    "accessibility-security": "Snackbar mit Button zur DSGVO anzeigen",
+    "accessibility-info": "Snackbar mit Button zum Impressum anzeigen"
+  },
+  "room-join": {
+    "accessibility-input": "Eingegebene Session-ID öffnen"
   }
 }
