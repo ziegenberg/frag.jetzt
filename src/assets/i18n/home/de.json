@@ -15,7 +15,8 @@
 		"really-delete-account": "Willst du dein Konto mit den zugehörigen Sessions wirklich unwiderruflich löschen?",
 		"account-deleted": "Dein Konto wurde erfolgreich gelöscht.",
 		"abort": "Abbrechen",
-		"delete": "Löschen"
+		"delete": "Löschen",
+    "btAccount": "Einloggen"
 	},
 	"login-page": {
 		"creator": "Dozent/in",
@@ -103,6 +104,14 @@
     "style": "Stil",
     "language": "Sprache",
     "english": "Englisch",
-    "german": "Deutsch"
+    "german": "Deutsch",
+    "btLanguage": "Sprache",
+    "btPalette": "Stil",
+    "btOndemand": "Demo",
+    "btSecurity": "Datenschutz",
+    "btInfo": "Impressum"
+  },
+  "room-join": {
+    "btInput": "Eingabe"
   }
 }
