@@ -5,7 +5,7 @@
         {{ 'footer.help' | translate }}
       </span>
   </button>
-  <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'" title="{{'footer.accessibility-ondemand_video' | translate}}" aria-label="footer.accessibility-ondemand_video | translate">
+  <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'" title="{{'footer.accessibility-ondemand_video' | translate}}">
     <mat-icon>ondemand_video</mat-icon>
     <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.demo' | translate }}
@@ -13,7 +13,7 @@
   </button>
 
   <span class="fill-remaining-space"></span>
-  <button mat-button [matMenuTriggerFor]="themeMenu" title="{{'footer.accessibility-palette' | translate}}" aria-label="footer.accessibility-palette | translate">
+  <button mat-button [matMenuTriggerFor]="themeMenu" title="{{'footer.accessibility-palette' | translate}}">
     <mat-icon>palette</mat-icon>
     <span *ngIf="deviceType === 'desktop'">
           {{'footer.style' | translate}}
@@ -21,7 +21,7 @@
   </button>
 
   <span class="fill-remaining-space"></span>
-  <button mat-button [matMenuTriggerFor]="langMenu" title="{{'footer.accessibility-language' | translate}}" aria-label="footer.accessibility-language | translate">
+  <button mat-button [matMenuTriggerFor]="langMenu" title="{{'footer.accessibility-language' | translate}}">
     <mat-icon>language</mat-icon>
     <span *ngIf="deviceType === 'desktop'">
           {{'footer.language' | translate}}
@@ -29,14 +29,14 @@
   </button>
 
   <span class="fill-remaining-space"></span>
-  <button mat-button (click)="navToDSGVO()" title="{{'footer.accessibility-security' | translate}}" aria-label="footer.accessibility-security | translate">
+  <button mat-button (click)="navToDSGVO()" title="{{'footer.accessibility-security' | translate}}">
     <mat-icon>security</mat-icon>
     <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.dsgvo' | translate}}
       </span>
   </button>
   <span class="fill-remaining-space"></span>
-  <button mat-button (click)="navToImprint()" title="{{'footer.accessibility-info' | translate}}" aria-label="footer.accessibility-info | translate">
+  <button mat-button (click)="navToImprint()" title="{{'footer.accessibility-info' | translate}}">
     <mat-icon>info</mat-icon>
     <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.imprint' | translate}}
