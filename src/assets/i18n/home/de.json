@@ -34,6 +34,7 @@
     "please-enter": "… sagt dir dein/e Dozent/in",
     "exactly-8": "Eine Session-ID hat genau 8 Ziffern.",
     "create-session": "Neue Session",
+    "create-session-description": "Neue Session erstellen",
     "no-empty-name": "Bitte gib einen Namen für die Session ein.",
     "created-1": "Session '",
     "created-2": "' erfolgreich erstellt",
