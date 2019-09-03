@@ -58,7 +58,8 @@
 		"activation-key-incorrect": "Activation key is incorrect.",
 		"or": "or",
 		"guest-login-tooltip": "Created sessions will be deleted after logout.",
-		"login-tooltip": "Sessions will be stored for 180 days."
+		"login-tooltip": "Sessions will be stored for 180 days.",
+    "start-login": "Login process is initiated."
 	},
 	"password-reset": {
 		"email": "E-mail",
@@ -87,21 +88,28 @@
 		"session-name": "Session name",
 		"description": "Description",
 		"max-ls": "Max. characters:",
-		"create-session": "Create session"
+		"create-session": "Create session",
+    "resent-sessions": "All already entered sessions"
 	},
   "footer": {
     "demo": "Demo",
+    "demo-title": "Show demo video.",
     "dsgvo": "Data Protection",
+    "dsgvo-title": "Pop-Up to open the dsgvo document on a new page.",
     "imprint": "Imprint",
+    "imprint-title": "Pop-Up to open imprint on a new page.",
     "will-open": " will be opened in a new tab...",
     "open": "Open",
     "help": "Help",
+    "help-title": "Pop-Up to open help blog on a new page.",
     "dark": "Dark background",
     "bright": "Bright background",
     "beamer": "Optimized for the projector (work in progress)",
     "wai": "Accessible according to WCAG 2.1 (work in progress)",
     "style": "Style",
+    "style-title": "Customize the color scheme.",
     "language": "Language",
+    "language-title": "Change the language.",
     "english": "English",
     "german": "German"
   }

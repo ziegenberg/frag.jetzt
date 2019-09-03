@@ -58,7 +58,8 @@
 		"activation-key-incorrect": "Aktivierungsschlüssel falsch",
 		"or": "oder",
 		"guest-login-tooltip": "Erstellte Sessions werden mit allen Fragen nach dem Ausloggen gelöscht.",
-		"login-tooltip": "Sessions mit allen Fragen werden für 180 Tage gespeichert."
+		"login-tooltip": "Sessions mit allen Fragen werden für 180 Tage gespeichert.",
+    "start-login": "Loginverfahren wird eingeleitet."
 	},
 	"password-reset": {
 		"email": "E-Mail",
@@ -87,21 +88,28 @@
 		"session-name": "Name der Session",
 		"description": "Beschreibung der Session",
 		"max-ls": "Max. Zeichen:",
-		"create-session": "Session erstellen"
+		"create-session": "Session erstellen",
+    "resent-sessions": "Alle bereits betretenen Sessions"
   },
   "footer": {
     "demo": "Demo",
+    "demo-title": "Zeige das Demo Video",
     "dsgvo": "Datenschutz",
+    "dsgvo-title": "Pop-Up um das DSGVO-Dokument auf einer neuen Seite anzuzeigen",
     "imprint": "Impressum",
+    "imprint-title": "Pup-Up um das Impressum auf einer neuen Seite anzuzeigen",
     "will-open": " wird in einem neuen Fenster geöffnet...",
     "open": "Öffnen",
     "help": "Hilfe",
+    "help-title": "Ein Pop-Up zum Öffnen des Hilfe Blogs wird angezeigt.",
     "dark": "Dunkler Hintergrund",
     "bright": "Heller Hintergrund",
     "beamer": "Für den Beamer optimiert (in Arbeit)",
     "wai": "Barrierefrei nach WCAG 2.1 (in Arbeit)",
     "style": "Stil",
+    "style-title": "Das Farbschema kann angepasst werden.",
     "language": "Sprache",
+    "language-title": "Wähle die Sprache.",
     "english": "Englisch",
     "german": "Deutsch"
   }
