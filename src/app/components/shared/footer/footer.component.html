@@ -7,7 +7,7 @@
         {{ 'footer.help' | translate }}
       </span>
     </button>
-    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'"  title="Demonstrationsvideo zu Frag.jetzt anzeigen."  aria-label="TMP">
+    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'"  title=" {{ 'footer.demo' | translate }}"  aria-label="TMP">
       <mat-icon>ondemand_video</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.demo' | translate }}
@@ -23,7 +23,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="langMenu" title="Sprachauswahl zwischen Deutsch und Englisch"  aria-label="TMP">
+    <button mat-button [matMenuTriggerFor]="langMenu" title="{{'footer.language' | translate}}"  aria-label="TMP">
       <mat-icon>language</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.language' | translate}}
@@ -31,14 +31,14 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToDSGVO()"  title="Datenschutzgrundverordnung anzeigen."  aria-label="TMP">
+    <button mat-button (click)="navToDSGVO()"  title=" {{ 'footer.dsgvo' | translate}}"  aria-label="TMP">
       <mat-icon>security</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.dsgvo' | translate}}
       </span>
     </button>
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToImprint()" title="Kontaktinformationen anzeigen."  aria-label="TMP">
+    <button mat-button (click)="navToImprint()" title=" {{ 'footer.imprint' | translate}}"  aria-label="TMP">
       <mat-icon>info</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.imprint' | translate}}
@@ -75,8 +75,8 @@
     </mat-menu>
 
     <mat-menu #langMenu="matMenu" [overlapTrigger]="false">
-      <button mat-menu-item (click)="useLanguage('de')" title="Deutsch als Sprache auswählen."  aria-label="TMP">{{ 'footer.german' | translate }}</button>
-      <button mat-menu-item (click)="useLanguage('en')" title="Englisch als Sprache auswählen." aria-label="TMP">{{ 'footer.english' | translate }}</button>
+      <button mat-menu-item (click)="useLanguage('de')" title=" {{ 'footer.dsgvo' | translate}}."  aria-label="TMP">{{ 'footer.german' | translate }}</button>
+      <button mat-menu-item (click)="useLanguage('en')" title=" {{ 'footer.dsgvo' | translate}}" aria-label="TMP">{{ 'footer.english' | translate }}</button>
     </mat-menu>
   </mat-toolbar>
 </footer>

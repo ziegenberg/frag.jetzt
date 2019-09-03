@@ -54,7 +54,7 @@
       <mat-icon *ngIf="user.isGuest" class="header-icons">meeting_room</mat-icon>
     </button>
 
-    <button mat-button *ngIf="!user && deviceType === 'desktop'" (click)="login(false);" aria-label="Button zum einloggen." title="Button zum einloggen.">
+    <button mat-button *ngIf="!user && deviceType === 'desktop'" (click)="login(false);" aria-label="Button zum einloggen." title=" {{ 'header.login' | translate }}">
       <div class="label-icon">
         <mat-icon class="header-icons">account_box</mat-icon>
         <h3 *ngIf="deviceType === 'desktop'">{{'header.login' | translate}}</h3>
