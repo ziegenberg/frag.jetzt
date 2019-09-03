@@ -15,7 +15,9 @@
     "really-delete-account": "Do you really want to irrevocably delete your account with the associated sessions?",
     "account-deleted": "Your account has been deleted successfully.",
     "abort": "Cancel",
-    "delete": "Delete"
+    "delete": "Delete",
+    "user-menu": "Opens the user menu, with various options available to users.",
+    "login-menu": "Opens the login dialog."
 	},
 	"login-page": {
 		"creator": "Professor",
@@ -38,7 +40,8 @@
 		"created-2": "' successfully created",
 		"only-numbers": "A session ID only contains digits.",
 		"update-available": "A newer version is available.",
-		"install": "Install"
+		"install": "Install",
+    "submit": "Check or open a session with the entered session ID."
 	},
 	"login": {
     "header": "Log in",
@@ -103,6 +106,11 @@
     "style": "Style",
     "language": "Language",
     "english": "English",
-    "german": "German"
+    "german": "German",
+    "demo-title": "Opens a dialog window with a demo video.",
+    "style-title": "Opens a menu with different themes, which change the design of the page.",
+    "language-title": "Opens a menu with available languages that change the display language.",
+    "dsgvo-title": "Opens a snack bar that contains a link to the privacy page.",
+    "imprint-title": "Opens a snack bar, which contains a link to the imprint."
   }
 }

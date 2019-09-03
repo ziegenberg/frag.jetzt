@@ -6,7 +6,7 @@
         {{ 'footer.help' | translate }}
       </span>
     </button>
-    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'" title="Dialog-Fenster mit einem Demo-Video öffnen">
+    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'" title="{{'footer.demo-title' | translate}}">
       <mat-icon>ondemand_video</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.demo' | translate }}
@@ -14,7 +14,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="themeMenu" title="Öffnet ein Menu mit verschiedenen Themes anzeigen, welche das Design der Seite verändern">
+    <button mat-button [matMenuTriggerFor]="themeMenu" title="{{'footer.style-title' | translate}}">
       <mat-icon>palette</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.style' | translate}}
@@ -22,7 +22,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="langMenu" title="Öffnet ein Menu mit verfügbaren Sprachen, welche die Anzeige Sprache verändern">
+    <button mat-button [matMenuTriggerFor]="langMenu" title="{{'footer.language-title' | translate}}">
       <mat-icon>language</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.language' | translate}}
@@ -30,14 +30,14 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToDSGVO()" title="Öffnet eine Snack-Bar, welche einen Link zur Datenschutz Seite enthällt">
+    <button mat-button (click)="navToDSGVO()" title="{{'footer.dsgvo-title' | translate}}">
       <mat-icon>security</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.dsgvo' | translate}}
       </span>
     </button>
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToImprint()" title="Öffnet eine Snack-Bar, welche einen Link zum Impressum enthällt">
+    <button mat-button (click)="navToImprint()" title="{{'footer.imprint-title' | translate}}">
       <mat-icon>info</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.imprint' | translate}}

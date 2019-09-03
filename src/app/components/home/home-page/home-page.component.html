@@ -11,9 +11,9 @@
         <mat-card-content>
           <mat-card-header *ngIf="deviceType === 'desktop'">
             <mat-card-title>
-              <h1>
-                <span class="main-heading-secondary">{{ 'login-page.welcome' | translate }}</span>
-                <span class="main-heading-primary">frag.jetzt</span>
+              <h1 aria>
+                <span class="main-heading-secondary" aria-hidden="false">{{ 'login-page.welcome' | translate }}</span>
+                <span class="main-heading-primary" aria-hidden="false">frag.jetzt</span>
               </h1>
             </mat-card-title>
           </mat-card-header>

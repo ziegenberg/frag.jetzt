@@ -15,7 +15,9 @@
 		"really-delete-account": "Willst du dein Konto mit den zugehörigen Sessions wirklich unwiderruflich löschen?",
 		"account-deleted": "Dein Konto wurde erfolgreich gelöscht.",
 		"abort": "Abbrechen",
-		"delete": "Löschen"
+		"delete": "Löschen",
+    "user-menu": "Öffnet das Benutzer Menu, mit verschiedenen Optionen die benutzern zur Verfügung stehen",
+    "login-menu": "Öffnet den Login Dialog."
 	},
 	"login-page": {
 		"creator": "Dozent/in",
@@ -38,7 +40,8 @@
 		"created-2": "' erfolgreich erstellt",
 		"only-numbers": "Eine Session-ID besteht aus Ziffern.",
 		"update-available": "Eine neue Version ist verfügbar.",
-		"install": "Installieren"
+		"install": "Installieren",
+    "submit": "Sitzung mit der eingegebenen Session-ID, auf Existenz prüfen bzw. öffnen"
 	},
 	"login": {
     "header": "Login",
@@ -103,6 +106,11 @@
     "style": "Stil",
     "language": "Sprache",
     "english": "Englisch",
-    "german": "Deutsch"
+    "german": "Deutsch",
+    "demo-title": "Öffnet ein Dialog-Fenster mit einem Demo-Video.",
+    "style-title": "Öffnet ein Menu mit verschiedenen Themes, welche das Design der Seite verändern.",
+    "language-title": "Öffnet ein Menu mit verfügbaren Sprachen, welche die Anzeigesprache verändern.",
+    "dsgvo-title": "Öffnet eine Snack-Bar, welche einen Link zur Datenschutz Seite enthält.",
+    "imprint-title": "Öffnet eine Snack-Bar, welche einen Link zum Impressum enthält."
   }
 }

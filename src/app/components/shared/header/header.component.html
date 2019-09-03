@@ -41,7 +41,7 @@
         </button>
       </mat-menu>
 
-      <button mat-button *ngIf="user && deviceType === 'desktop'" [matMenuTriggerFor]="userMenu" title="Öffnet das Benutzer Menu, mit verschiedenen Optionen die benutzern zur Verfügung stehen">
+      <button mat-button *ngIf="user && deviceType === 'desktop'" [matMenuTriggerFor]="userMenu" title="{{'header.user-menu' | translate}}">
         <div class="label-icon">
           <mat-icon *ngIf="!user.isGuest" class="header-icons">account_box</mat-icon>
           <mat-icon *ngIf="user.isGuest" class="header-icons">meeting_room</mat-icon>
@@ -50,19 +50,19 @@
         </div>
       </button>
 
-      <button mat-icon-button *ngIf="user && deviceType === 'mobile'" [matMenuTriggerFor]="userMenu" title="Öffnet das Benutzer Menu, mit verschiedenen Optionen die benutzern zur Verfügung stehen">
+      <button mat-icon-button *ngIf="user && deviceType === 'mobile'" [matMenuTriggerFor]="userMenu" title="{{'header.user-menu' | translate}}">
         <mat-icon *ngIf="!user.isGuest" class="header-icons">account_box</mat-icon>
         <mat-icon *ngIf="user.isGuest" class="header-icons">meeting_room</mat-icon>
       </button>
 
-      <button mat-button *ngIf="!user && deviceType === 'desktop'" title="Öffnet den Login Dialog" (click)=login(false)>
+      <button mat-button *ngIf="!user && deviceType === 'desktop'" title="{{'header.login-menu' | translate}}" (click)=login(false)>
         <div class="label-icon">
           <mat-icon class="header-icons">account_box</mat-icon>
           <h2 *ngIf="deviceType === 'desktop'">{{'header.login' | translate}}</h2>
         </div>
       </button>
 
-      <button mat-icon-button *ngIf="!user && deviceType === 'mobile'" title="Öffnet den Login Dialog" (click)=login(false)>
+      <button mat-icon-button *ngIf="!user && deviceType === 'mobile'" title="{{'header.login-menu' | translate}}" (click)=login(false)>
         <mat-icon class="header-icons">account_box</mat-icon>
       </button>
     </mat-toolbar-row>
