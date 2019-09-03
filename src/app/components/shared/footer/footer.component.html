@@ -1,12 +1,12 @@
 <footer>
   <mat-toolbar id="footer-toolbar">
-    <button mat-button (click)="navToBlog()" *ngIf="router.url !== '/home'">
+    <button id="buttonHelp" title="{{'footer.buttonHelp'| translate }}" mat-button (click)="navToBlog()" *ngIf="router.url !== '/home'">
       <mat-icon>help_outline</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.help' | translate }}
       </span>
     </button>
-    <button id="buttonOnDemond" title="Ondemand" mat-button (click)="showDemo()" *ngIf="router.url === '/home'">
+    <button id="buttonOnDemond" title="{{'footer.buttonDemo'| translate }}" mat-button (click)="showDemo()" *ngIf="router.url === '/home'">
       <mat-icon>ondemand_video</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.demo' | translate }}
@@ -14,7 +14,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button id="buttonPalette" title="Palette" mat-button [matMenuTriggerFor]="themeMenu">
+    <button id="buttonPalette" title="{{'footer.buttonPalette'| translate }}" mat-button [matMenuTriggerFor]="themeMenu">
       <mat-icon>palette</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.style' | translate}}
@@ -22,7 +22,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button id="buttonLanguage" title="Language" mat-button [matMenuTriggerFor]="langMenu">
+    <button id="buttonLanguage" title="{{'footer.buttonLanguage'| translate }}" mat-button [matMenuTriggerFor]="langMenu">
       <mat-icon >language</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.language' | translate}}
@@ -31,14 +31,14 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button id="Security" title="security" mat-button (click)="navToDSGVO()">
+    <button id="Security" title ="{{'footer.buttonSecurity'| translate }}" mat-button (click)="navToDSGVO()">
       <mat-icon>security</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.dsgvo' | translate}}
       </span>
     </button>
     <span class="fill-remaining-space"></span>
-    <button id="buttonInfo" title="Info" mat-button (click)="navToImprint()">
+    <button id="buttonInfo" title="{{'footer.buttonInfo'| translate }}" mat-button (click)="navToImprint()">
       <mat-icon>info</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.imprint' | translate}}

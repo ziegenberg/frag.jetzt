@@ -15,7 +15,8 @@
     "really-delete-account": "Do you really want to irrevocably delete your account with the associated sessions?",
     "account-deleted": "Your account has been deleted successfully.",
     "abort": "Cancel",
-    "delete": "Delete"
+    "delete": "Delete",
+    "buttonAccount": "Login"
 	},
 	"login-page": {
 		"creator": "Professor",
@@ -103,6 +104,16 @@
     "style": "Style",
     "language": "Language",
     "english": "English",
-    "german": "German"
+    "german": "German",
+    "buttonSecurity": "Data Security",
+    "buttonLanguage": "Language",
+    "buttonPalette": "Style",
+    "buttonDemo": "Demo",
+    "buttonInfo": "Info",
+    "buttonHelp": "Help"
+
+  },
+  "room-join": {
+    "buttonInput": "Input"
   }
 }
