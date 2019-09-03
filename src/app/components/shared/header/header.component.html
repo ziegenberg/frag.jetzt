@@ -59,11 +59,12 @@
       *ngIf="!user && deviceType === 'desktop'"
       (click)=login(false)
       title="{{'header.login-description' | translate}}"
+      class="login-button"
     >
-      <div class="label-icon">
+      <span class="label-icon">
         <mat-icon class="header-icons">account_box</mat-icon>
-        <h3 *ngIf="deviceType === 'desktop'">{{'header.login' | translate}}</h3>
-      </div>
+        <span class="login-button-text" *ngIf="deviceType === 'desktop'">{{'header.login' | translate}}</span>
+      </span>
     </button>
 
     <button

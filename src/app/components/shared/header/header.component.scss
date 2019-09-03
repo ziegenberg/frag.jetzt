@@ -24,6 +24,14 @@ mat-toolbar {
   color: var(--primary);
 }
 
+.login-button {
+  color: var(--on-surface);
+}
+
+.login-button-text {
+  margin-left: 5px;
+}
+
 h3 {
   color: var(--on-surface);
   margin-left: 5px;
