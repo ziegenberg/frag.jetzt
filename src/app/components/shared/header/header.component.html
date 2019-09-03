@@ -1,6 +1,6 @@
 <mat-toolbar class="mat-elevation-z4">
   <mat-toolbar-row>
-    <button mat-icon-button *ngIf="router.url !== '/home'" (click)="goBack()"
+    <button mat-icon-button *ngIf="router.url[1]" (click)="goBack()"
             matTooltip="{{'header.back' | translate}}">
       <mat-icon class="header-icons" aria-label="Go back">keyboard_arrow_left</mat-icon>
     </button>

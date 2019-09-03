@@ -7,11 +7,6 @@ import { UserHomeComponent } from './components/home/user-home/user-home.compone
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
     component: HomePageComponent
   },
   {
