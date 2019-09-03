@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
 import { AuthenticationService } from '../../../services/http/authentication.service';
 import { NotificationService } from '../../../services/util/notification.service';
 import { Router, NavigationEnd } from '@angular/router';

@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="center center" fxlayoutgap="50px" fxFill>
 <form (ngSubmit)="joinRoom(roomId.value)">
   <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px">
-    <mat-form-field (keyup.enter)="onEnter()">
+    <mat-form-field (keyup.enter)="onEnter()" title="Feld zur Eingabe der Session-ID.">
       <input matInput #roomId type="text" pattern="[0-9 ]*" inputmode="numeric" min="00000000" max="99999999"
              onkeydown="if(this.value.length - (this.value.split(' ').length -1) === 8 && event.keyCode != 8) return false;
                         if(this.value.length === 4 && event.keyCode != 8) this.value = this.value + ' ';"
@@ -11,7 +11,7 @@
       <mat-error *ngIf="roomFormControl.hasError('required')">{{ 'home-page.please-enter' | translate}}</mat-error>
       <mat-error *ngIf="roomFormControl.hasError('pattern')">{{ 'home-page.only-numbers' | translate}}</mat-error>
     </mat-form-field>
-    <button mat-fab type="submit"  aria-label="Bestätigen" type="submit">
+    <button mat-fab type="submit"  title="Eingegebener Session beitreten." type="submit">
       <mat-icon>input</mat-icon>
     </button>
   </div>
