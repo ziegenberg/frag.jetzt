@@ -6,7 +6,7 @@
         {{ 'footer.help' | translate }}
       </span>
     </button>
-    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'" aria-label="opens a demo Video">
+    <button id="buttonOnDemand" title="{{'footer.bOnDemand' | translate }}" mat-button (click)="showDemo()" *ngIf="router.url === '/home'">
       <mat-icon>ondemand_video</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.demo' | translate }}
@@ -14,7 +14,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="themeMenu" aria-label="change theme">
+    <button id ="buttonPalette" title="{{'footer.bPalette' | translate }}" mat-button [matMenuTriggerFor]="themeMenu" >
       <mat-icon>palette</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.style' | translate}}
@@ -22,7 +22,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="langMenu" aria-label=" change language">
+    <button id ="buttonLanguage" title="{{'footer.bLanguage' | translate }}" mat-button [matMenuTriggerFor]="langMenu" >
       <mat-icon>language</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.language' | translate}}
@@ -30,14 +30,14 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToDSGVO()" aria-label="security">
+    <button id ="buttonSecurity" title="{{'footer.bDataprotect' | translate }}" mat-button (click)="navToDSGVO()" >
       <mat-icon>security</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.dsgvo' | translate}}
       </span>
     </button>
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToImprint()" aria-label="info">
+    <button  id ="buttonInfo" title="{{'footer.bInfo' | translate }}" mat-button (click)="navToImprint()" >
       <mat-icon>info</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.imprint' | translate}}
@@ -74,8 +74,7 @@
     </mat-menu>
 
     <mat-menu #langMenu="matMenu" [overlapTrigger]="false">
-      <button mat-menu-item (click)="useLanguage('de')"aria-lab ="Waehle Sprache">{{ 'footer.german' | translate }}
-      </button>
+      <button mat-menu-item (click)="useLanguage('de')">{{ 'footer.german' | translate }}</button>
       <button mat-menu-item (click)="useLanguage('en')">{{ 'footer.english' | translate }}</button>
     </mat-menu>
   </mat-toolbar>

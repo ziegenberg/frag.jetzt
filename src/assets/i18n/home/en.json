@@ -103,6 +103,16 @@
     "style": "Style",
     "language": "Language",
     "english": "English",
-    "german": "German"
+    "german": "German",
+
+    "bLanguage": "Language",
+    "bPalette": "Style",
+    "bOnDemand": "Demo",
+    "bDataprotect" : "Dataprotect",
+    "bInfo" : "Imprint"
+  },
+
+  "room-join" : {
+    "bInput": "Input"
   }
 }
