@@ -1,12 +1,11 @@
-<footer>
-  <mat-toolbar id="footer-toolbar">
+ <mat-toolbar id="footer-toolbar">
     <button mat-button (click)="navToBlog()" *ngIf="router.url !== '/home'">
       <mat-icon>help_outline</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.help' | translate }}
       </span>
     </button>
-    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'" aria-label="Demo-Button. Öffnet Modalfenster in dem ein Demo-Video angezeigt ist">
+    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'" title="{{'footer.accessibility-demo'|translate}}">
       <mat-icon>ondemand_video</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.demo' | translate }}
@@ -14,7 +13,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="themeMenu" aria-label="Stil-Button. Öffnet eine Auswahl von Farbschemata">
+    <button mat-button [matMenuTriggerFor]="themeMenu" title="{{'footer.accessibility-style'|translate}}">
       <mat-icon>palette</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.style' | translate}}
@@ -22,7 +21,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="langMenu" aria-label="Sprache-Button. Öffnet die Sprachauswahl">
+    <button mat-button [matMenuTriggerFor]="langMenu" title="{{'footer.accessibility-language'|translate}}">
       <mat-icon>language</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.language' | translate}}
@@ -30,7 +29,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToDSGVO()" aria-label="Datenschutz-Button. Zeigt Link zur arsnova-Datenschutzerklärung an">
+    <button mat-button (click)="navToDSGVO()" title="{{'footer.accessibility-data_protection'|translate}}">
       <mat-icon>security</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.dsgvo' | translate}}
@@ -38,7 +37,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToImprint()" aria-label="Impressum-Button. Zeigt Link zum Impressum an">
+    <button mat-button (click)="navToImprint()" title="{{'footer.accessibility-imprint'|translate}}">
       <mat-icon>info</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.imprint' | translate}}
@@ -79,4 +78,3 @@
       <button mat-menu-item (click)="useLanguage('en')">{{ 'footer.english' | translate }}</button>
     </mat-menu>
   </mat-toolbar>
-</footer>

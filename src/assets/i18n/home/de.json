@@ -15,7 +15,8 @@
 		"really-delete-account": "Willst du dein Konto mit den zugehörigen Sessions wirklich unwiderruflich löschen?",
 		"account-deleted": "Dein Konto wurde erfolgreich gelöscht.",
 		"abort": "Abbrechen",
-		"delete": "Löschen"
+		"delete": "Löschen",
+    "accessibility-login": "Konto-Button. Öffnet Modalfenster in dem man sich einloggen kann"
 	},
 	"login-page": {
 		"creator": "Dozent/in",
@@ -38,7 +39,9 @@
 		"created-2": "' erfolgreich erstellt",
 		"only-numbers": "Eine Session-ID besteht aus Ziffern.",
 		"update-available": "Eine neue Version ist verfügbar.",
-		"install": "Installieren"
+		"install": "Installieren",
+    "accessibility-join": "Beitreten-Button. Betritt den Raum, dessen Session-ID im Textfeld angegeben ist",
+    "accessibility-create": "Erstellen-Button. Erstellt einen neuen Raum"
 	},
 	"login": {
     "header": "Login",
@@ -103,6 +106,11 @@
     "style": "Stil",
     "language": "Sprache",
     "english": "Englisch",
-    "german": "Deutsch"
+    "german": "Deutsch",
+    "accessibility-demo": "Demo-Button. Öffnet Modalfenster in dem ein Demo-Video angezeigt wird",
+    "accessibility-style": "Stil-Button. Öffnet die Farbschema-Auswahl",
+    "accessibility-language": "Sprache-Button. Öffnet die Sprachauswahl",
+    "accessibility-data_protection": "Datenschutz-Button. Zeigt Link zur arsnova-Datenschutzerklärung an",
+    "accessibility-imprint": "Impressum-Button. Zeigt Link zum Impressum an"
   }
 }

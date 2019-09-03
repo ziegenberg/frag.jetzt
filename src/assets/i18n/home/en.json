@@ -15,7 +15,8 @@
     "really-delete-account": "Do you really want to irrevocably delete your account with the associated sessions?",
     "account-deleted": "Your account has been deleted successfully.",
     "abort": "Cancel",
-    "delete": "Delete"
+    "delete": "Delete",
+    "accessibility-login": "Account-Button. Opens the login window"
 	},
 	"login-page": {
 		"creator": "Professor",
@@ -38,7 +39,9 @@
 		"created-2": "' successfully created",
 		"only-numbers": "A session ID only contains digits.",
 		"update-available": "A newer version is available.",
-		"install": "Install"
+		"install": "Install",
+    "accessibility-join": "Join button. Enters the room with the specified session ID.",
+    "accessibility-create": "Create button. Creates a new session"
 	},
 	"login": {
     "header": "Log in",
@@ -103,6 +106,11 @@
     "style": "Style",
     "language": "Language",
     "english": "English",
-    "german": "German"
+    "german": "German",
+    "accessibility-demo": "Demo-Button. Opens a window with a demo video",
+    "accessibility-style": "Style-Button. Opens the style-chooser",
+    "accessibility-language": "Language-Button. Opens the language-chooser",
+    "accessibility-data_protection": "Data-Protection-Button. Displays link to the arsnova privacy statement",
+    "accessibility-imprint": "Imprint-Button. Displays link to the imprint"
   }
 }

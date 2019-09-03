@@ -40,7 +40,7 @@
       </button>
     </mat-menu>
 
-    <button mat-button *ngIf="user && deviceType === 'desktop'" [matMenuTriggerFor]="userMenu" aria-label="Konto-Button. Öffnet Modalfenster in dem man sich einloggen kann.">
+    <button mat-button *ngIf="user && deviceType === 'desktop'" [matMenuTriggerFor]="userMenu" title="{{'header.accessibility-login' | translate}}">
       <div class="label-icon">
         <mat-icon *ngIf="!user.isGuest" class="header-icons">account_box</mat-icon>
         <mat-icon *ngIf="user.isGuest" class="header-icons">meeting_room</mat-icon>
@@ -49,19 +49,19 @@
       </div>
     </button>
 
-    <button mat-icon-button *ngIf="user && deviceType === 'mobile'" [matMenuTriggerFor]="userMenu" aria-label="Konto-Button. Öffnet Modalfenster in dem man sich einloggen kann.">
+    <button mat-icon-button *ngIf="user && deviceType === 'mobile'" [matMenuTriggerFor]="userMenu" title="{{'header.accessibility-login' | translate}}">
       <mat-icon *ngIf="!user.isGuest" class="header-icons">account_box</mat-icon>
       <mat-icon *ngIf="user.isGuest" class="header-icons">meeting_room</mat-icon>
     </button>
 
-    <button mat-button *ngIf="!user && deviceType === 'desktop'" (click)=login(false) aria-label="Konto-Button. Öffnet Modalfenster in dem man sich einloggen kann.">
+    <button mat-button *ngIf="!user && deviceType === 'desktop'" (click)=login(false) title="{{'header.accessibility-login' | translate}}">
       <div class="label-icon">
         <mat-icon class="header-icons">account_box</mat-icon>
         <h2 *ngIf="deviceType === 'desktop'">{{'header.login' | translate}}</h2>
       </div>
     </button>
 
-    <button mat-icon-button *ngIf="!user && deviceType === 'mobile'" (click)=login(false) aria-label="Konto-Button. Öffnet Modalfenster in dem man sich einloggen kann." >
+    <button mat-icon-button *ngIf="!user && deviceType === 'mobile'" (click)=login(false) title="{{'header.accessibility-login' | translate}}" >
       <mat-icon class="header-icons">account_box</mat-icon>
     </button>
   </mat-toolbar-row>
