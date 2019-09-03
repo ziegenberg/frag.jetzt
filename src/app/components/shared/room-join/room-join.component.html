@@ -1,15 +1,22 @@
-<div fxLayout="column" fxLayoutAlign="center center" fxlayoutgap="50px" fxFill>
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px" fxFill>
 <form (ngSubmit)="joinRoom(roomId.value)">
   <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px">
     <mat-form-field (keyup.enter)="onEnter()">
       <input matInput #roomId type="text" pattern="[0-9 ]*" inputmode="numeric" min="00000000" max="99999999"
-             onkeydown="if(this.value.length - (this.value.split(' ').length -1) === 8 && event.keyCode != 8) return false;
-                        if(this.value.length === 4 && event.keyCode != 8) this.value = this.value + ' ';"
+             onkeydown="if(this.value.length - (this.value.split(' ').length -1) === 8 && event.keyCode !== 8) return false;
+                        if(this.value.length === 4 && event.keyCode !== 8) this.value = this.value + ' ';"
                         [formControl]="roomFormControl" [errorStateMatcher]="matcher"/>
-      <mat-placeholder class="placeholder">Session ID</mat-placeholder>
-      <mat-hint align="end">{{ roomId.value.length - (roomId.value.split(' ').length -1) }} / 8</mat-hint>
-      <mat-error *ngIf="roomFormControl.hasError('required')">{{ 'home-page.please-enter' | translate}}</mat-error>
-      <mat-error *ngIf="roomFormControl.hasError('pattern')">{{ 'home-page.only-numbers' | translate}}</mat-error>
+      <mat-placeholder class="placeholder">{{ 'home-page.session-id' | translate }}</mat-placeholder>
+      <mat-hint align="end"
+                title="{{ roomId.value.length - (roomId.value.split(' ').length -1) }} {{ 'home-page.input-8' | translate }}">
+        {{ roomId.value.length - (roomId.value.split(' ').length -1) }} / 8
+      </mat-hint>
+      <mat-error *ngIf="roomFormControl.hasError('required')">
+        {{ 'home-page.please-enter' | translate }}
+      </mat-error>
+      <mat-error *ngIf="roomFormControl.hasError('pattern')">
+        {{ 'home-page.only-numbers' | translate }}
+      </mat-error>
     </mat-form-field>
     <button mat-fab type="submit" title="Raum mit der angegebenen id betreten">
       <mat-icon>input</mat-icon>

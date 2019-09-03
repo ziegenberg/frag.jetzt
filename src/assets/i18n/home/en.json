@@ -30,7 +30,7 @@
 		"join-demo-session": "Join public session",
 		"session-id": "Session ID",
 		"no-room-found": "No session found with this ID",
-		"please-enter": "… your professor tells you",
+		"please-enter": "The Session ID will be told to you by your lecturer",
 		"exactly-8": "A session ID has exactly 8 digits.",
 		"create-session": "New session",
 		"no-empty-name": "Please enter a name.",
@@ -38,7 +38,8 @@
 		"created-2": "' successfully created",
 		"only-numbers": "A session ID only contains digits.",
 		"update-available": "A newer version is available.",
-		"install": "Install"
+		"install": "Install",
+    "input-8": " of 8 digits entered."
 	},
 	"login": {
     "header": "Log in",
@@ -91,18 +92,29 @@
 	},
   "footer": {
     "demo": "Demo",
-    "dsgvo": "Data Protection",
+    "demo-description": "Show demo video",
+    "dsgvo": "Privacy",
+    "dsgvo-description": "Show privacy policy",
     "imprint": "Imprint",
+    "imprint-description": "Show imprint",
     "will-open": " will be opened in a new tab...",
     "open": "Open",
     "help": "Help",
     "dark": "Dark background",
+    "dark-description": "Switch to style with dark background",
     "bright": "Bright background",
+    "bright-description": "Switch to style with bright background",
     "beamer": "Optimized for the projector (work in progress)",
+    "beamer-description": "Switch to style, optimized for the projector (work in progress)",
     "wai": "Accessible according to WCAG 2.1 (work in progress)",
+    "wai-description": "Switch to an accessible style according to WCAG 2.1 (work in progress)",
     "style": "Style",
+    "style-description": "Change style",
     "language": "Language",
+    "language-description": "Change language",
     "english": "English",
-    "german": "German"
+    "english-description": "Switch to english language",
+    "german": "German",
+    "german-description": "Switch to german language"
   }
 }

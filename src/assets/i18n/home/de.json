@@ -28,9 +28,9 @@
 	},
 	"home-page": {
 		"join-demo-session": "Öffentliche Session betreten",
-		"session-id": "Session-ID",
+		"session-id": "Session ID",
 		"no-room-found": "Es wurde keine Session mit dieser ID gefunden.",
-		"please-enter": "… sagt dir dein/e Dozent/in",
+		"please-enter": "Die Session ID sagt dir dein/e Dozent/in",
 		"exactly-8": "Eine Session-ID hat genau 8 Ziffern.",
 		"create-session": "Neue Session",
 		"no-empty-name": "Bitte gib einen Namen für die Session ein.",
@@ -38,7 +38,8 @@
 		"created-2": "' erfolgreich erstellt",
 		"only-numbers": "Eine Session-ID besteht aus Ziffern.",
 		"update-available": "Eine neue Version ist verfügbar.",
-		"install": "Installieren"
+		"install": "Installieren",
+    "input-8": " von 8 Ziffern eingegeben."
 	},
 	"login": {
     "header": "Login",
@@ -91,18 +92,30 @@
   },
   "footer": {
     "demo": "Demo",
+    "demo-description": "Demo Video anzeigen",
     "dsgvo": "Datenschutz",
+    "dsgvo-description": "Datenschutzerklärung anzeigen",
     "imprint": "Impressum",
-    "will-open": " wird in einem neuen Fenster geöffnet...",
+    "imprint-description": "Impressum anzeigen",
+    "will-open": " wird in einer neuen Registerkarte geöffnet...",
     "open": "Öffnen",
     "help": "Hilfe",
+    "help-description": "Hilfe anzeigen",
     "dark": "Dunkler Hintergrund",
+    "dark-description": "Stil mit dunklem Hintergrund auswählen",
     "bright": "Heller Hintergrund",
+    "bright-description": "Stil mit hellem Hintergrund auswählen",
     "beamer": "Für den Beamer optimiert (in Arbeit)",
+    "beamer-description": "Für den Beamer optimierten Stil auswählen (in Arbeit)",
     "wai": "Barrierefrei nach WCAG 2.1 (in Arbeit)",
+    "wai-description": "Barrierefreien Stil nach WCAG 2.1 auswählen (in Arbeit)",
     "style": "Stil",
+    "style-description": "Stil ändern",
     "language": "Sprache",
+    "language-description": "Sprache ändern",
     "english": "Englisch",
-    "german": "Deutsch"
+    "english-description": "Ändere die Sprache auf Englisch",
+    "german": "Deutsch",
+    "german-description": "Andere die Sprache auf Deutsch"
   }
 }
