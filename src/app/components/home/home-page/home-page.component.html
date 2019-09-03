@@ -1,28 +1,30 @@
-<div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="20px" fxFill>
-  <div fxLayout="row" fxLayoutAlign="center" *ngIf="deviceType === 'mobile'">
-    <h1>
-      <span class="main-heading-secondary">{{ 'login-page.welcome' | translate }}</span>
-      <span class="main-heading-primary">frag.jetzt</span>
-    </h1>
-  </div>
-  <div fxLayout="row" fxLayoutAlign="center">
-    <mat-card class="outer">
-      <mat-card-content>
-      <mat-card-header *ngIf="deviceType === 'desktop'">
-        <mat-card-title>
-            <h1>
+<main>
+  <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="20px" fxFill>
+    <div fxLayout="row" fxLayoutAlign="center" *ngIf="deviceType === 'mobile'">
+      <h1>
+        <span class="main-heading-secondary">{{ 'login-page.welcome' | translate }}</span>
+        <span class="main-heading-primary">frag.jetzt</span>
+      </h1>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center">
+      <mat-card class="outer">
+        <mat-card-content>
+          <mat-card-header *ngIf="deviceType === 'desktop'">
+            <mat-card-title>
+              <h1>
                 <span class="main-heading-secondary">{{ 'login-page.welcome' | translate }}</span>
                 <span class="main-heading-primary">frag.jetzt</span>
               </h1>
-        </mat-card-title>
-      </mat-card-header>
-        <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="20px" fxFill>
-          <div fxLayout="row" fxLayoutAlign="center">
-            <app-new-landing></app-new-landing>
+            </mat-card-title>
+          </mat-card-header>
+          <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="20px" fxFill>
+            <div fxLayout="row" fxLayoutAlign="center">
+              <app-new-landing></app-new-landing>
+            </div>
           </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
-</div>
+</main>
 
