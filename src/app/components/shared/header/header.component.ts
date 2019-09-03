@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
 import { DeleteAccountComponent } from '../_dialogs/delete-account/delete-account.component';
 import { UserService } from '../../../services/http/user.service';
+import {Contrast} from '../../../models/prototype_style/Contrast';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,7 @@ import { UserService } from '../../../services/http/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
   user: User;
   cTime: string;
   shortId: string;
@@ -127,6 +129,11 @@ export class HeaderComponent implements OnInit {
           this.deleteAccount(this.user.id);
         }
       });
+  }
+
+  private contrast(){
+    /*I DON'T EVEN*/
+    Contrast.contrast();
   }
 
 }

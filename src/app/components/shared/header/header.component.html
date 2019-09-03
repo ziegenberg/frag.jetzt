@@ -64,5 +64,13 @@
     <button mat-icon-button *ngIf="!user && deviceType === 'mobile'" (click)=login(false)>
       <mat-icon class="header-icons">account_box</mat-icon>
     </button>
+
+    <button mat-icon-button (click)="contrast();">
+      <div class="label-icon">
+        <mat-icon class="header-icons">visibility</mat-icon>
+        <h3>CONTRAST</h3>
+      </div>
+    </button>
+
   </mat-toolbar-row>
 </mat-toolbar>

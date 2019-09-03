@@ -1,12 +1,12 @@
 <footer>
   <mat-toolbar id="footer-toolbar">
-    <button mat-button (click)="navToBlog()" *ngIf="router.url !== '/home'">
+    <button mat-button (click)="navToBlog()" *ngIf="router.url !== '/home'" aria-label="" title="{{ 'footer.help' | translate }}">
       <mat-icon>help_outline</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.help' | translate }}
       </span>
     </button>
-    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'">
+    <button mat-button (click)="showDemo()" *ngIf="router.url === '/home'" aria-label="" title="{{ 'footer.demo' | translate }}">
       <mat-icon>ondemand_video</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.demo' | translate }}
@@ -14,7 +14,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="themeMenu">
+    <button mat-button [matMenuTriggerFor]="themeMenu" aria-label="" title="{{'footer.style' | translate}}">
       <mat-icon>palette</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.style' | translate}}
@@ -22,7 +22,7 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button [matMenuTriggerFor]="langMenu">
+    <button mat-button [matMenuTriggerFor]="langMenu" aria-label="" title="{{'footer.language' | translate}}">
       <mat-icon>language</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
           {{'footer.language' | translate}}
@@ -30,14 +30,14 @@
     </button>
 
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToDSGVO()">
+    <button mat-button (click)="navToDSGVO()" aria-label="" title="{{ 'footer.dsgvo' | translate}}">
       <mat-icon>security</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.dsgvo' | translate}}
       </span>
     </button>
     <span class="fill-remaining-space"></span>
-    <button mat-button (click)="navToImprint()">
+    <button mat-button (click)="navToImprint()" aria-label="" title="{{ 'footer.imprint' | translate}}">
       <mat-icon>info</mat-icon>
       <span *ngIf="deviceType === 'desktop'">
         {{ 'footer.imprint' | translate}}
@@ -74,8 +74,8 @@
     </mat-menu>
 
     <mat-menu #langMenu="matMenu" [overlapTrigger]="false">
-      <button mat-menu-item (click)="useLanguage('de')">{{ 'footer.german' | translate }}</button>
-      <button mat-menu-item (click)="useLanguage('en')">{{ 'footer.english' | translate }}</button>
+      <button mat-menu-item (click)="useLanguage('de')" aria-label="" title="{{ 'footer.german' | translate }}">{{ 'footer.german' | translate }}</button>
+      <button mat-menu-item (click)="useLanguage('en')" aria-label="" title="{{ 'footer.english' | translate }}">{{ 'footer.english' | translate }}</button>
     </mat-menu>
   </mat-toolbar>
 </footer>
