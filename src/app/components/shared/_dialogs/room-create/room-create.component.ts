@@ -65,7 +65,15 @@ export class RoomCreateComponent implements OnInit {
       this.authService.setAccess(room.shortId, UserRole.CREATOR);
       this.authService.assignRole(UserRole.CREATOR);
       this.router.navigate([`/creator/room/${this.room.shortId}`]);
-      this.dialogRef.close();
+      this.closeDialog();
     });
+  }
+
+
+  /**
+   * Closes the room create dialog on call.
+   */
+  closeDialog(): void {
+    this.dialogRef.close();
   }
 }

@@ -104,5 +104,11 @@
     "language": "Language",
     "english": "English",
     "german": "German"
+  },
+  "room-create": {
+    "cancel": "Cancel",
+    "cancel-description": "Cancel",
+    "create-room": "Create Session",
+    "create-room-description": "Create new session"
   }
 }
