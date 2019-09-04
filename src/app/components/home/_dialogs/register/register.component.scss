@@ -2,7 +2,7 @@ mat-form-field {
   color: var(--on-surface);
 }
 
-.mat-raised-button {
+.mat-flat-button {
   color: var(--on-primary);
   background-color: var(--primary);
 }
@@ -11,3 +11,10 @@ input {
   caret-color: var(--on-surface);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  left: -10000px;
+}

@@ -69,6 +69,8 @@
 		"reset-successful": "Password was reset. Please check your mails."
 	},
 	"register": {
+    "cancel": "Cancel",
+    "cancel-description": "Cancel",
 		"email": "E-mail",
 		"email-verify": "Verify e-mail",
 		"email-invalid": "E-mail is invalid.",
@@ -79,6 +81,7 @@
 		"password-unmatch": "Passwords do not match.",
 		"password-verify": "Verify password",
 		"register": "Register",
+    "register-description": "Register User",
 		"register-successful": "Successfully registered. Please check your mails.",
 		"register-unsuccessful": "Please check your data.",
 		"register-request-error": "Something went wrong with the registration. Maybe you already made the account?"

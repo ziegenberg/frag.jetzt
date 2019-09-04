@@ -67,11 +67,20 @@ export class RegisterComponent implements OnInit {
               @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
+
+  /**
+   * Closes the register dialog on call.
+   */
+  closeDialog(): void {
+    this.dialogRef.close([]);
   }
 
+
+  /**
+   * @inheritDoc
+   */
   ngOnInit() {
+      // nothing special yet
   }
 
   register(username: string, password: string): void {
