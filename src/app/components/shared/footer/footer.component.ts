@@ -9,6 +9,7 @@ import { User } from '../../../models/user';
 import { Room } from '../../../models/room';
 import { DemoVideoComponent } from '../../home/_dialogs/demo-video/demo-video.component';
 import { ThemeService } from '../../../../theme/theme.service';
+import {ThemeObj} from '../../../../theme/ThemeObj';
 
 @Component({
   selector: 'app-footer',
@@ -30,6 +31,12 @@ export class FooterComponent implements OnInit {
 
   themeClass = localStorage.getItem('theme');
 
+  /*THEMES*/
+
+  private themes:ThemeObj[];
+
+  /**/
+
   constructor(public notificationService: NotificationService,
               public router: Router,
               public dialog: MatDialog,
@@ -46,6 +53,9 @@ export class FooterComponent implements OnInit {
     this.translateService.get('footer.open').subscribe(message => {
       this.open = message;
     });
+    /*Init Themes*/
+    this.themes=this.themeService.getThemes();
+    console.log(this.themes);
   }
 
   navToBlog() {
@@ -111,8 +121,8 @@ export class FooterComponent implements OnInit {
     this.langService.langEmitter.emit(language);
   }
 
-  changeTheme(theme) {
-    this.themeClass = theme;
-    this.themeService.activate(theme);
+  changeTheme(theme:ThemeObj) {
+    this.themeClass = theme.name;
+    this.themeService.activate(theme.name);
   }
 }

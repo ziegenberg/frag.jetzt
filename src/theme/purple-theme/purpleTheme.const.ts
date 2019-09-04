@@ -1,19 +1,22 @@
 export const purple = {
 
   '--primary' : '#842a40',
-  '--primary-variant': '#dfeec8',
+  '--primary-variant': '#f5e0d5',
 
+  '--secondary': '#842a40',
+  '--secondary-variant': '#f5e0d5',
+/*
   '--secondary': '#4a5c66',
   '--secondary-variant': '#4a5d66',
-
-  '--background': '#f6e1d5',
+*/
+  '--background': '#f5e0d5',
   '--surface': '#ffeae0',
   '--dialog': '#f2f4f5',
 
   '--on-primary': '#FFFFFF',
-  '--on-secondary': '#191919',
-  '--on-background': '#191919',
-  '--on-surface': '#191919',
+  '--on-secondary': '#dfeec8',
+  '--on-background': '#00FF00',
+  '--on-surface': '#000000',
 
   '--green': '#4caf50',
   '--red': '#f44336',
