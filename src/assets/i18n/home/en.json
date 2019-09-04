@@ -61,11 +61,14 @@
 		"login-tooltip": "Sessions will be stored for 180 days."
 	},
 	"password-reset": {
+    "cancel": "Cancel",
+    "cancel-description": "Cancel",
 		"email": "E-mail",
 		"email-invalid": "E-mail is invalid.",
 		"email-required": "E-mail required",
 		"input-incorrect": "Please check your data.",
 		"reset-password": "Reset password",
+    "reset-password-description": "Reset password",
 		"reset-successful": "Password was reset. Please check your mails."
 	},
 	"register": {

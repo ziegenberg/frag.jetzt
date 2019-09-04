@@ -61,11 +61,14 @@
 		"login-tooltip": "Sessions mit allen Fragen werden für 180 Tage gespeichert."
 	},
 	"password-reset": {
+    "cancel": "Zurück",
+    "cancel-description": "Zurück",
 		"email": "E-Mail",
 		"email-invalid": "E-Mail-Adresse ungültig",
 		"email-required": "E-Mail-Adresse erforderlich",
 		"input-incorrect": "Bitte prüfe deine Eingaben.",
 		"reset-password": "Passwort zurücksetzen",
+    "reset-password-description": "Passwort zurücksetzen",
 		"reset-successful": "Passwort wurde zurückgesetzt. Bitte prüfe deine E-Mails."
 	},
 	"register": {
