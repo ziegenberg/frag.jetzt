@@ -6,23 +6,23 @@
       <mat-hint align="end" class="count" *ngIf="!emptyInputs">{{roomName.value.length}} / 20</mat-hint>
       <mat-hint align="start" class="error" *ngIf="emptyInputs"><strong>{{ 'home-page.no-empty-name' | translate }}</strong></mat-hint>
     </mat-form-field>
-    <div mat-dialog-actions class="actions">
+    <div mat-dialog-actions class="dialog-action-buttons">
       <button
         mat-button
         class="cancel-button"
         aria-labelledby="room-create-cancel"
-        (click)="closeDialog()">{{ 'room-create.cancel' | translate}}</button>
+        (click)="closeDialog()"
+      >{{ 'room-create.cancel' | translate}}</button>
       <button
         mat-flat-button
         aria-labelledby="room-create-create"
-        type="submit">{{ 'room-create.create-room' | translate}}</button>
+        type="submit"
+      >{{ 'room-create.create-room' | translate}}</button>
     </div>
   </div>
 </form>
 <!--Hidden Div's for a11y-Descriptions-->
 <div class="visually-hidden">
   <div id="room-create-cancel">{{'room-create.cancel-description' | translate}}</div>
-</div>
-<div class="visually-hidden">
   <div id="room-create-create">{{'room-create.create-room-description' | translate}}</div>
 </div>

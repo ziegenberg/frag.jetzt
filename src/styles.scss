@@ -28,3 +28,21 @@
 }
 
 @import 'theme/default-theme/theme';
+
+// some global styles which are not related to specific angular component
+.dialog-action-buttons {
+  justify-content: flex-end;
+}
+
+.dialog-action-buttons .cancel-button {
+  margin-right: .5em;
+  color: var(--on-surface);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  left: -10000px;
+}
