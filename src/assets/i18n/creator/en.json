@@ -10,6 +10,8 @@
     "create-content": "Create content",
     "live-feedback": "Live feedback",
     "answer-statistics": "Statistics",
+    "cancel": "Cancel",
+    "cancel-description": "Cancel",
     "delete-room": "Delete session",
     "sure": "Are you sure?",
     "reallySession": "Do you really want to delete session ",
