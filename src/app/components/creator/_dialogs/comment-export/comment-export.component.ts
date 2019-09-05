@@ -36,7 +36,7 @@ export class CommentExportComponent implements OnInit {
   /**
    * Returns a lambda which executes the dialog dedicated action on call.
    */
-  buildExportActionCallback(email: HTMLInputElement): () => void {
+  buildExportActionCallback(): () => void {
     return () => this.dialogRef.close(this.exportType);
   }
 }
