@@ -1,24 +1,24 @@
 export const purple = {
 
   '--primary' : 'Maroon',
-  '--primary-variant': 'Moccasin',
+  '--primary-variant': 'white',
 
   '--secondary': 'black',
   '--secondary-variant': 'green',
 
   '--background': 'DarkKhaki',
-  '--surface': 'Moccasin',
-  '--dialog': '#f2f4f5',
+  '--surface': 'white',
+  '--dialog': 'Moccasin',
 
-  '--on-primary': '#FFFFFF',
-  '--on-secondary': '#ffffff',
-  '--on-background': '#000000',
-  '--on-surface': '#000000',
+  '--on-primary': 'white',
+  '--on-secondary': 'white',
+  '--on-background': 'black',
+  '--on-surface': 'black',
 
-  '--green': 'green',
-  '--red': 'red',
-  '--yellow': 'yellow',
-  '--blue': 'blue',
+  '--green': 'darkgreen',
+  '--red': 'Maroon',
+  '--yellow': 'darkorange',
+  '--blue': 'darkblue',
   '--purple': 'purple',
   '--light-green': 'lightgreen',
   '--grey': 'grey',
