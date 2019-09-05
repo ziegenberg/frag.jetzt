@@ -77,7 +77,8 @@ import { DialogActionButtonsComponent } from './dialog/dialog-action-buttons/dia
     StatisticsPageComponent,
     CreateCommentComponent,
     PresentCommentComponent,
-    CommentComponent
+    CommentComponent,
+    DialogActionButtonsComponent
   ],
   entryComponents: [
     RoomCreateComponent,
