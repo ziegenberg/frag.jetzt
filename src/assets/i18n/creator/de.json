@@ -106,6 +106,8 @@
     "no-answers": "Keine Antworten"
   },
   "comment-page": {
+    "cancel": "Zurück",
+    "cancel-description": "Zurück",
     "enter-title": "Titel",
     "enter-comment": "Frage",
     "send": "Senden",
@@ -117,6 +119,7 @@
     "comma": "Microsoft Excel",
     "semicolon": "Standard CSV",
     "export": "Exportieren",
+    "export-description": "Exportieren",
     "no-comments": "Keine Fragen vorhanden",
     "mark-correct": "Frage bejahen",
     "mark-not-correct": "Frage nicht bejahen",

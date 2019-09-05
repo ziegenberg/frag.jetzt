@@ -106,6 +106,8 @@
     "no-answers": "No answers"
   },
   "comment-page": {
+    "cancel": "Cancel",
+    "cancel-description": "Cancel",
     "enter-title": "Title",
     "enter-comment": "Question",
     "send": "Send",
@@ -117,6 +119,7 @@
     "comma": "Microsoft Excel",
     "semicolon": "Standard CSV",
     "export": "Export",
+    "export-description": "Export",
     "no-comments": "No questions yet",
     "mark-correct": "Mark as correct",
     "mark-not-correct": "Mark not as correct",
