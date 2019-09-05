@@ -17,6 +17,12 @@
 		"abort": "Abbrechen",
 		"delete": "Löschen"
 	},
+  "delete-account": {
+    "cancel": "Zurück",
+    "cancel-description": "Zurück",
+    "delete": "Löschen",
+    "delete-description": "Konto löschen"
+  },
 	"login-page": {
 		"creator": "Dozent/in",
 		"participant": "Student/in",
