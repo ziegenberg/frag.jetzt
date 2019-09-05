@@ -1,0 +1,12 @@
+.dialog-action-buttons, .dialog-action-buttons .buttons {
+  margin-top: 1rem;
+}
+
+.dialog-action-buttons .cancel-button {
+  color: var(--on-surface);
+}
+
+.mat-flat-button {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
