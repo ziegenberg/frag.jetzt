@@ -14,7 +14,7 @@ export class RoomDeleteComponent implements OnInit {
 
 
   /**
-   * The confirm button type of the delete account.
+   * The confirm button type of the dialog.
    */
   confirmButtonType: DialogConfirmActionButtonType = DialogConfirmActionButtonType.Alert;
 
