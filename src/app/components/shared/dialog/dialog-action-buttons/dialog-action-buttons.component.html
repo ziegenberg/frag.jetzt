@@ -6,7 +6,7 @@
       mat-button
       type="button"
       class="cancel-button"
-      attr.aria-labelledby="{{ ariaPrefix + 'cancel' }}"
+      attr.aria-labelledby="{{ ariaPrefix + 'cancel' | translate }}"
       (click)="performCancelButtonClickAction()"
     >{{ buttonsLabelSection + '.cancel' | translate}}</button>
     <button
@@ -14,7 +14,7 @@
       type="button"
       mat-flat-button
       class="mat-flat-button {{ confirmButtonType }}-confirm-button"
-      attr.aria-labelledby="{{ ariaPrefix + 'confirm'}}"
+      attr.aria-labelledby="{{ ariaPrefix + 'confirm' | translate }}"
       (click)="performConfirmButtonClickAction()"
     >{{ buttonsLabelSection + '.' + confirmButtonLabel | translate}}</button>
   </div>
@@ -22,13 +22,13 @@
   <div class="visually-hidden">
     <div
       *ngIf="cancelButtonClickAction !== undefined"
-      id="{{ ariaPrefix + 'cancel'}}"
+      id="{{ ariaPrefix + 'cancel' | translate }}"
     >
       {{ buttonsLabelSection + '.cancel-description' | translate }}
     </div>
     <div
       *ngIf="confirmButtonClickAction !== undefined"
-      id="{{ ariaPrefix + 'confirm'}}"
+      id="{{ ariaPrefix + 'confirm' | translate }}"
     >
       {{ buttonsLabelSection + '.' + confirmButtonLabel + '-description' | translate }}
     </div>
