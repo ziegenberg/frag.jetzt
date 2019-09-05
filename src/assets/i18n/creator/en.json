@@ -50,6 +50,8 @@
     "moderating-stream": "Moderation"
   },
   "content": {
+    "cancel": "Cancel",
+    "cancel-description": "Cancel",
     "content": "Content",
     "create": "Create",
     "collection": "Collection",
@@ -79,6 +81,7 @@
     "undo": "Undo",
     "points": "Points",
     "delete": "Delete",
+    "delete-description": "Delete",
     "abort": "Abort",
     "delete-answer": "Delete answer",
     "edit-answer": "Edit answer",

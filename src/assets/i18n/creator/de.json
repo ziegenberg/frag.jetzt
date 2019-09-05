@@ -50,6 +50,8 @@
     "moderating-stream": "Moderation"
   },
   "content": {
+    "cancel": "Zurück",
+    "cancel-description": "Zurück",
     "content": "Frage",
     "create": "Erstellen",
     "collection": "Sammlung",
@@ -79,6 +81,7 @@
     "undo": "Rückgängig",
     "points": "Punkte",
     "delete": "Löschen",
+    "delete-description": "Löschen",
     "abort": "Abbrechen",
     "delete-answer": "Antwort löschen",
     "edit-answer": "Antwort bearteiten",
