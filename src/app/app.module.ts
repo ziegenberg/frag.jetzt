@@ -42,6 +42,7 @@ import { HomeCreatorPageComponent } from './components/home/home-creator-page/ho
 import { HomeParticipantPageComponent } from './components/home/home-participant-page/home-participant-page.component';
 import { CommentSettingsService } from './services/http/comment-settings.service';
 import { ModeratorModule } from './components/moderator/moderator.module';
+import { RescaleComponent } from './components/prototype/rescale/rescale.component';
 
 export function dialogClose(dialogResult: any) {
 }
@@ -61,7 +62,8 @@ export function initializeApp(appConfig: AppConfig) {
     DemoVideoComponent,
     UserHomeComponent,
     HomeCreatorPageComponent,
-    HomeParticipantPageComponent
+    HomeParticipantPageComponent,
+    RescaleComponent
   ],
   entryComponents: [
     RegisterComponent,

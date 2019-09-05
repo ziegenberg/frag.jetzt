@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
 import { DeleteAccountComponent } from '../_dialogs/delete-account/delete-account.component';
 import { UserService } from '../../../services/http/user.service';
+import { AppComponent } from '../../../app.component';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,7 @@ import { UserService } from '../../../services/http/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
   user: User;
   cTime: string;
   shortId: string;
@@ -72,7 +74,7 @@ export class HeaderComponent implements OnInit {
        });
       }
     });
-    this.moderationEnabled = (localStorage.getItem('moderationEnabled') === 'true') ? true : false;
+    this.moderationEnabled = (localStorage.getItem('moderationEnabled') === 'true');
   }
 
   getTime(time: Date) {
@@ -127,6 +129,26 @@ export class HeaderComponent implements OnInit {
           this.deleteAccount(this.user.id);
         }
       });
+  }
+
+  /**/
+
+  scaleUp() {
+    AppComponent.rescale.scaleUp(10);
+  }
+
+  scaleDown() {
+    AppComponent.rescale.scaleDown(10);
+  }
+
+  undo() {
+    AppComponent.rescale.setScale(100);
+  }
+
+  isScaleDisabled(): boolean {
+    // tslint:disable-next-line:triple-equals
+    if (AppComponent.rescale) {return AppComponent.rescale.getScale() == 100; }
+    return true;
   }
 
 }

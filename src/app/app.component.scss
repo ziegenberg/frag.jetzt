@@ -2,3 +2,22 @@
   padding: 4%;
   background-color:var(--background);
 }
+
+/* Temp-Fix of "much zoom correlating to not many content in screen" */
+
+.header{
+  height:64px;
+  z-index:3;
+}
+
+.content{
+  width:100%;
+  height:calc( 100% - 100px );
+  overflow:hidden;
+  z-index:2;
+}
+
+.footer{
+  height:36px;
+  z-index:3;
+}

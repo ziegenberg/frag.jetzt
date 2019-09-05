@@ -1,10 +1,27 @@
 <mat-toolbar class="mat-elevation-z1">
   <mat-toolbar-row>
+
     <button mat-icon-button *ngIf="router.url !== '/home'" (click)="goBack()"
             matTooltip="{{'header.back' | translate}}">
       <mat-icon class="header-icons" aria-label="Go back">arrow_back</mat-icon>
     </button>
+
     <span class="fill-remaining-space"></span>
+
+    <button mat-icon-button (click)="scaleDown();" aria-hidden="true">
+      <mat-icon class="header-icons">zoom_in</mat-icon>
+    </button>
+
+    <button mat-icon-button (click)="scaleUp();" aria-hidden="true">
+      <mat-icon class="header-icons">zoom_out</mat-icon>
+    </button>
+
+    <button mat-icon-button
+            (click)="undo();" disabled="{{isScaleDisabled()}}"
+            [ngStyle]="{'opacity' : (isScaleDisabled() ? '0.5' : '1') }" aria-hidden="true">
+      <mat-icon class="header-icons">undo</mat-icon>
+    </button>
+
     <h3 *ngIf="router.url.includes('comments') && user.role === 3 && deviceType === 'desktop'"
         fxLayoutAlign="center center">
       {{cTime}}

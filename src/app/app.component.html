@@ -1,7 +1,12 @@
+
+<app-rescale>
   <div fxLayout="column" fxFill appTheme>
-    <app-header #header></app-header>
-    <div fxFlex class="app-component">
-      <router-outlet></router-outlet>
+    <app-header class="header" #header></app-header>
+    <div class="content">
+      <div fxFlex class="app-component">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-    <app-footer></app-footer>
+    <app-footer class="footer"></app-footer>
   </div>
+</app-rescale>

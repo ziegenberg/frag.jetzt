@@ -1,16 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ContentChild, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SwUpdate } from '@angular/service-worker';
 import { NotificationService } from './services/util/notification.service';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import { RescaleComponent } from './components/prototype/rescale/rescale.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
+
+  /*JUST FOR TESTING*/
+
+  public static rescale: RescaleComponent;
+
+  @ViewChild(RescaleComponent) rescale: RescaleComponent;
 
   icons = [
     'beamer',
@@ -52,4 +59,16 @@ export class AppComponent implements OnInit {
       });
     });
   }
+
+  ngAfterViewInit() {
+    AppComponent.rescale = this.rescale;
+  }
 }
+
+
+
+
+
+
+
+
