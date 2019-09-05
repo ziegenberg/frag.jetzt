@@ -37,13 +37,13 @@ export class DialogActionButtonsComponent implements OnInit {
   /**
    * A callback which will be executed if the confirm button was clicked.
    */
-  @Input() confirmButtonClickAction: Function;
+  @Input() confirmButtonClickAction: (Function | undefined);
 
 
   /**
    * A callback which will be executed if the cancel button was clicked.
    */
-  @Input() cancelButtonClickAction: Function;
+  @Input() cancelButtonClickAction: (Function | undefined);
 
 
   /**
@@ -64,7 +64,9 @@ export class DialogActionButtonsComponent implements OnInit {
    * Performs the confirm button click action.
    */
   public performConfirmButtonClickAction(): void {
-    this.confirmButtonClickAction();
+    if (this.confirmButtonClickAction !== undefined) {
+      this.confirmButtonClickAction();
+    }
   }
 
 
@@ -72,6 +74,8 @@ export class DialogActionButtonsComponent implements OnInit {
    * Performs the cancel button click action.
    */
   public performCancelButtonClickAction(): void {
-    this.cancelButtonClickAction();
+    if (this.cancelButtonClickAction !== undefined) {
+      this.cancelButtonClickAction();
+    }
   }
 }

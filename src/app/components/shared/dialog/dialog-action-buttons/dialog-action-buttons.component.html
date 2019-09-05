@@ -2,6 +2,7 @@
   <mat-divider></mat-divider>
   <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="10px" class="buttons">
     <button
+      *ngIf="cancelButtonClickAction !== undefined"
       mat-button
       type="button"
       class="cancel-button"
@@ -9,6 +10,7 @@
       (click)="performCancelButtonClickAction()"
     >{{ buttonsLabelSection + '.cancel' | translate}}</button>
     <button
+      *ngIf="confirmButtonClickAction !== undefined"
       type="button"
       mat-flat-button
       class="mat-flat-button {{ confirmButtonType }}-confirm-button"
@@ -18,7 +20,17 @@
   </div>
   <!--Hidden Div's for a11y-Descriptions-->
   <div class="visually-hidden">
-    <div id="{{ ariaPrefix + 'cancel'}}">{{ buttonsLabelSection + '.cancel-description' | translate }}</div>
-    <div id="{{ ariaPrefix + 'confirm'}}">{{ buttonsLabelSection + '.' + confirmButtonLabel + '-description' | translate }}</div>
+    <div
+      *ngIf="cancelButtonClickAction !== undefined"
+      id="{{ ariaPrefix + 'cancel'}}"
+    >
+      {{ buttonsLabelSection + '.cancel-description' | translate }}
+    </div>
+    <div
+      *ngIf="confirmButtonClickAction !== undefined"
+      id="{{ ariaPrefix + 'confirm'}}"
+    >
+      {{ buttonsLabelSection + '.' + confirmButtonLabel + '-description' | translate }}
+    </div>
   </div>
 </div>
