@@ -1,5 +1,14 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 
+/**
+ * Available confirm button types.
+ */
+export enum DialogConfirmActionButtonType {
+  Primary = 'primary',
+  Alert = 'alert'
+}
+
+
 @Component({
   selector: 'app-dialog-action-buttons',
   templateUrl: './dialog-action-buttons.component.html',
@@ -14,9 +23,15 @@ export class DialogActionButtonsComponent implements OnInit {
 
 
   /**
-   * The confirm button label.
+   * The i18n label identifier of the confirm button.
    */
   @Input() confirmButtonLabel: string;
+
+
+  /**
+   * The confirm button type.
+   */
+  @Input() confirmButtonType: DialogConfirmActionButtonType = DialogConfirmActionButtonType.Primary;
 
 
   /**

@@ -6,7 +6,12 @@
   color: var(--on-surface);
 }
 
-.mat-flat-button {
+.primary-confirm-button {
   background-color: var(--primary);
   color: var(--on-primary);
+}
+
+.alert-confirm-button {
+  background-color: var(--red);
+  color: #fff;
 }
