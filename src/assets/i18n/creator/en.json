@@ -13,6 +13,7 @@
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "delete-room": "Delete session",
+    "delete-room-description": "Delete session",
     "sure": "Are you sure?",
     "reallySession": "Do you really want to delete session ",
     "reallyContent": "Do you really want to delete content ",
