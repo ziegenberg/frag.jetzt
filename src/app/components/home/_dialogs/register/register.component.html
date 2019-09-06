@@ -37,23 +37,11 @@
       {{ 'register.password-unmatch' | translate }}
     </mat-error>
   </mat-form-field>
-  <div mat-dialog-actions class="dialog-action-buttons">
-    <button
-      mat-button
-      type="button"
-      class="cancel-button"
-      aria-labelledby="register.register-cancel"
-      (click)="closeDialog()"
-    >{{ 'register.cancel' | translate}}</button>
-    <button
-      mat-flat-button
-      aria-labelledby="register.register-description"
-      type="submit"
-    >{{ 'register.register' | translate }}</button>
-  </div>
+  <app-dialog-action-buttons
+    buttonsLabelSection="register"
+    confirmButtonLabel="register"
+    [cancelButtonClickAction]="buildCloseDialogActionCallback()"
+    [confirmButtonClickAction]="buildRegisterActionCallback(userName, userPassword1)"
+  ></app-dialog-action-buttons>
 </form>
-<!--Hidden Div's for a11y-Descriptions-->
-<div class="visually-hidden">
-  <div id="register.register-cancel">{{'register.cancel-description' | translate}}</div>
-  <div id="register.register-description">{{'register.register-description' | translate}}</div>
-</div>
+

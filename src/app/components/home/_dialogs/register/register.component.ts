@@ -107,4 +107,20 @@ export class RegisterComponent implements OnInit {
       });
     }
   }
+
+
+  /**
+   * Returns a lambda which closes the dialog on call.
+   */
+  buildCloseDialogActionCallback(): () => void {
+    return () => this.closeDialog();
+  }
+
+
+  /**
+   * Returns a lambda which executes the dialog dedicated action on call.
+   */
+  buildRegisterActionCallback(userName: HTMLInputElement, password: HTMLInputElement): () => void {
+    return () => this.register(userName.value, password.value);
+  }
 }
