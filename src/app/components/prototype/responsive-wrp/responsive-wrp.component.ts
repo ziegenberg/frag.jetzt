@@ -57,7 +57,7 @@ export class ResponsiveWrpComponent implements OnInit, AfterViewInit {
   }
 
   checkState(isMobile: boolean, force: boolean) {
-    if (!force && this.isMobile == isMobile) {return; }
+    if (!force && this.isMobile === isMobile) {return; }
     this.isMobile = isMobile;
     this.setStyle(this.style[this.isMobile ? 'mobile' : 'desktop']);
   }

@@ -13,8 +13,7 @@ import {ResponsiveWrpComponent} from './components/prototype/responsive-wrp/resp
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit {
-
-  /*JUST FOR TESTING*/
+  
 
   public static rescale: RescaleComponent;
   public static responsive: ResponsiveWrpComponent;
