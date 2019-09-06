@@ -7,6 +7,9 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2 } from '
 })
 export class ResponsiveWrpComponent implements OnInit, AfterViewInit {
 
+  @Input() width: number;
+  @Input() mobPad: number;
+
   public static createStyle = (width, mobPad) => {
     return {
       'mobile': {
@@ -19,9 +22,6 @@ export class ResponsiveWrpComponent implements OnInit, AfterViewInit {
       }
     };
   }
-
-  @Input() width: number;
-  @Input() mobPad: number;
 
   // tslint:disable-next-line:member-ordering
   private wrp: HTMLElement;

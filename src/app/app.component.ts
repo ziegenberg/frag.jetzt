@@ -5,7 +5,7 @@ import { NotificationService } from './services/util/notification.service';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RescaleComponent } from './components/prototype/rescale/rescale.component';
-import {ResponsiveWrpComponent} from './components/prototype/responsive-wrp/responsive-wrp.component';
+import { ResponsiveWrpComponent } from './components/prototype/responsive-wrp/responsive-wrp.component';
 
 @Component({
   selector: 'app-root',
