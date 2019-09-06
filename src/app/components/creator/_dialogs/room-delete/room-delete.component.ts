@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Room } from '../../../../models/room';
 import { RoomEditComponent } from '../room-edit/room-edit.component';
 import { DialogConfirmActionButtonType } from '../../../shared/dialog/dialog-action-buttons/dialog-action-buttons.component';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-room-delete',
@@ -20,10 +21,17 @@ export class RoomDeleteComponent implements OnInit {
 
 
   constructor(public dialogRef: MatDialogRef<RoomEditComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any) {
-  }
+              @Inject(MAT_DIALOG_DATA) public data: any,
+              private liveAnnouncer: LiveAnnouncer) { }
+
 
   ngOnInit() {
+    this.announce();
+  }
+
+
+  public announce() {
+    this.liveAnnouncer.announce('Willst du die Session wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.', 'assertive');
   }
 
 
