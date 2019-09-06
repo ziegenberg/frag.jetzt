@@ -24,13 +24,15 @@
     "delete-description": "Konto löschen"
   },
 	"login-page": {
+    "cancel": "Zurück",
+    "cancel-description": "Zurück",
 		"creator": "Dozent/in",
 		"participant": "Student/in",
 		"password-reset": "Passwort vergessen?",
 		"not-registered": "Noch kein Konto?",
 		"register": "Registrieren",
 		"welcome": "Online fragen | Fragen voten",
-		"login": "Login"
+		"login": "Anmelden"
 	},
 	"home-page": {
 		"join-demo-session": "Öffentliche Session betreten",

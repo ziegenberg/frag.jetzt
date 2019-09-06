@@ -24,6 +24,8 @@
     "delete-description": "Delete your Account"
   },
 	"login-page": {
+    "cancel": "Cancel",
+    "cancel-description": "Cancel",
 		"creator": "Professor",
 		"participant": "Student",
 		"password-reset": "Forgot your password?",
