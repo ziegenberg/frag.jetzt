@@ -47,6 +47,8 @@
 		"install": "Installieren"
 	},
 	"login": {
+    "cancel": "Zurück",
+    "cancel-description": "Zurück",
     "header": "Login",
 		"email": "E-Mail",
 		"email-invalid": "E-Mail-Adresse ungültig",

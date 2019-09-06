@@ -47,6 +47,8 @@
 		"install": "Install"
 	},
 	"login": {
+    "cancel": "Cancel",
+    "cancel-description": "Cancel",
     "header": "Log in",
     "email": "E-mail",
 		"email-invalid": "E-mail is invalid",
