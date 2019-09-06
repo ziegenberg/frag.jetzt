@@ -29,3 +29,10 @@
 
 @import 'theme/default-theme/theme';
 
+/*rescale-interface*/
+
+body{
+  margin:0px;
+  padding:0px;
+  background-color:var(--background);
+}

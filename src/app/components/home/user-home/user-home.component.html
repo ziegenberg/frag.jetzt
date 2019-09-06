@@ -1,11 +1,17 @@
 <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="20px" >
   <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="15px">
-    <app-room-join></app-room-join>
-  </div>
-  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="15px">
-    <button mat-raised-button (click)="openCreateRoomDialog()">
-      <mat-icon>add</mat-icon>
-      {{ 'home-page.create-session' | translate }}</button>
+    <mat-card class="outer">
+      <mat-card-content>
+        <app-room-join></app-room-join>
+      </mat-card-content>
+      <mat-card-footer class="cardFooter">
+        <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="15px">
+          <button mat-raised-button (click)="openCreateRoomDialog()">
+            <mat-icon>add</mat-icon>
+            {{ 'home-page.create-session' | translate }}</button>
+        </div>
+      </mat-card-footer>
+    </mat-card>
   </div>
   <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="15px">
     <app-room-list [user]="user"></app-room-list>

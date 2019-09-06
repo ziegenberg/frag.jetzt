@@ -1,12 +1,63 @@
 
-<app-rescale>
-  <div fxLayout="column" fxFill appTheme>
-    <app-header class="header" #header></app-header>
-    <div class="content">
-      <div fxFlex class="app-component">
-        <router-outlet></router-outlet>
+<div class="mainBackground">
+  <div class="outerMainWrp">
+    <app-rescale>
+
+      <div class="mainBackground">
+
+        <div fxLayout="column" fxFill appTheme>
+          <app-header class="header" #header></app-header>
+          <div class="content">
+            <app-scroll-wrp>
+              <div fxFlex class="app-component">
+                <app-responsive-wrp [width]="800" [mobPad]="10">
+                  <router-outlet></router-outlet>
+                </app-responsive-wrp>
+              </div>
+            </app-scroll-wrp>
+          </div>
+        </div>
+
       </div>
-    </div>
+
+    </app-rescale>
+  </div>
+  <div class="outerFooterWrp">
     <app-footer class="footer"></app-footer>
   </div>
+</div>
+<!--
+<app-rescale>
+
+  <div class="mainBackground">
+
+    <div fxLayout="column" fxFill appTheme>
+    </div>
+
+  </div>
+
 </app-rescale>
+-->
+<!--
+<app-rescale>
+
+  <div class="mainBackground">
+
+    <div fxLayout="column" fxFill appTheme>
+      <app-header class="header" #header></app-header>
+      <div class="content">
+        <app-scroll-wrp>
+          <div fxFlex class="app-component">
+            <app-responsive-wrp [width]="800" [mobPad]="10">
+              <router-outlet></router-outlet>
+            </app-responsive-wrp>
+          </div>
+        </app-scroll-wrp>
+      </div>
+      <app-footer class="footer"></app-footer>
+    </div>
+
+  </div>
+
+</app-rescale>
+-->

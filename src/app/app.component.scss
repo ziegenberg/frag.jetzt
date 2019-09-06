@@ -1,9 +1,38 @@
-.app-component {
-  padding: 4%;
-  background-color:var(--background);
+
+::-webkit-scrollbar{
+  display:none;
 }
 
+.app-component {
+  padding-top:50px;
+  padding-bottom:50px;
+  background-color:var(--background);
+  float:left;
+}
+
+/* Rescale-Interface */
 /* Temp-Fix of "much zoom correlating to not many content in screen" */
+/* Hello if you are reading this. This is just a quick fix for the layout.*/
+/* I'll propably use a proper layout-framework in the future ~ lphs11 */
+
+.outerMainWrp{
+  width:100%;
+  height:calc( 100% - 37px );
+  float:left;
+}
+
+.outerFooterWrp{
+  width:100%;
+  height:36px;
+  float:left;
+}
+
+.mainBackground{
+  width:100%;
+  height:100%;
+  float:left;
+  background-color:var(--background);
+}
 
 .header{
   height:64px;
@@ -12,7 +41,7 @@
 
 .content{
   width:100%;
-  height:calc( 100% - 100px );
+  height:calc( 100% - 37px );
   overflow:hidden;
   z-index:2;
 }

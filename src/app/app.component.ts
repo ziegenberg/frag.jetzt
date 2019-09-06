@@ -5,6 +5,7 @@ import { NotificationService } from './services/util/notification.service';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RescaleComponent } from './components/prototype/rescale/rescale.component';
+import {ResponsiveWrpComponent} from './components/prototype/responsive-wrp/responsive-wrp.component';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   /*JUST FOR TESTING*/
 
   public static rescale: RescaleComponent;
+  public static responsive: ResponsiveWrpComponent;
 
   @ViewChild(RescaleComponent) rescale: RescaleComponent;
+  @ViewChild(ResponsiveWrpComponent) responsive: ResponsiveWrpComponent;
 
   icons = [
     'beamer',
@@ -62,6 +65,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     AppComponent.rescale = this.rescale;
+    AppComponent.responsive = this.responsive;
+    /* Quick Solution, needs improvement */
+    /* The Listener is used for internal rescale */
+    /* window.resize, won't get triggered. The Listener updates all Responsive Components. Needs some rework. */
+    AppComponent.rescale.addListener(AppComponent.responsive);
   }
 }
 

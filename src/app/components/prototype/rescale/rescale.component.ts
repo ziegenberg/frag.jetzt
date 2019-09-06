@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { ResponsiveWrpComponent } from '../responsive-wrp/responsive-wrp.component';
 
 @Component({
   selector: 'app-rescale',
@@ -10,6 +11,8 @@ export class RescaleComponent implements OnInit, AfterViewInit {
   private scale = 100;
   private screen: HTMLElement;
   private rescaler: HTMLElement;
+
+  private listener: ResponsiveWrpComponent[] = [];
 
   constructor(private ref: ElementRef, private render: Renderer2) { }
 
@@ -63,10 +66,21 @@ export class RescaleComponent implements OnInit, AfterViewInit {
     this.scale = scale;
     if (this.scale < 10) {this.scale = 10; } else if (this.scale > 500) {this.scale = 500; }
     this.update();
+    this.callListener();
   }
 
   getScale(): number {
     return this.scale;
+  }
+
+  callListener() {
+    this.listener.forEach(e => {
+      e.update(false);
+    });
+  }
+
+  addListener(listener: ResponsiveWrpComponent) {
+    this.listener.push(listener);
   }
 
 }

@@ -43,6 +43,8 @@ import { HomeParticipantPageComponent } from './components/home/home-participant
 import { CommentSettingsService } from './services/http/comment-settings.service';
 import { ModeratorModule } from './components/moderator/moderator.module';
 import { RescaleComponent } from './components/prototype/rescale/rescale.component';
+import { ScrollWrpComponent } from './components/prototype/scroll-wrp/scroll-wrp.component';
+import { ResponsiveWrpComponent } from './components/prototype/responsive-wrp/responsive-wrp.component';
 
 export function dialogClose(dialogResult: any) {
 }
@@ -63,7 +65,9 @@ export function initializeApp(appConfig: AppConfig) {
     UserHomeComponent,
     HomeCreatorPageComponent,
     HomeParticipantPageComponent,
-    RescaleComponent
+    RescaleComponent,
+    ScrollWrpComponent,
+    ResponsiveWrpComponent
   ],
   entryComponents: [
     RegisterComponent,

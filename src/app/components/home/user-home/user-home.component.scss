@@ -11,3 +11,14 @@ app-room-list {
 app-join-room {
   max-width: 800px;
 }
+
+.outer{
+  width:100%;
+  background-color: var(--surface);
+  color: var(--on-surface);
+}
+
+.cardFooter{
+  margin-top:25px;
+  margin-bottom:25px;
+}
