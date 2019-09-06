@@ -17,6 +17,8 @@
     "session-id": "ID"
   },
   "comment-page": {
+    "cancel": "Cancel",
+    "cancel-description": "Cancel",
     "enter-title": "Title",
     "enter-comment": "Your question",
     "send": "Send",
