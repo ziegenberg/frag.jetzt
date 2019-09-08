@@ -64,6 +64,9 @@ export class ResponsiveWrpComponent implements OnInit, AfterViewInit {
 
   setStyle(style: Object) {
     for (const k in style) {
+      if (!this.style.hasOwnProperty(k)) {
+        continue;
+      }
       this.render.setStyle(this.resp, k, style[k]);
     }
   }
