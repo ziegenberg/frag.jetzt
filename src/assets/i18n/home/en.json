@@ -186,6 +186,7 @@
   },
   "page-not-found": {
     "text": "404 - Page not found",
-    "message": "You might want to go to "
+    "message": "You might want to go to ",
+    "link": "Page not found. You might want to go to {{path}}"
   }
 }

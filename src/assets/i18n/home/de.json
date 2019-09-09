@@ -181,6 +181,7 @@
     },
   "page-not-found": {
     "text": "404 - Seite nicht gefunden",
-    "message": "Meinten sie "
+    "message": "Meinten sie ",
+    "a11y-link": "Seite nicht gefunden. Meinten sie {{path}}"
   }
   }

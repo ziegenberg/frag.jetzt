@@ -1,5 +1,9 @@
 <h1>
   {{ 'page-not-found.text' | translate}}&nbsp;
 </h1>
-<p *ngIf="path">{{'page-not-found.message' | translate}} <a [routerLink]="path">"{{ path }}"</a></p>
+<p *ngIf="path">{{'page-not-found.message' | translate}} <a aria-labelledby="link" [routerLink]="path">"{{ path }}"</a></p>
+
+<div class="visually-hidden">
+  <div id = "link">{{'page-not-found.a11y-link' | translate: {path: path} }} </div>
+</div>
 
