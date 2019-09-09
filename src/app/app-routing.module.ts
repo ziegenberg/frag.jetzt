@@ -6,47 +6,52 @@ import { UserHomeComponent } from './components/home/user-home/user-home.compone
 import { ImprintComponent } from './components/home/_dialogs/imprint/imprint.component';
 import { DataProtectionComponent } from './components/home/_dialogs/data-protection/data-protection.component';
 import { HelpPageComponent } from './components/shared/_dialogs/help-page/help-page.component';
+import { paths } from './app-paths';
+import { PathResolveService } from './services/http/path-resolve.service';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: paths.home,
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: paths.home,
     component: HomePageComponent
   },
   {
-    path: 'user',
+    path: paths.user,
     component: UserHomeComponent
   },
   {
-    path: 'imprint',
+    path: paths.imprint,
     component: ImprintComponent
   },
   {
-    path: 'data-protection',
+    path: paths.dataProtection,
     component: DataProtectionComponent
   },
   {
-    path: 'help-page',
+    path: paths.helpPage,
     component: HelpPageComponent
   },
   {
-    path: 'creator',
+    path: paths.creator,
     loadChildren: './components/creator/creator.module#CreatorModule'
   },
   {
-    path: 'participant',
+    path: paths.participant,
     loadChildren: './components/participant/participant.module#ParticipantModule'
   },
   {
-    path: 'moderator',
+    path: paths.moderator,
     loadChildren: './components/moderator/moderator.module#ModeratorModule'
   },
   {
     path: '**',
+    resolve: {
+      path: PathResolveService
+    },
     component: PageNotFoundComponent
   }
 ];
