@@ -1,6 +1,5 @@
-
 <h1>
-  404-Page not found
+  {{ 'page-not-found.text' | translate}}&nbsp;
 </h1>
-<p *ngIf="path">You might want to go to the <a [routerLink]="path">"{{ path }}" page</a></p>
+<p *ngIf="path">{{'page-not-found.message' | translate}} <a [routerLink]="path">"{{ path }}"</a></p>
 

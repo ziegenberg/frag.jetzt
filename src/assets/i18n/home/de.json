@@ -178,5 +178,9 @@
       "table-label": "Nachfolgend findest du eine Liste der besuchten Sitzungen.",
       "entry": "Eintrag ",
       "filter": "Hier kannst du die besuchten Sitzungen filtern."
-    }
+    },
+  "page-not-found": {
+    "text": "404 - Seite nicht gefunden",
+    "message": "Meinten sie "
+  }
   }

@@ -183,5 +183,9 @@
   "table-label": "Below you find a list of your visited sessions",
   "entry": "Entry ",
   "filter": "Here you can filter your visited sessions"
+  },
+  "page-not-found": {
+    "text": "404 - Page not found",
+    "message": "You might want to go to "
   }
 }
