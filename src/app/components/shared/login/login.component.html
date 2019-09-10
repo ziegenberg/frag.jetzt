@@ -30,7 +30,7 @@
     <mat-error *ngIf="passwordFormControl.hasError('required')">{{ 'login.password-required' | translate }}</mat-error>
   </mat-form-field>
   <button class="login" mat-flat-button type="submit">
-    {{ 'login-page.login' | translate }}
+    {{ 'login.login' | translate }}
   </button>
   <div class="forgot-password">
     <a
@@ -38,14 +38,14 @@
       (click)="openPasswordDialog(); $event.preventDefault(); $event.stopPropagation();"
       role="button"
     >
-      {{ 'login-page.password-reset' | translate }}
+      {{ 'login.password-reset' | translate }}
     </a>
   </div>
 </form>
 <mat-divider></mat-divider>
 <div fxLayout="row" class="register">
-  <p>{{ 'login-page.not-registered' | translate }}</p>
-  <a class="registerBtn" (click)="openRegisterDialog()">{{ 'login-page.register' | translate }}</a>
+  <p>{{ 'login.not-registered' | translate }}</p>
+  <a class="registerBtn" (click)="openRegisterDialog()">{{ 'login.register' | translate }}</a>
 </div>
 <app-dialog-action-buttons
   [spacing]="false"

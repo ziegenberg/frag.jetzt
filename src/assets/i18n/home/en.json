@@ -1,10 +1,10 @@
 {
   "cookies": {
     "accept": "Accept",
-    "accept-description": "Accepts the use of cookies and proceeds to the app",
+    "accept-description": "Accept the use of cookies and proceed to the app.",
     "cancel": "Decline",
-    "cancel-description": "Declines cookie usage and exits the app",
-    "info-label": "Opens a dialog with  the frag.jetzt privacy statement"
+    "cancel-description": "Decline cookie usage and exit the app.",
+    "info-label": "Open a dialog with the frag.jetzt privacy policy."
   },
   "overlay": {
     "message": "You have declined cookie usage for this app, thus you can not use it for the time being.",
@@ -16,7 +16,7 @@
     "cancel-description": "Decline the app's privacy policy and close dialog",
     "consent": "Accept",
     "consent-description": "Accept the app's privacy policy and close dialog",
-    "title": "Data Protection"
+    "title": "Privacy"
   },
   "delete-account": {
     "cancel": "Cancel",
@@ -26,20 +26,20 @@
   },
   "demo": {
     "cancel": "Close",
-    "cancel-description": "Closes the demo dialog"
+    "cancel-description": "Close the demo dialog"
   },
   "footer": {
-    "accessibility-data_protection": "Opens the frag.jetzt privacy statement in a new dialog",
-    "accessibility-demo": "Shows demo video of frag.jetzt in a new dialog",
-    "accessibility-help": "Opens help text in a new dialog",
-    "accessibility-imprint": "Opens the imprint in a new dialog",
-    "accessibility-language": "Opens the language selection menu",
-    "accessibility-style": "Opens the color scheme menu",
+    "accessibility-data_protection": "Open the privacy statement in a new dialog.",
+    "accessibility-demo": "Show the demo video in a new dialog.",
+    "accessibility-help": "Open the help text in a new dialog.",
+    "accessibility-imprint": "Open the imprint in a new dialog.",
+    "accessibility-language": "Open the language selection menu.",
+    "accessibility-style": "Open the color scheme menu.",
     "beamer": "Optimized for the projector (work in progress)",
     "bright": "Bright background",
     "dark": "Dark background",
     "demo": "Demo",
-    "dsgvo": "Data Protection",
+    "dsgvo": "Privacy",
     "english": "English",
     "german": "German",
     "help": "Help",
@@ -98,11 +98,11 @@
     "please-enter": "… your professor tells you",
     "room-name-input": "Enter the name of the session you want to create here.",
     "session-id": "Session ID",
-    "update-available": "A newer version is available."
+    "update-available": "An update is available."
   },
   "imprint": {
     "cancel": "Close",
-    "cancel-description": "Closes the imprint dialog",
+    "cancel-description": "Close the imprint dialog.",
     "title": "Imprint"
   },
   "login": {
@@ -121,22 +121,14 @@
     "guest-login-tooltip": "Created sessions will be deleted after logout.",
     "header": "Log in",
     "input-incorrect": "Please check your data.",
-    "login": "Sign in",
+    "login": "Log in with account",
     "login-data-incorrect": "Username or password incorrect",
     "login-successful": "Login successful",
     "login-tooltip": "Sessions will be stored for 180 days.",
+    "not-registered": "Don't have an account yet?",
     "or": "or",
     "password": "Password",
-    "password-description": "Enter your password here.",
-    "password-required": "Password required"
-  },
-  "login-page": {
-    "cancel": "Cancel",
-    "cancel-description": "Cancel",
-    "creator": "Professor",
-    "login": "Login",
-    "not-registered": "Don't have an account yet?",
-    "participant": "Student",
+    "password-required": "Password required",
     "password-reset": "Forgot your password?",
     "register": "Register",
     "welcome": "Ask online & vote questions"
@@ -150,15 +142,15 @@
     "email-required": "E-mail required",
     "forgot-password": "Forgot the password?",
     "input-incorrect": "Please check your data.",
+    "key": "Reset key",
+    "key-required": "Reset key required",
+    "new-password": "New password",
+    "new-password-successful": "The new password has been set.",
     "reset-password": "Reset password",
     "reset-password-description": "Reset password",
     "reset-successful": "Password was reset. Please check your mails.",
     "set-new-password": "Set new password with the reset key",
-    "set-new-password-button": "Set password",
-    "key": "Key",
-    "new-password": "New password",
-    "new-password-successful": "The new password has been set.",
-    "key-required": "Key required"
+    "set-new-password-button": "Set password"
   },
   "register": {
     "cancel": "Cancel",
