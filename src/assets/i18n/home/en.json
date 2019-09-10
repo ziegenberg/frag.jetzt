@@ -123,6 +123,7 @@
     "input-incorrect": "Please check your data.",
     "login": "Log in with account",
     "login-data-incorrect": "Username or password incorrect",
+    "login-description": "Log in with your account",
     "login-successful": "Login successful",
     "login-tooltip": "Sessions will be stored for 180 days.",
     "not-registered": "Don't have an account yet?",
