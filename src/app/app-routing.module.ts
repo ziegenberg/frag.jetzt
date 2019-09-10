@@ -24,19 +24,19 @@ const routes: Routes = [
     component: UserHomeComponent
   },
   {
-    path: paths.imprint,
+    path: 'imprint',
     component: ImprintComponent
   },
   {
-    path: paths.dataProtection,
+    path: 'data-protection',
     component: DataProtectionComponent
   },
   {
-    path: paths.helpPage,
+    path: 'help-page',
     component: HelpPageComponent
   },
   {
-    path: paths.creator,
+    path: 'creator',
     loadChildren: './components/creator/creator.module#CreatorModule'
   },
   {
@@ -44,7 +44,7 @@ const routes: Routes = [
     loadChildren: './components/participant/participant.module#ParticipantModule'
   },
   {
-    path: paths.moderator,
+    path: 'moderator',
     loadChildren: './components/moderator/moderator.module#ModeratorModule'
   },
   {
