@@ -1,4 +1,4 @@
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/home/_dialogs/register/register.component';
 import { PasswordResetComponent } from './components/home/_dialogs/password-reset/password-reset.component';
@@ -54,9 +54,9 @@ import { ImprintEnComponent } from '../assets/i18n/imprint/imprint-en';
 import { ImprintDeComponent } from '../assets/i18n/imprint/imprint-de';
 import { HelpDeComponent } from '../assets/i18n/help/help-de';
 import { HelpEnComponent } from '../assets/i18n/help/help-en';
-import { LayoutComponent } from './components/layout/layout.component';
+import { LayoutComponent } from './components/shared/layout/layout.component';
 
-export function dialogClose(dialogResult: any) {
+export function dialogClose() {
 }
 
 export function initializeApp(appConfig: AppConfig) {

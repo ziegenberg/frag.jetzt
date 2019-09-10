@@ -8,7 +8,7 @@ import { DataProtectionComponent } from './components/home/_dialogs/data-protect
 import { HelpPageComponent } from './components/shared/_dialogs/help-page/help-page.component';
 import { paths } from './app-paths';
 import { PathResolveService } from './services/http/path-resolve.service';
-import { LayoutComponent } from './components/layout/layout.component';
+import { LayoutComponent } from './components/shared/layout/layout.component';
 
 const routes: Routes = [
 
