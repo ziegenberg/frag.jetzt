@@ -145,8 +145,8 @@
     "new-password": "Neues Passwort",
     "new-password-successful": "Dein neues Passwort wurde erfolgreich gesetzt.",
     "reset-password": "Passwort zurücksetzen",
-    "reset-password-description": "Passwort zurücksetzen",
-    "reset-successful": "Passwort wurde zurückgesetzt. Bitte prüfe dein Postfach.",
+    "reset-password-description": "Hier kannst du dein Passwort zurücksetzen.",
+    "reset-successful": "Dein Passwort wurde zurückgesetzt. Bitte prüfe dein E-Mail Postfach.",
     "set-new-password": "Setze ein neues Passwort mit dem Schlüssel",
     "set-new-password-button": "Setze Passwort"
   },
@@ -168,9 +168,9 @@
     "password-unmatch": "Passwörter stimmen nicht überein",
     "password-verify": "Passwort wiederholen",
     "register": "Registrieren",
-    "register-description": "Benutzer registrieren",
+    "register-description": "Registrierung abschließen",
     "register-request-error": "Etwas ist bei der Registrierung fehlgeschlagen. Hast du dich vielleicht schon registriert?",
-    "register-successful": "Erfolgreich registriert. Bitte prüfe dein Postfach.",
+    "register-successful": "Erfolgreich registriert. Bitte prüfe dein E-Mail Postfach.",
     "register-unsuccessful": "Bitte prüfe deine Eingaben."
   },
   "room-create": {
