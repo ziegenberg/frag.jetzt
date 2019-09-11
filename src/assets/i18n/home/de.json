@@ -88,6 +88,7 @@
     "no-room-found": "Es wurde keine Sitzung mit diesem Code gefunden.",
     "only-numbers": "Der Sitzungs-Code besteht ausschließlich aus Ziffern.",
     "please-enter": "Den Code sagt dir dein Dozent.",
+    "room-name-input": "Gib hier den Namen der Sitzung die du erstellen möchtest ein.",
     "session-id": "Sitzungs-Code",
     "update-available": "Eine neue Version ist verfügbar."
   },

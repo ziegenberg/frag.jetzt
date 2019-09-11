@@ -91,6 +91,7 @@
     "no-room-found": "No session found with this ID",
     "only-numbers": "A session ID only contains digits.",
     "please-enter": "… your professor tells you",
+    "room-name-input": "Enter the name of the session you want to create here.",
     "session-id": "Session ID",
     "update-available": "A newer version is available."
   },
