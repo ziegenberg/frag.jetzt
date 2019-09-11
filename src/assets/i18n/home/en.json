@@ -84,7 +84,7 @@
   },
   "home-page": {
     "accessibility-create": "Creates a new session",
-    "accessibility-join": "Enters the room with the specified session ID.",
+    "accessibility-join-button": "Enter the room with the specified session ID.",
     "accessibility-join-input": "Here you can enter the session ID of the room you want to join.",
     "create-session": "New session",
     "created-1": "Session '",

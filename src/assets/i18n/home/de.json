@@ -82,7 +82,7 @@
   },
   "home-page": {
     "accessibility-create": "Erstellt eine neue Sitzung.",
-    "accessibility-join": "Betritt die Sitzung, deren Code du eingegeben hast.",
+    "accessibility-join-button": "Betritt die Sitzung, deren Code du eingegeben hast.",
     "accessibility-join-input": "Hier kannst du den Code der Sitzung eingeben der du beitreten möchtest.",
     "create-session": "Neue Sitzung",
     "created-1": "Die Sitzung '",
