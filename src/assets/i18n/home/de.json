@@ -133,6 +133,7 @@
     "cancel": "Zurück",
     "cancel-description": "Zurück",
     "email": "Adresse",
+    "email-description": "Gib hier deine E-Mail Adresse ein um dein Passwort zurückzusetzen.",
     "email-invalid": "Adresse ungültig",
     "email-required": "Adresse erforderlich",
     "input-incorrect": "Bitte prüfe deine Eingaben.",

@@ -139,6 +139,7 @@
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "email": "E-mail",
+    "email-description": "Enter your email address here to reset your password.",
     "email-invalid": "E-mail is invalid.",
     "email-required": "E-mail required",
     "input-incorrect": "Please check your data.",
