@@ -39,17 +39,23 @@ export class CommentPageComponent implements OnInit, OnDestroy {
         }
       } else if (event.keyCode === 51 && this.eventService.focusOnInput === false) {
         document.getElementById('searchBox').focus();
+      } else if (event.keyCode === 52 && this.eventService.focusOnInput === false) {
+        document.getElementById('sort-button').focus();
+      } else if (event.keyCode === 53 && this.eventService.focusOnInput === false) {
+        document.getElementById('filter-button').focus();
       } else if (event.keyCode === 56 && this.eventService.focusOnInput === false) {
         this.liveAnnouncer.announce('Aktueller Sitzungs-Code:' + this.shortId.slice(0, 8));
       } else if ((event.keyCode === 57 || event.keyCode === 27) && this.eventService.focusOnInput === false) {
         this.announce();
+      } else if (document.getElementById('search_close-button') && event.keyCode === 27
+                 && this.eventService.focusOnInput === true) {
+        document.getElementById('search_close-button').click();
       } else if (event.keyCode === 27 && this.eventService.focusOnInput === true) {
-        // if (document.getElementById('add_comment-button')) {
-        //   document.getElementById('add_comment-button').focus();
-        // } else {
-        //   document.getElementById('add_comment_small-button').focus();
-        // }
-        // document.getElementById('searchBox').
+        if (document.getElementById('add_comment-button')) {
+          document.getElementById('add_comment-button').focus();
+        } else {
+          document.getElementById('add_comment_small-button').focus();
+        }
       }
     });
   }
