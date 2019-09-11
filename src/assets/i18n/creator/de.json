@@ -17,6 +17,7 @@
   },
   "comment-page": {
     "abort": "Abbrechen",
+    "ask-question-description": "Gib hier deine Frage ein!",
     "acknowledge": "Erlauben",
     "cancel": "Zurück",
     "cancel-description": "Zurück",

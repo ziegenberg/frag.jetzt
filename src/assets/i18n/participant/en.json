@@ -27,6 +27,7 @@
   },
   "comment-page": {
     "abort": "Cancel",
+    "ask-question-description": "Enter your question here!",
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "comment": "Question {{ comment }} was asked at {{ time }} and has currently {{ votes }} votes.",

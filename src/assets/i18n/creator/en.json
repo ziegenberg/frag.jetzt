@@ -18,6 +18,7 @@
   "comment-page": {
     "abort": "Cancel",
     "acknowledge": "Acknowledge",
+    "ask-question-description": "Enter your question here!",
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "comma": "Microsoft Excel",

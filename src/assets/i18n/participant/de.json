@@ -27,6 +27,7 @@
   },
   "comment-page": {
     "abort": "Abbrechen",
+    "ask-question-description": "Gib hier deine Frage ein!",
     "cancel": "Zurück",
     "cancel-description": "Zurück",
     "comment": "Die Frage {{ comment }} wurde um {{ time }} Uhr gestellt und hat derzeitig {{ votes }} votes.",
