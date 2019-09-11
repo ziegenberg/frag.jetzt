@@ -105,6 +105,7 @@
     "cancel": "Zurück",
     "cancel-description": "Zurück",
     "email": "Adresse als Benutzername",
+    "email-description": "Gib hier deine E-Mail Adresse ein.",
     "email-invalid": "Adresse ungültig",
     "email-required": "Adresse erforderlich",
     "guest-login": "Anmelden als Gast",
@@ -116,6 +117,7 @@
     "login-successful": "Anmeldung erfolgreich",
     "or": "oder",
     "password": "Passwort",
+    "password-description": "Gib hier dein Passwort ein.",
     "password-required": "Passwort erforderlich"
   },
   "login-page": {

@@ -108,6 +108,7 @@
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "email": "E-mail",
+    "email-description": "Enter your e-mail address here.",
     "email-invalid": "E-mail is invalid",
     "email-required": "E-mail required",
     "guest-login": "Log in as a guest",
@@ -120,6 +121,7 @@
     "login-tooltip": "Sessions will be stored for 180 days.",
     "or": "or",
     "password": "Password",
+    "password-description": "Enter your password here.",
     "password-required": "Password required"
   },
   "login-page": {
