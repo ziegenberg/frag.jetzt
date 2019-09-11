@@ -151,6 +151,8 @@
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "email": "E-mail",
+    "email-description": "",
+    "email-description-repeat": "",
     "email-invalid": "E-mail is invalid.",
     "email-required": "E-mail required",
     "email-unmatch": "E-mails do not match.",
