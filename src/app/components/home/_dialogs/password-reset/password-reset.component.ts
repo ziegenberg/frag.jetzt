@@ -71,8 +71,7 @@ export class PasswordResetComponent implements OnInit {
     if (!this.usernameFormControl2.hasError('required') && !this.usernameFormControl2.hasError('email')
       && !this.passwordFormControl2.hasError('passwordIsEqual')) {
       if (email !== '' && key !== '' && password !== '') {
-        this.authenticationService.setNewPassword(email, key, password).subscribe(answer => {
-          console.log(answer);
+        this.authenticationService.setNewPassword(email, key, password).subscribe(() => {
           this.translationService.get('password-reset.new-password-successful').subscribe(message => {
             this.notificationService.show(message);
           });

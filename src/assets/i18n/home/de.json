@@ -144,7 +144,11 @@
     "reset-password": "Passwort zurücksetzen",
     "reset-password-description": "Passwort zurücksetzen",
     "reset-successful": "Passwort wurde zurückgesetzt. Bitte prüfe dein Postfach.",
-    "set-new-password-button": "Setze Passwort"
+    "set-new-password-button": "Setze Passwort",
+    "key": "Schlüssel",
+    "new-password": "Neues Passwort",
+    "new-password-successful": "Das neue Passwort wurde gesetzt.",
+    "key-required": "Schlüssel erforderlich"
   },
   "register": {
     "cancel": "Zurück",

@@ -150,7 +150,11 @@
     "reset-password-description": "Reset password",
     "reset-successful": "Password was reset. Please check your mails.",
     "set-new-password": "Set new password with the reset key",
-    "set-new-password-button": "Set password"
+    "set-new-password-button": "Set password",
+    "key": "Key",
+    "new-password": "New password",
+    "new-password-successful": "The new password has been set.",
+    "key-required": "Key required"
   },
   "register": {
     "cancel": "Cancel",
