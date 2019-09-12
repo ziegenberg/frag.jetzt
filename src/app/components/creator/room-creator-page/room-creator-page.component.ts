@@ -34,7 +34,6 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
   urlToCopy = 'https://frag.jetzt/participant/room/';
 
   listenerFn: () => void;
-  shortId: string;
 
   constructor(protected roomService: RoomService,
               protected notification: NotificationService,
@@ -58,7 +57,6 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
     this.route.params.subscribe(params => {
       this.initializeRoom(params['roomId']);
     });
-    this.shortId = localStorage.getItem('shortId');
     this.announce();
     this.listenerFn = this._r.listen(document, 'keyup', (event) => {
       if (event.keyCode === 49 && this.eventService.focusOnInput === false) {
@@ -69,7 +67,7 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
         document.getElementById('settings-menu').focus();
       } else if ((event.keyCode === 56) && this.eventService.focusOnInput === false) {
         this.liveAnnouncer.announce('Aktueller Sitzungs-Name: ' + this.room.name + '. ' +
-                                    'Aktueller Sitzungs-Code: ' + this.shortId.slice(0, 8));
+                                    'Aktueller Sitzungs-Code: ' + this.room.shortId.slice(0, 8));
       } else if ((event.keyCode === 57 || event.keyCode === 27) && this.eventService.focusOnInput === false) {
         this.announce();
       } else if (event.keyCode === 27 && this.eventService.focusOnInput === true) {
