@@ -68,7 +68,7 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
       } else if (event.keyCode === 52 && this.eventService.focusOnInput === false) {
         document.getElementById('settings-menu').focus();
       } else if ((event.keyCode === 56) && this.eventService.focusOnInput === false) {
-        this.liveAnnouncer.announce('Aktueller Sitzungs-Name: ' + this.room.name +
+        this.liveAnnouncer.announce('Aktueller Sitzungs-Name: ' + this.room.name + '. ' +
                                     'Aktueller Sitzungs-Code: ' + this.shortId.slice(0, 8));
       } else if ((event.keyCode === 57 || event.keyCode === 27) && this.eventService.focusOnInput === false) {
         this.announce();
@@ -85,10 +85,10 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
 
   public announce() {
     this.liveAnnouncer.announce('Sie befinden sich in der von Ihnen erstellten Sitzung. ' +
-      'Drücken Sie die Taste 1 um auf die Fragen Übersicht zu gelangen, ' +
-      'die Taste 2 um das Sitzungsmenü zu öffnen, die Taste 3 um in die Moderations Übersicht zu gelangen, ' +
+      'Drücken Sie die Taste 1 um auf die Fragen-Übersicht zu gelangen, ' +
+      'die Taste 2 um das Sitzungs-Menü zu öffnen, die Taste 3 um in die Moderationsübersicht zu gelangen, ' +
       'die Taste 4 um Einstellungen an der Sitzung vorzunehmen, ' +
-      'die Taste 8 um den aktuellen Sitzungs-Code zu hören, die Taste 0 um auf den Zurück-Button zu gelanngen, ' +
+      'die Taste 8 um den aktuellen Sitzungs-Code zu hören, die Taste 0 um auf den Zurück-Button zu gelangen, ' +
       'oder die Taste 9 um diese Ansage zu wiederholen.', 'assertive');
   }
 
