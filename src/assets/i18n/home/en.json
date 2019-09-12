@@ -118,7 +118,7 @@
     "email-invalid": "E-mail is invalid",
     "email-required": "E-mail required",
     "guest-login": "Log in as a guest",
-    "guest-login-tooltip": "Created sessions will be deleted after logout.",
+    "guest-login-tooltip": "Created sessions will be deleted after logout. Sessions created with an account are saved for 180 days after the last visit.",
     "header": "Log in",
     "input-incorrect": "Please check your data.",
     "login": "Log in with account",
