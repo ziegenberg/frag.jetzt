@@ -202,7 +202,7 @@
   },
   "session": {
     "create-session": "Create session",
-    "description": "Description",
+    "description": "Session description",
     "join": "join session",
     "max-ls": "Max. characters:",
     "session-name": "Session name"
