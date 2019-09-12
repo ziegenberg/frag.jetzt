@@ -105,6 +105,7 @@
     "activation-key": "Activation key",
     "activation-key-incorrect": "Activation key is incorrect.",
     "activation-key-required": "Activation key required",
+    "activation-key-input-description": "Enter the activation key that you received by e-mail.",
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "email": "E-mail",

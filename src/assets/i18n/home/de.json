@@ -102,6 +102,7 @@
     "activation-key": "Aktivierungs-Schlüssel",
     "activation-key-incorrect": "Aktivierungs-Schlüssel falsch",
     "activation-key-required": "Aktivierungs-Schlüssel erforderlich",
+    "activation-key-input-description": "Gib hier den Aktivierungs-Schlüssel ein den du per E-Mail zugesendet bekommen hast.",
     "cancel": "Zurück",
     "cancel-description": "Zurück",
     "email": "Adresse als Benutzername",
