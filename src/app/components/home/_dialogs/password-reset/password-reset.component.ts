@@ -23,8 +23,10 @@ export class PasswordResetComponent implements OnInit {
 
 
   usernameFormControl = new FormControl('', [Validators.required, Validators.email]);
-  password1FormControl = new FormControl('', [Validators.required]);
-  password2FormControl = new FormControl('', [Validators.required, validatePassword(this.password1FormControl)]);
+  usernameFormControl2 = new FormControl('', [Validators.required, Validators.email]);
+  passwordFormControl = new FormControl('', [Validators.required]);
+  passwordFormControl2 = new FormControl('', [Validators.required, validatePassword(this.passwordFormControl)]);
+  keyFormControl = new FormControl('', [Validators.required]);
 
   matcher = new PasswordResetErrorStateMatcher();
 
@@ -66,13 +68,21 @@ export class PasswordResetComponent implements OnInit {
   }
 
   setNewPassword(email: string, key: string, password: string) {
-    if (!this.usernameFormControl.hasError('required') && !this.usernameFormControl.hasError('email')) {
-      this.authenticationService.setNewPassword(email, key, password).subscribe(() => {
-        this.translationService.get('password-reset.reset-successful').subscribe(message => {
+    if (!this.usernameFormControl2.hasError('required') && !this.usernameFormControl2.hasError('email')
+      && !this.passwordFormControl2.hasError('passwordIsEqual')) {
+      if (email !== '' && key !== '' && password !== '') {
+        this.authenticationService.setNewPassword(email, key, password).subscribe(answer => {
+          console.log(answer);
+          this.translationService.get('password-reset.new-password-successful').subscribe(message => {
+            this.notificationService.show(message);
+          });
+          this.closeDialog();
+        });
+      } else {
+        this.translationService.get('password-reset.input-incorrect').subscribe(message => {
           this.notificationService.show(message);
         });
-        this.closeDialog();
-      });
+      }
     } else {
       this.translationService.get('password-reset.input-incorrect').subscribe(message => {
         this.notificationService.show(message);
