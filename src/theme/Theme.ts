@@ -52,7 +52,8 @@ export class Theme {
     public name: string,
     public description: string,
     public previewColor: string,
-    public palette: Object
+    public palette: Object,
+    public order: number
   ) {
 
     this.colors = [];

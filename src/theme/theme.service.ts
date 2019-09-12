@@ -19,10 +19,15 @@ export class ThemeService {
         themes_meta[k]['name'],
         themes_meta[k]['description'],
         themes[k]['--primary'],
-        themes[k])
+        themes[k],
+        themes_meta[k]['order'])
       );
-
     }
+    this.themes.sort((a, b) => {
+      if (a.order < b.order) {return -1; } else if (a.order > b.order) {return 1; }
+      return 0;
+    });
+    console.log(this.themes);
   }
 
   public getTheme() {

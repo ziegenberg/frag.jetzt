@@ -31,6 +31,7 @@ export const arsnova = {
 export const arsnova_meta = {
 
   'name': 'Light ARSnova',
-  'description': 'Bright Theme'
+  'description': 'Bright Theme',
+  'order': 2
 
 };

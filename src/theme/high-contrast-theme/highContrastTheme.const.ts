@@ -30,7 +30,8 @@ export const highcontrast = {
 export const highcontrast_meta = {
 
   'name': 'High Contrast',
-  'description': 'Dark High Contrast Theme'
+  'description': 'Dark High Contrast Theme',
+  'order': 0
 
 };
 

@@ -30,6 +30,7 @@ export const purple = {
 export const purple_meta = {
 
   'name': 'Projector',
-  'description': 'Projector Friendly Theme'
+  'description': 'Projector Friendly Theme',
+  'order': 1
 
 };

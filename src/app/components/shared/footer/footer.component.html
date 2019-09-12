@@ -45,6 +45,31 @@
   </button>
 
     <mat-menu class="color-menu" #themeMenu="matMenu" [overlapTrigger]="false">
+
+      <div id="themeMenu">
+        <div class="scrollWrp">
+          <button *ngFor="let theme of themes" (click)="changeTheme(theme)">
+            <div class="btnContent">
+              <div class="btnColorIcon" [ngStyle]="{'background-color':theme.previewColor}">
+                <div class="checked" *ngIf="theme.key===themeClass">
+                  <mat-icon>
+                    checked
+                  </mat-icon>
+                </div>
+              </div>
+              <div class="btnAppend">
+                <div class="title">
+                  <p class="title_bold">{{theme.name}}</p>
+                </div>
+                <div class="title">
+                  <p>{{theme.description}}</p>
+                </div>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+      <!--
       <mat-grid-list cols="2">
         <mat-grid-tile *ngFor="let theme of themes">
           <button mat-menu-item class="color-button" (click)="changeTheme(theme)">
@@ -56,6 +81,7 @@
           </button>
         </mat-grid-tile>
       </mat-grid-list>
+      -->
     </mat-menu>
 
     <mat-menu #langMenu="matMenu" [overlapTrigger]="false">

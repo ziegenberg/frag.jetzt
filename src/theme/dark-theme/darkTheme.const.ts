@@ -31,6 +31,7 @@ export const dark = {
 export const dark_meta = {
 
   'name': 'Dark ARSnova',
-  'description': 'Dark Default Theme'
+  'description': 'Dark Default Theme',
+  'order': 3
 
 };
