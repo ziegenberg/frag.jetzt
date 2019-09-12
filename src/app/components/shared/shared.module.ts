@@ -29,7 +29,7 @@ import { DialogActionButtonsComponent } from './dialog/dialog-action-buttons/dia
 import { MatRippleModule } from '@angular/material';
 
 @NgModule({
-  imports:[
+  imports: [
     CommonModule,
     EssentialsModule,
     ChartsModule,
