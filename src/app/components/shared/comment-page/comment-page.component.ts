@@ -53,8 +53,10 @@ export class CommentPageComponent implements OnInit, OnDestroy {
       } else if (event.keyCode === 27 && this.eventService.focusOnInput === true) {
         if (document.getElementById('add_comment-button')) {
           document.getElementById('add_comment-button').focus();
+          this.eventService.makeFocusOnInputFalse();
         } else {
           document.getElementById('add_comment_small-button').focus();
+          this.eventService.makeFocusOnInputFalse();
         }
       }
     });
@@ -62,6 +64,7 @@ export class CommentPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.listenerFn();
+    this.eventService.makeFocusOnInputFalse();
   }
 
   public announce() {
