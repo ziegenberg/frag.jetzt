@@ -19,7 +19,7 @@ import { OverlayComponent } from '../../home/_dialogs/overlay/overlay.component'
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
+  styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
 
@@ -47,6 +47,9 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!this.themeService.getTheme().source['_value']) {
+      this.themeService.activate('dark');
+    }
     this.deviceType = localStorage.getItem('deviceType');
     this.translateService.use(localStorage.getItem('currentLang'));
     this.translateService.get('footer.open').subscribe(message => {
@@ -73,8 +76,8 @@ export class FooterComponent implements OnInit {
 
   showCookieModal() {
     const dialogRef = this.dialog.open(CookiesComponent, {
-      width: '60%',
-      autoFocus: false
+      width: '70%',
+      autoFocus: true
 
     });
     dialogRef.disableClose = true;

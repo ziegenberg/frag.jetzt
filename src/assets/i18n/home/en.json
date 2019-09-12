@@ -1,21 +1,21 @@
 {
   "cookies": {
     "accept": "Accept",
-    "accept-label": "Accepts the use of cookies and proceeds to the app",
-    "decline": "Decline",
-    "decline-label": "Declines cookie usage and exits the app",
+    "accept-description": "Accepts the use of cookies and proceeds to the app",
+    "cancel": "Decline",
+    "cancel-description": "Declines cookie usage and exits the app",
     "info-label": "Opens a dialog with  the frag.jetzt privacy statement"
   },
   "overlay": {
     "message": "You have declined cookie usage for this app, thus you can not use it for the time being.",
-    "change": "Change settings",
-    "change-label": "Open the cookie setting dialog"
+    "cancel": "Change settings",
+    "cancel-description": "Open the cookie setting dialog"
   },
   "data-protection": {
+    "cancel": "Decline",
+    "cancel-description": "Decline the app's privacy policy and close dialog",
     "consent": "Accept",
-    "consent-label": "Accept the app's privacy policy and close dialog",
-    "deny": "Decline",
-    "deny-label": "Decline the app's privacy policy and close dialog",
+    "consent-description": "Accept the app's privacy policy and close dialog",
     "title": "Data Protection"
   },
   "delete-account": {
@@ -23,6 +23,10 @@
     "cancel-description": "Cancel account deletion",
     "delete": "Delete",
     "delete-description": "Delete your Account"
+  },
+  "demo": {
+    "cancel": "Close",
+    "cancel-description": "Closes the demo dialog"
   },
   "footer": {
     "accessibility-data_protection": "Opens the frag.jetzt privacy statement in a new dialog",
@@ -72,6 +76,7 @@
     "visited-sessions": "Visited sessions"
   },
   "help": {
+    "cancel": "Close",
     "close": "Close",
     "close-label": "Closes the help dialog",
     "title": "Help"
@@ -79,6 +84,7 @@
   "home-page": {
     "accessibility-create": "Creates a new session",
     "accessibility-join": "Enters the room with the specified session ID.",
+    "accessibility-join-input": "Here you can enter the session ID of the room you want to join.",
     "create-session": "New session",
     "created-1": "Session '",
     "created-2": "' successfully created",
@@ -89,12 +95,13 @@
     "no-room-found": "No session found with this ID",
     "only-numbers": "A session ID only contains digits.",
     "please-enter": "… your professor tells you",
+    "room-name-input": "Enter the name of the session you want to create here.",
     "session-id": "Session ID",
     "update-available": "A newer version is available."
   },
   "imprint": {
-    "close": "Close",
-    "close-label": "Closes the imprint dialog",
+    "cancel": "Close",
+    "cancel-description": "Closes the imprint dialog",
     "title": "Imprint"
   },
   "introduction": {
@@ -106,9 +113,11 @@
     "activation-key": "Activation key",
     "activation-key-incorrect": "Activation key is incorrect.",
     "activation-key-required": "Activation key required",
+    "activation-key-input-description": "Enter the activation key that you received by e-mail.",
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "email": "E-mail",
+    "email-description": "Enter your e-mail address here.",
     "email-invalid": "E-mail is invalid",
     "email-required": "E-mail required",
     "guest-login": "Log in as a guest",
@@ -121,6 +130,7 @@
     "login-tooltip": "Sessions will be stored for 180 days.",
     "or": "or",
     "password": "Password",
+    "password-description": "Enter your password here.",
     "password-required": "Password required"
   },
   "login-page": {
@@ -138,22 +148,35 @@
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "email": "E-mail",
+    "email-description": "Enter your email address here to reset your password.",
     "email-invalid": "E-mail is invalid.",
     "email-required": "E-mail required",
+    "forgot-password": "Forgot the password?",
     "input-incorrect": "Please check your data.",
     "reset-password": "Reset password",
     "reset-password-description": "Reset password",
-    "reset-successful": "Password was reset. Please check your mails."
+    "reset-successful": "Password was reset. Please check your mails.",
+    "set-new-password": "Set new password with the reset key",
+    "set-new-password-button": "Set password",
+    "key": "Key",
+    "new-password": "New password",
+    "new-password-successful": "The new password has been set.",
+    "key-required": "Key required"
   },
   "register": {
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "email": "E-mail",
+    "email-description": "Enter your e-mail address here.",
+    "email-description-repeat": "Please enter your e-mail address again to ensure that you have not mistyped.",
     "email-invalid": "E-mail is invalid.",
     "email-required": "E-mail required",
     "email-unmatch": "E-mails do not match.",
     "email-verify": "Verify e-mail",
+    "forgot-password": "Forgot the password?",
     "password": "Password",
+    "password-description": "Enter the password you want to register with here.",
+    "password-description-repeat": "Please enter the password you want to register with again to make sure that you have not mistyped it.",
     "password-required": "Password required",
     "password-unmatch": "Passwords do not match.",
     "password-verify": "Verify password",
