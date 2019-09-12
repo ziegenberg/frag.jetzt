@@ -26,3 +26,28 @@ export const highcontrast = {
   '--black': 'black'
 
 };
+
+export const highcontrast_meta = {
+
+  'name': 'High Contrast',
+  'description': 'Dark High Contrast Theme'
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

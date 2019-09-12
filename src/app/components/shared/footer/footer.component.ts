@@ -57,62 +57,62 @@ export class FooterComponent implements OnInit {
     }
   }
 
-showDemo() {
-  const dialogRef = this.dialog.open(DemoVideoComponent, {
-    position: {
-      left: '10px',
-      right: '10px'
-    },
-    maxWidth: '100vw',
-    maxHeight: '100vh',
-    height: '100%',
-    width: '100%'
-  });
-  dialogRef.componentInstance.deviceType = this.deviceType;
-}
+  showDemo() {
+    const dialogRef = this.dialog.open(DemoVideoComponent, {
+      position: {
+        left: '10px',
+        right: '10px'
+      },
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      height: '100%',
+      width: '100%'
+    });
+    dialogRef.componentInstance.deviceType = this.deviceType;
+  }
 
-showCookieModal() {
-  const dialogRef = this.dialog.open(CookiesComponent, {
-    height: '95%',
-    width: '95%',
-    autoFocus: false
-  });
-  dialogRef.disableClose = true;
-  dialogRef.componentInstance.deviceType = this.deviceType;
-}
+  showCookieModal() {
+    const dialogRef = this.dialog.open(CookiesComponent, {
+      height: '95%',
+      width: '95%',
+      autoFocus: false
+    });
+    dialogRef.disableClose = true;
+    dialogRef.componentInstance.deviceType = this.deviceType;
+  }
 
-showImprint() {
-  const dialogRef = this.dialog.open(ImprintComponent, {
-    height: '95%',
-    width: '95%'
-  });
-  dialogRef.componentInstance.deviceType = this.deviceType;
-}
+  showImprint() {
+    const dialogRef = this.dialog.open(ImprintComponent, {
+      height: '95%',
+      width: '95%'
+    });
+    dialogRef.componentInstance.deviceType = this.deviceType;
+  }
 
-showHelp() {
-  const dialogRef = this.dialog.open(HelpPageComponent, {
-    height: '95%',
-    width: '95%'
-  });
-  dialogRef.componentInstance.deviceType = this.deviceType;
-}
+  showHelp() {
+    const dialogRef = this.dialog.open(HelpPageComponent, {
+      height: '95%',
+      width: '95%'
+    });
+    dialogRef.componentInstance.deviceType = this.deviceType;
+  }
 
-showDataProtection() {
-  const dialogRef = this.dialog.open(DataProtectionComponent, {
-    height: '95%',
-    width: '95%'
-  });
-  dialogRef.componentInstance.deviceType = this.deviceType;
-}
+  showDataProtection() {
+    const dialogRef = this.dialog.open(DataProtectionComponent, {
+      height: '95%',
+      width: '95%'
+    });
+    dialogRef.componentInstance.deviceType = this.deviceType;
+  }
 
-useLanguage(language: string) {
-  this.translateService.use(language);
-  localStorage.setItem('currentLang', language);
-  this.langService.langEmitter.emit(language);
-}
+  useLanguage(language: string) {
+    this.translateService.use(language);
+    localStorage.setItem('currentLang', language);
+    this.langService.langEmitter.emit(language);
+  }
 
-changeTheme(theme: Theme) {
-  this.themeClass = theme.name;
-  this.themeService.activate(theme.name);
-}
+  changeTheme(theme: Theme) {
+    this.themeClass = theme.key;
+    this.themeService.activate(theme.key);
+  }
 }

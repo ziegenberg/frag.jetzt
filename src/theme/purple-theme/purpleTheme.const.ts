@@ -26,3 +26,10 @@ export const purple = {
   '--grey-light': 'lightgrey',
   '--black': 'black'
 };
+
+export const purple_meta = {
+
+  'name': 'Projector',
+  'description': 'Projector Friendly Theme'
+
+};
