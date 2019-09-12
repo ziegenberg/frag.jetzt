@@ -96,7 +96,8 @@ mat-icon {
   border-radius:2px;
 }
 
-.btnContent *{
+.btnContent:hover{
+  background-color:rgba(0,0,0,0.05);
 }
 
 .btnContent>.btnColorIcon{
@@ -108,12 +109,23 @@ mat-icon {
   border-radius:100%;
 }
 
-.btnColorIcon>.checked{
+.checked{
   width:calc( 100% - 10px );
   height:calc( 100% - 10px );
   margin:5px;
   float:left;
   border-radius:100%;
+  transition:all 0.1s;
+}
+
+.checked.checked_true{
+  transform:scale(1);
+  opacity:1;
+}
+
+.checked.checked_false{
+  transform:scale(0.2);
+  opacity:0;
 }
 
 .checked>mat-icon{
