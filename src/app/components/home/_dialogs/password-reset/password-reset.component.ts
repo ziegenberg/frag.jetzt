@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { RegisterComponent } from '../register/register.component';
+import { RegisterComponent, validatePassword } from '../register/register.component';
 import { AuthenticationService } from '../../../../services/http/authentication.service';
 import { NotificationService } from '../../../../services/util/notification.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -23,6 +23,8 @@ export class PasswordResetComponent implements OnInit {
 
 
   usernameFormControl = new FormControl('', [Validators.required, Validators.email]);
+  password1FormControl = new FormControl('', [Validators.required]);
+  password2FormControl = new FormControl('', [Validators.required, validatePassword(this.password1FormControl)]);
 
   matcher = new PasswordResetErrorStateMatcher();
 
@@ -51,6 +53,21 @@ export class PasswordResetComponent implements OnInit {
 
     if (!this.usernameFormControl.hasError('required') && !this.usernameFormControl.hasError('email')) {
       this.authenticationService.resetPassword(username).subscribe(() => {
+        this.translationService.get('password-reset.reset-successful').subscribe(message => {
+          this.notificationService.show(message);
+        });
+        this.closeDialog();
+      });
+    } else {
+      this.translationService.get('password-reset.input-incorrect').subscribe(message => {
+        this.notificationService.show(message);
+      });
+    }
+  }
+
+  setNewPassword(email: string, key: string, password: string) {
+    if (!this.usernameFormControl.hasError('required') && !this.usernameFormControl.hasError('email')) {
+      this.authenticationService.setNewPassword(email, key, password).subscribe(() => {
         this.translationService.get('password-reset.reset-successful').subscribe(message => {
           this.notificationService.show(message);
         });
