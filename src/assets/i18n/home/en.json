@@ -57,8 +57,8 @@
   "header": {
     "abort": "Cancel",
     "accessibility-back": "Go back to the previous page",
-    "accessibility-login": "Opens the login window",
-    "accessibility-session": "Opens session menu",
+    "accessibility-login": "Open the login window",
+    "accessibility-session": "Open the session menu. Here you can view the sessions you have attended or log out of your account.",
     "account-deleted": "Your account has been deleted successfully.",
     "back": "Back",
     "close-demo": "Close demo video and go back to login page",
@@ -83,7 +83,7 @@
     "title": "Help"
   },
   "home-page": {
-    "accessibility-create": "Creates a new session",
+    "accessibility-create": "Create a new session",
     "accessibility-join-button": "Enter the room with the specified session ID.",
     "accessibility-join-input": "Here you can enter the session ID of the room you want to join.",
     "create-session": "New session",
@@ -95,7 +95,7 @@
     "no-empty-name": "Please enter a name.",
     "no-room-found": "No session found with this ID",
     "only-numbers": "A session ID only contains digits.",
-    "please-enter": "… your professor tells you",
+    "please-enter": "Your lecturer will tell you the session ID.",
     "room-name-input": "Enter the name of the session you want to create here.",
     "session-id": "Session ID",
     "update-available": "An update is available."
