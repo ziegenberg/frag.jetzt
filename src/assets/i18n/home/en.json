@@ -4,7 +4,13 @@
     "accept-label": "Accepts the use of cookies and proceeds to the app",
     "decline": "Decline",
     "decline-label": "Declines cookie usage and exits the app",
+    "header": "Cookies",
     "info-label": "Opens a dialog with  the frag.jetzt privacy statement"
+  },
+  "overlay": {
+    "message": "You have declined cookie usage for this app, thus you can not use it for the time being.",
+    "change": "Change settings",
+    "change-label": "Open the cookie setting dialog"
   },
   "data-protection": {
     "consent": "Accept",
@@ -75,6 +81,7 @@
   "home-page": {
     "accessibility-create": "Creates a new session",
     "accessibility-join": "Enters the room with the specified session ID.",
+    "accessibility-join-input": "Here you can enter the session ID of the room you want to join.",
     "create-session": "New session",
     "created-1": "Session '",
     "created-2": "' successfully created",
@@ -85,6 +92,7 @@
     "no-room-found": "No session found with this ID",
     "only-numbers": "A session ID only contains digits.",
     "please-enter": "… your professor tells you",
+    "room-name-input": "Enter the name of the session you want to create here.",
     "session-id": "Session ID",
     "update-available": "A newer version is available."
   },
@@ -98,9 +106,11 @@
     "activation-key": "Activation key",
     "activation-key-incorrect": "Activation key is incorrect.",
     "activation-key-required": "Activation key required",
+    "activation-key-input-description": "Enter the activation key that you received by e-mail.",
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "email": "E-mail",
+    "email-description": "Enter your e-mail address here.",
     "email-invalid": "E-mail is invalid",
     "email-required": "E-mail required",
     "guest-login": "Log in as a guest",
@@ -113,6 +123,7 @@
     "login-tooltip": "Sessions will be stored for 180 days.",
     "or": "or",
     "password": "Password",
+    "password-description": "Enter your password here.",
     "password-required": "Password required"
   },
   "login-page": {
@@ -130,6 +141,7 @@
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "email": "E-mail",
+    "email-description": "Enter your email address here to reset your password.",
     "email-invalid": "E-mail is invalid.",
     "email-required": "E-mail required",
     "input-incorrect": "Please check your data.",
@@ -141,11 +153,15 @@
     "cancel": "Cancel",
     "cancel-description": "Cancel",
     "email": "E-mail",
+    "email-description": "Enter your e-mail address here.",
+    "email-description-repeat": "Please enter your e-mail address again to ensure that you have not mistyped.",
     "email-invalid": "E-mail is invalid.",
     "email-required": "E-mail required",
     "email-unmatch": "E-mails do not match.",
     "email-verify": "Verify e-mail",
     "password": "Password",
+    "password-description": "Enter the password you want to register with here.",
+    "password-description-repeat": "Please enter the password you want to register with again to make sure that you have not mistyped it.",
     "password-required": "Password required",
     "password-unmatch": "Passwords do not match.",
     "password-verify": "Verify password",

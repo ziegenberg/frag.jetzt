@@ -15,6 +15,7 @@ import { RoomService } from '../../../services/http/room.service';
 import { VoteService } from '../../../services/http/vote.service';
 import { NotificationService } from '../../../services/util/notification.service';
 import { CorrectWrong } from '../../../models/correct-wrong.enum';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { EventService } from '../../../services/util/event.service';
 
 @Component({
@@ -52,6 +53,7 @@ export class CommentListComponent implements OnInit {
   searchPlaceholder = '';
   moderationEnabled = false;
   thresholdEnabled = false;
+  newestComment: string;
 
   constructor(private commentService: CommentService,
               private translateService: TranslateService,
@@ -61,7 +63,8 @@ export class CommentListComponent implements OnInit {
               protected roomService: RoomService,
               protected voteService: VoteService,
               private notificationService: NotificationService,
-              public eventService: EventService
+              public eventService: EventService,
+              public liveAnnouncer: LiveAnnouncer
   ) {
     langService.langEmitter.subscribe(lang => translateService.use(lang));
   }
@@ -70,16 +73,19 @@ export class CommentListComponent implements OnInit {
     this.roomId = localStorage.getItem(`roomId`);
     const userId = this.user.id;
     this.userRole = this.user.role;
+    this.currentSort = this.votedesc;
     this.roomService.getRoom(this.roomId).subscribe( room => {
       this.room = room;
       if (this.room && this.room.extensions && this.room.extensions['comments']) {
-        if (this.room.extensions['comments'].commentThreshold !== null) {
-          this.thresholdEnabled = true;
-        }
         if (this.room.extensions['comments'].enableModeration !== null) {
           this.moderationEnabled = this.room.extensions['comments'].enableModeration;
         }
       }
+      this.commentService.getAckComments(this.roomId)
+        .subscribe(comments => {
+          this.comments = comments;
+          this.getComments();
+        });
     });
     this.hideCommentsList = false;
     this.wsCommentService.getCommentStream(this.roomId).subscribe((message: Message) => {
@@ -94,12 +100,6 @@ export class CommentListComponent implements OnInit {
         }
       });
     }
-    this.currentSort = this.votedesc;
-    this.commentService.getAckComments(this.roomId)
-      .subscribe(comments => {
-        this.comments = comments;
-        this.getComments();
-      });
     this.translateService.get('comment-list.search').subscribe(msg => {
       this.searchPlaceholder = msg;
     });
@@ -135,8 +135,15 @@ export class CommentListComponent implements OnInit {
   }
 
   getComments(): void {
+    if (this.room && this.room.extensions && this.room.extensions['comments']) {
+      if (this.room.extensions['comments'].enableThreshold) {
+        this.thresholdEnabled = true;
+      } else {
+        this.thresholdEnabled = false;
+      }
+    }
     this.isLoading = false;
-    let commentThreshold = -10;
+    let commentThreshold;
     if (this.thresholdEnabled) {
       commentThreshold = this.room.extensions['comments'].commentThreshold;
       if (this.hideCommentsList) {
@@ -164,6 +171,9 @@ export class CommentListComponent implements OnInit {
         c.body = payload.body;
         c.id = payload.id;
         c.timestamp = payload.timestamp;
+
+        this.announceNewComment(c.body);
+
         this.comments = this.comments.concat(c);
         break;
       case 'CommentPatched':
@@ -300,5 +310,25 @@ export class CommentListComponent implements OnInit {
       this.sort(this.comments, type);
     }
     this.currentSort = type;
+  }
+
+
+  /**
+   * Announces a new comment receive.
+   */
+  public announceNewComment(comment: string) {
+    // update variable so text will be fetched to DOM
+    this.newestComment = comment;
+
+    // Currently the only possible way to announce the new comment text
+    // @see https://github.com/angular/angular/issues/11405
+    setTimeout(() => {
+      const newCommentText: string = document.getElementById('new-comment').innerText;
+
+      // current live announcer content must be cleared before next read
+      this.liveAnnouncer.clear();
+
+      this.liveAnnouncer.announce(newCommentText).catch(err => { /* TODO error handling */ });
+    }, 450);
   }
 }

@@ -4,7 +4,13 @@
     "accept-label": "Bestätigt die Verwendung von Cookies und führt zur Startseite zurück.",
     "decline": "Nein, lösche meine Spuren.",
     "decline-label": "Lehnt die Verwendung von Cookies ab und verlässt die Anwendung.",
+    "header": "Cookies",
     "info-label": "Öffnet ein Dialogfenster mit der frag.jetzt Datenschutzerklärung."
+  },
+  "overlay": {
+    "message": "Du hast die benutzung von Cookies für diese Anwendung nicht erlaubt. Solange kannst du diese Seite nicht nutzen.",
+    "change": "Einstellung ändern",
+    "change-label": "Öffnet den Dialog mit den Cookie Einstellungen"
   },
   "data-protection": {
     "consent": "Akzeptieren",
@@ -73,6 +79,7 @@
   "home-page": {
     "accessibility-create": "Erstellt eine neue Sitzung.",
     "accessibility-join": "Betritt die Sitzung, deren Code du eingegeben hast.",
+    "accessibility-join-input": "Hier kannst du den Code der Sitzung eingeben der du beitreten möchtest.",
     "create-session": "Neue Sitzung",
     "created-1": "Die Sitzung '",
     "created-2": "' wurde erstellt.",
@@ -82,6 +89,7 @@
     "no-room-found": "Es wurde keine Sitzung mit diesem Code gefunden.",
     "only-numbers": "Der Sitzungs-Code besteht ausschließlich aus Ziffern.",
     "please-enter": "Den Code sagt dir dein Dozent.",
+    "room-name-input": "Gib hier den Namen der Sitzung die du erstellen möchtest ein.",
     "session-id": "Sitzungs-Code",
     "update-available": "Eine neue Version ist verfügbar."
   },
@@ -95,9 +103,11 @@
     "activation-key": "Aktivierungs-Schlüssel",
     "activation-key-incorrect": "Aktivierungs-Schlüssel falsch",
     "activation-key-required": "Aktivierungs-Schlüssel erforderlich",
+    "activation-key-input-description": "Gib hier den Aktivierungs-Schlüssel ein den du per E-Mail zugesendet bekommen hast.",
     "cancel": "Zurück",
     "cancel-description": "Zurück",
     "email": "Adresse als Benutzername",
+    "email-description": "Gib hier deine E-Mail Adresse ein.",
     "email-invalid": "Adresse ungültig",
     "email-required": "Adresse erforderlich",
     "guest-login": "Anmelden als Gast",
@@ -109,6 +119,7 @@
     "login-successful": "Anmeldung erfolgreich",
     "or": "oder",
     "password": "Passwort",
+    "password-description": "Gib hier dein Passwort ein.",
     "password-required": "Passwort erforderlich"
   },
   "login-page": {
@@ -124,6 +135,7 @@
     "cancel": "Zurück",
     "cancel-description": "Zurück",
     "email": "Adresse",
+    "email-description": "Gib hier deine E-Mail Adresse ein um dein Passwort zurückzusetzen.",
     "email-invalid": "Adresse ungültig",
     "email-required": "Adresse erforderlich",
     "input-incorrect": "Bitte prüfe deine Eingaben.",
@@ -135,11 +147,15 @@
     "cancel": "Zurück",
     "cancel-description": "Zurück",
     "email": "Adresse",
+    "email-description": "Gib hier deine E-Mail Adresse ein.",
+    "email-description-repeat": "Gib hier bitte erneut deine E-Mail Adresse ein um sicherzustellen dass du dich nicht vertippt hast.",
     "email-invalid": "Adresse ungültig",
     "email-required": "Adresse erforderlich",
     "email-unmatch": "Adressen stimmen nicht überein",
     "email-verify": "Adresse wiederholen",
     "password": "Passwort",
+    "password-description": "Gib hier das Passwort mit dem du dich registrieren möchtest ein.",
+    "password-description-repeat": "Gib hier bitte erneut das Passwort mit dem du dich registrieren möchtest ein um sicherzustellen dass du dich nicht vertippt hast.",
     "password-required": "Passwort erforderlich",
     "password-unmatch": "Passwörter stimmen nicht überein",
     "password-verify": "Passwort wiederholen",
