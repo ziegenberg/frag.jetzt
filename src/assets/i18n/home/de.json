@@ -55,7 +55,6 @@
     "accessibility-session": "Öffnet das Sitzungs-Menü",
     "account-deleted": "Dein Konto wurde gelöscht.",
     "back": "Zurück",
-    "close-demo": "Schließe die Einführung und gehe zurück zur Anmeldung.",
     "delete": "Löschen",
     "delete-account": "Konto löschen",
     "id": "Code",
@@ -94,6 +93,10 @@
     "close": "Schließen",
     "close-label": "Schließt das Impressum.",
     "title": "Impressum"
+  },
+  "introduction": {
+    "cancel": "zurück",
+    "cancel-description": "Schließe die Einführung und gehe zurück zur Anmeldung."
   },
   "login": {
     "activate": "Aktivieren",

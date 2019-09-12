@@ -23,4 +23,11 @@ export class DemoVideoComponent implements OnInit {
     this.dialogRef.close();
   }
 
+
+  /**
+   * Returns a lambda which closes the dialog on call.
+   */
+  buildCloseDialogActionCallback(): () => void {
+    return () => this.closeDialog();
+  }
 }

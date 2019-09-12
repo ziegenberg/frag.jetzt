@@ -1,10 +1,4 @@
 <div>
-  <button [ngClass]="{'mobileButton': deviceType === 'mobile', 'desktopButton': deviceType === 'desktop'}"
-          mat-raised-button (click)="closeDialog()" aria-labelledby="close-demo-label">
-    <mat-icon>exit_to_app</mat-icon>
-  </button>
-</div>
-<div>
   <div id="setFocus" class="intro-text" tabindex="0">
     <app-demo-en *ngIf="currentLang=='en'"></app-demo-en>
     <app-demo-de *ngIf="currentLang=='de'"></app-demo-de>
@@ -15,7 +9,8 @@
             src="https://www.youtube.com/embed/RODwmMxLKa0?autoplay=0" frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
-  <div class="visually-hidden">
-    <div id="close-demo-label">{{'header.close-demo' | translate}}</div>
-  </div>
+  <app-dialog-action-buttons
+    buttonsLabelSection="introduction"
+    [cancelButtonClickAction]="buildCloseDialogActionCallback()"
+  ></app-dialog-action-buttons>
 </div>
