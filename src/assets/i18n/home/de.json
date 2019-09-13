@@ -103,7 +103,8 @@
   },
   "introduction": {
     "cancel": "zurück",
-    "cancel-description": "Schließe die Einführung und gehe zurück zur Anmeldung."
+    "cancel-description": "Schließe die Einführung und gehe zurück zur Anmeldung.",
+    "title": "Einführung"
   },
   "login": {
     "activate": "Aktivieren",

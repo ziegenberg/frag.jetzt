@@ -106,7 +106,8 @@
   },
   "introduction": {
     "cancel": "Cancel",
-    "cancel-description": "Close demo video and go back to login page."
+    "cancel-description": "Close demo video and go back to login page.",
+    "title": "Introduction"
   },
   "login": {
     "activate": "Activate",
