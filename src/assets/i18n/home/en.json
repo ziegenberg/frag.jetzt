@@ -7,9 +7,10 @@
     "info-label": "Opens a dialog with  the frag.jetzt privacy statement"
   },
   "overlay": {
-    "message": "You have declined cookie usage for this app, thus you can not use it for the time being.",
     "cancel": "Change settings",
-    "cancel-description": "Open the cookie setting dialog"
+    "cancel-description": "Open the cookie setting dialog",
+    "message": "You have declined cookie usage for this app, thus you can not use it for the time being.",
+    "title": "Cannot use app"
   },
   "data-protection": {
     "cancel": "Decline",
