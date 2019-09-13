@@ -44,8 +44,9 @@
 </form>
 <mat-divider></mat-divider>
 <div fxLayout="row" class="register">
-  <p>{{ 'login.not-registered' | translate }}</p>
-  <a class="registerBtn" (click)="openRegisterDialog()">{{ 'login.register' | translate }}</a>
+  <p>{{ 'login-page.not-registered' | translate }}</p>
+  <a href="" class="registerBtn" (click)="openRegisterDialog(); $event.preventDefault(); $event.stopPropagation();">
+    {{ 'login-page.register' | translate }}</a>
 </div>
 <app-dialog-action-buttons
   [spacing]="false"

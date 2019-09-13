@@ -114,7 +114,7 @@
     "activation-key-input-description": "Gib hier den Aktivierungs-Schlüssel ein den du per E-Mail zugesendet bekommen hast.",
     "cancel": "Zurück",
     "cancel-description": "Zurück",
-    "email": "E-Mail Adresse",
+    "email": "E-Mail Adresse als Benutzername",
     "email-description": "Gib hier deine E-Mail Adresse ein.",
     "email-invalid": "E-Mail Adresse ungültig",
     "email-required": "E-Mail Adresse erforderlich",
