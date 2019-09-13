@@ -40,8 +40,8 @@
   },
   "comment-page": {
     "a11y-comment_input": "Geben sie Ihre Frage ein",
-    "a11y-comment_vote_down": "Stimmt dieser Frage ab",
-    "a11y-comment_vote_up": "Stimmt dieser Frage zu",
+    "a11y-comment_vote_down": "Diese Frage runter woten",
+    "a11y-comment_vote_up": "Diese Frage hoch woten",
     "a11y-text_correct": "Diese Frage wurde bejaht.",
     "a11y-text_grade": "Diese Frage wurde als Bonus Frage markiert.",
     "a11y-text_read": "Diese Frage wurde in Vollansicht am Beamer besprochen.",
