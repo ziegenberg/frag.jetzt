@@ -18,10 +18,10 @@
         matAutosizeMinRows="2"
         matAutosizeMaxRows="5"
         maxlength="255"
-        placeholder="{{ 'session.description' | translate }}"
         name="description"
         aria-labelledby="description"
       ></textarea>
+      <mat-placeholder class="placeholder">{{ 'session.description' | translate }}</mat-placeholder>
       <mat-hint align="end"><span aria-hidden="true">{{ editRoom.description ? editRoom.description.length : 0 }} / 255</span></mat-hint>
     </mat-form-field>
     <div fxLayoutAlign="center center">
