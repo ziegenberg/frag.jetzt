@@ -15,7 +15,6 @@ import { KeyboardKey } from '../../../utils/keyboard/keys';
 })
 export class CommentPageComponent implements OnInit, OnDestroy, AfterContentInit {
   roomId: string;
-  shortId: string;
   user: User;
 
   listenerFn: () => void;
@@ -34,7 +33,6 @@ export class CommentPageComponent implements OnInit, OnDestroy, AfterContentInit
   }
   ngOnInit(): void {
     this.roomId = localStorage.getItem('roomId');
-    this.shortId = localStorage.getItem('roomId');
     this.user = this.authenticationService.getUser();
     this.listenerFn = this._r.listen(document, 'keyup', (event) => {
       if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit1) === true && this.eventService.focusOnInput === false) {
@@ -51,7 +49,7 @@ export class CommentPageComponent implements OnInit, OnDestroy, AfterContentInit
         document.getElementById('filter-button').focus();
       } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit8) === true && this.eventService.focusOnInput === false) {
         this.liveAnnouncer.clear();
-        this.liveAnnouncer.announce('Aktueller Sitzungs-Code:' + this.shortId.slice(0, 8));
+        this.liveAnnouncer.announce('Aktueller Sitzungs-' + document.getElementById('shortId-header').textContent);
       } else if (
         KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit9, KeyboardKey.Escape) === true &&
         this.eventService.focusOnInput === false

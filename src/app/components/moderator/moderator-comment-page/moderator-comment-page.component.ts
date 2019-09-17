@@ -1,5 +1,6 @@
+
 import { Component, OnInit, Renderer2, OnDestroy, AfterContentInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { User } from '../../../models/user';
 import { NotificationService } from '../../../services/util/notification.service';
 import { AuthenticationService } from '../../../services/http/authentication.service';
@@ -21,9 +22,9 @@ export class ModeratorCommentPageComponent implements OnInit, OnDestroy, AfterCo
               private router: Router,
               private notification: NotificationService,
               private authenticationService: AuthenticationService,
-              private liveAnnouncer: LiveAnnouncer,
+              public eventService: EventService,
               private _r: Renderer2,
-              public eventService: EventService) { }
+              private liveAnnouncer: LiveAnnouncer) { }
 
   ngAfterContentInit(): void {
     setTimeout( () => {
@@ -42,7 +43,7 @@ export class ModeratorCommentPageComponent implements OnInit, OnDestroy, AfterCo
       } else if (event.keyCode === 52 && this.eventService.focusOnInput === false) {
         document.getElementById('filter-button').focus();
       } else if (event.keyCode === 56 && this.eventService.focusOnInput === false) {
-        this.liveAnnouncer.announce('Aktueller Sitzungs-Code:' + this.shortId.slice(0, 8));
+        this.liveAnnouncer.announce('Aktueller Sitzungs-' + document.getElementById('shortId-header').textContent);
       } else if ((event.keyCode === 57 || event.keyCode === 27) && this.eventService.focusOnInput === false) {
         this.announce();
       } else if (document.getElementById('search_close-button') && event.keyCode === 27
