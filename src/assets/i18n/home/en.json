@@ -138,6 +138,7 @@
     "a11y-new_password2": "Enter your new password here again",
     "a11y-password_reset_button": "Resets the password",
     "a11y-password_reset_key": "Enter the password reset key you received by email here",
+    "a11y-password_set_button": "Sets the new password",
     "a11y-password_set_email": "Enter your email address here to set a new password",
     "cancel": "Cancel",
     "cancel-description": "Cancel",
