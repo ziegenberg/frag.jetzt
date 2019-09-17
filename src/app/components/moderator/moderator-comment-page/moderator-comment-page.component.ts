@@ -1,4 +1,3 @@
-
 import { Component, OnInit, Renderer2, OnDestroy, AfterContentInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../../../models/user';
@@ -21,7 +20,6 @@ export class ModeratorCommentPageComponent implements OnInit, OnDestroy, AfterCo
   listenerFn: () => void;
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
               private notification: NotificationService,
               private authenticationService: AuthenticationService,
               public eventService: EventService,
