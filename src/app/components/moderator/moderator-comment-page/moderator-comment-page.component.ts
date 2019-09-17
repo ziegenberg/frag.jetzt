@@ -6,6 +6,8 @@ import { NotificationService } from '../../../services/util/notification.service
 import { AuthenticationService } from '../../../services/http/authentication.service';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { EventService } from '../../../services/util/event.service';
+import { KeyboardUtils } from '../../../utils/keyboard';
+import { KeyboardKey } from '../../../utils/keyboard/keys';
 
 @Component({
   selector: 'app-moderator-comment-page',
@@ -36,20 +38,24 @@ export class ModeratorCommentPageComponent implements OnInit, OnDestroy, AfterCo
     this.user = this.authenticationService.getUser();
     this.announce();
     this.listenerFn = this._r.listen(document, 'keyup', (event) => {
-      if (event.keyCode === 49 && this.eventService.focusOnInput === false) {
+      if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit1) === true && this.eventService.focusOnInput === false) {
         document.getElementById('searchBox').focus();
-      } else if (event.keyCode === 51 && this.eventService.focusOnInput === false) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit3) === true && this.eventService.focusOnInput === false) {
         document.getElementById('sort-button').focus();
-      } else if (event.keyCode === 52 && this.eventService.focusOnInput === false) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit4) === true && this.eventService.focusOnInput === false) {
         document.getElementById('filter-button').focus();
-      } else if (event.keyCode === 56 && this.eventService.focusOnInput === false) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit8) === true && this.eventService.focusOnInput === false) {
         this.liveAnnouncer.announce('Aktueller Sitzungs-' + document.getElementById('shortId-header').textContent);
-      } else if ((event.keyCode === 57 || event.keyCode === 27) && this.eventService.focusOnInput === false) {
+      } else if (
+        KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit9, KeyboardKey.Escape) === true &&
+        this.eventService.focusOnInput === false) {
         this.announce();
-      } else if (document.getElementById('search_close-button') && event.keyCode === 27
-        && this.eventService.focusOnInput === true) {
+      } else if (
+        document.getElementById('search_close-button') &&
+        KeyboardUtils.isKeyEvent(event, KeyboardKey.Escape) === true &&
+        this.eventService.focusOnInput === true) {
         document.getElementById('search_close-button').click();
-      } else if (event.keyCode === 27 && this.eventService.focusOnInput === true) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Escape) === true && this.eventService.focusOnInput === true) {
         this.eventService.makeFocusOnInputFalse();
         document.getElementById('sort-button').focus();
       }
