@@ -1,11 +1,20 @@
+import { KeyboardUtils } from '../utils/keyboard';
+import { KeyboardKey } from '../utils/keyboard/keys';
 
 export class Rescale {
 
   public scale = 1;
   public cachedScale = 1;
   private f;
+  public defaultScale = 1;
 
   private state = 0;
+
+  public setDefaultScale(defaultScale: number) {
+    this.scale = defaultScale;
+    this.defaultScale = defaultScale;
+    this.scaleUpdate();
+  }
 
   public scaleUp() {
     this.setScale(this.scale + 0.1);
@@ -16,7 +25,7 @@ export class Rescale {
   }
 
   public scaleUndo() {
-    this.setScale(1);
+    this.setScale(this.defaultScale);
   }
 
   public setScale(scale: number) {
@@ -76,7 +85,6 @@ export class Rescale {
     window.removeEventListener('keydown', this.f);
     this.f = null;
     this.cachedScale = this.scale;
-    this.scale = 1;
     this.scaleUpdate();
     this.toggleHeader(true);
     this.toggleFooter(true);
@@ -106,8 +114,8 @@ export class Rescale {
   private createKeyListener() {
     if (!this.f) {
       window.addEventListener('keydown', this.f = e => {
-        if (e.key === 'Escape') {
-          this.state -= 1;
+        if (KeyboardUtils.isKeyEvent(e, KeyboardKey.Escape)) {
+          this.state--;
           this.updateState();
         }
       });
