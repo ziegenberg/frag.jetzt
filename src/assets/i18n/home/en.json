@@ -48,6 +48,7 @@
     "style": "Display"
   },
   "header": {
+    "a11y-delete_account": "Do you want to irrevocably delete your account with all sessions?",
     "abort": "Cancel",
     "accessibility-back": "Go back to the previous page",
     "accessibility-login": "Open the login window",

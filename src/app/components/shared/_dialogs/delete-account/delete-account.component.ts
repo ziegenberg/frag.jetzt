@@ -4,6 +4,7 @@ import { RoomEditComponent } from '../../../creator/_dialogs/room-edit/room-edit
 import { RoomService } from '../../../../services/http/room.service';
 import { Room } from '../../../../models/room';
 import { DialogConfirmActionButtonType } from '../../dialog/dialog-action-buttons/dialog-action-buttons.component';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-delete-account',
@@ -23,15 +24,27 @@ export class DeleteAccountComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<RoomEditComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
-              private roomService: RoomService) { }
+              private roomService: RoomService,
+              private liveAnnouncer: LiveAnnouncer) { }
 
   ngOnInit() {
+    this.announce();
     this.roomService.getCreatorRooms().subscribe(rooms => {
       this.rooms = rooms.sort((a, b) => {
         return a.name > b.name ? 1 : -1;
       });
     });
   }
+
+  public announce() {
+    const text: string = document.getElementById('delete-account').innerText;
+
+    // current live announcer content must be cleared before next read
+    this.liveAnnouncer.clear();
+
+    this.liveAnnouncer.announce(text);
+  }
+
 
   close(type: string): void {
     this.dialogRef.close(type);
