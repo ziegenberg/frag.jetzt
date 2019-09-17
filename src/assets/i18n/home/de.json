@@ -132,6 +132,8 @@
     "welcome": "Online fragen & Fragen bewerten"
   },
   "password-reset": {
+    "a11y-password_reset_button": "Setzt das passwort zurück",
+    "a11y-password_set_email": "Gib hier deine E-Mail Adresse ein, um ein neues Passwort zu setzten",
     "cancel": "Zurück",
     "cancel-description": "Zurück",
     "email": "E-Mail Adresse",
