@@ -14,12 +14,6 @@
     "consent-description": "Akzeptiert die Datenschutzerklärung der Anwendung.",
     "title": "Datenschutz"
   },
-  "delete-account": {
-    "cancel": "Abbrechen",
-    "cancel-description": "Löschung des Kontos abbrechen",
-    "delete": "Löschen",
-    "delete-description": "Konto löschen"
-  },
   "demo": {
     "cancel": "Schließen",
     "cancel-description": "Schließt die Einführung"
@@ -63,9 +57,8 @@
   },
   "help": {
     "cancel": "Schließen",
-    "close": "Schließen",
-    "close-label": "Schließt die Hilfe.",
-    "title": "Hilfe"
+    "cancel-description": "Schließt die Hilfe",
+        "title": "Hilfe"
   },
   "home-page": {
     "accessibility-create": "Erstellt eine neue Sitzung.",

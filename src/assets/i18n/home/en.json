@@ -14,12 +14,6 @@
     "consent-description": "Accept the app's privacy policy and close dialog",
     "title": "Privacy"
   },
-  "delete-account": {
-    "cancel": "Cancel",
-    "cancel-description": "Cancel account deletion",
-    "delete": "Delete",
-    "delete-description": "Delete your Account"
-  },
   "demo": {
     "cancel": "Close",
     "cancel-description": "Close the introduction dialog"
@@ -64,8 +58,7 @@
   },
   "help": {
     "cancel": "Close",
-    "close": "Close",
-    "close-label": "Closes the help dialog",
+    "cancel-description": "Closes the help dialog",
     "title": "Help"
   },
   "home-page": {

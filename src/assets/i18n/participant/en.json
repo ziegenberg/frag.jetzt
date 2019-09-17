@@ -58,6 +58,7 @@
     "error-both-fields": "Please fill in all fields.",
     "error-comment": "Please enter a question.",
     "error-title": "Please enter a title.",
+    "exit-description": "Exit Comment-Presentation Mode",
     "mark-not-correct": "Marked as correct by the professor",
     "mark-not-favorite": "Bonus question: Your professor intends to give a bonus for that question.",
     "mark-not-wrong": "Marked as wrong by the professor",
@@ -66,8 +67,15 @@
     "no-comments": "No questions yet",
     "search-box-input-description": "Here you can search for questions.",
     "send": "Send",
+    "send-description": "Send question",
     "vote-down": "Vote down",
     "vote-up": "Vote up"
+  },
+  "delete-account": {
+    "cancel": "Cancel",
+    "cancel-description": "Cancel account deletion",
+    "delete": "Delete",
+    "delete-description": "Delete your Account"
   },
   "home-page": {
     "exactly-8": "A session ID is a combination of exactly 8 digits.",
