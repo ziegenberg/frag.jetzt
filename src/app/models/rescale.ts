@@ -73,6 +73,8 @@ export class Rescale {
   }
 
   public reset() {
+    window.removeEventListener('keydown', this.f);
+    this.f = null;
     this.cachedScale = this.scale;
     this.scale = 1;
     this.scaleUpdate();
@@ -83,20 +85,33 @@ export class Rescale {
   }
 
   public activate() {
+    this.createKeyListener();
     this.setScale(this.cachedScale);
     this.toggleHeader(true);
     this.toggleFooter(true);
-    this.toggleRescaler(true);
     this.setOffsetRescaler(0, 75);
+    this.toggleRescaler(true);
     this.state = 1;
   }
 
   public activateFull() {
+    this.createKeyListener();
     this.toggleHeader(false);
     this.toggleFooter(false);
-    this.toggleRescaler(true);
     this.setOffsetRescaler(0, 15);
+    this.toggleRescaler(true);
     this.state = 2;
+  }
+
+  private createKeyListener() {
+    if (!this.f) {
+      window.addEventListener('keydown', this.f = e => {
+        if (e.key === 'Escape') {
+          this.state -= 1;
+          this.updateState();
+        }
+      });
+    }
   }
 
   private toggleHeader(b: boolean) {
