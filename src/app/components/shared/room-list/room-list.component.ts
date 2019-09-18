@@ -102,4 +102,16 @@ export class RoomListComponent implements OnInit {
   applyFilter(filterValue: string): void {
     this.tableDataSource.filter = filterValue.trim().toLowerCase();
   }
+
+
+
+  delete(room: Room) {
+    this.roomService.deleteRoom(room.id).subscribe(e => {
+      this.roomsWithRole = this.roomsWithRole.filter(e => {
+        return e.id !== room.id;
+      });
+      this.updateTable();
+    });
+  }
+
 }
