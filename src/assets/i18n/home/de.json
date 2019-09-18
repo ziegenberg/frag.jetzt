@@ -47,7 +47,6 @@
     "style": "Anzeige"
   },
   "header": {
-    "a11y-delete_account": "Willst du dein Konto mit allen Sitzungen unwiderruflich löschen?",
     "abort": "Abbrechen",
     "accessibility-back": "Führt zur vorherigen Seite",
     "accessibility-login": "Öffnet das Anmeldungs-Fenster.",
