@@ -6,9 +6,10 @@
   <input (focus)="eventService.makeFocusOnInputTrue()" (blur)="eventService.makeFocusOnInputFalse()"
          #searchBox id="searchBox" [ngClass]="{'desktop-input': deviceType === 'desktop',
    'mobile-input': deviceType === 'mobile' && !search, 'mobile-input-2': deviceType === 'mobile' && search }"
-         [placeholder]="searchPlaceholder" (input)="searchComments()" [(ngModel)]="searchInput"
-         aria-labelledby="search-box-input-description">
-  <button mat-icon-button class="searchBarButton close" *ngIf="searchInput !== '' || search"
+         (input)="searchComments()" [(ngModel)]="searchInput" [placeholder]="searchPlaceholder"
+         aria-labelledby="search-box-input-description"/>
+  <button id="search_close-button"
+          mat-icon-button class="searchBarButton close" *ngIf="searchInput !== '' || search"
           (click)="hideCommentsList=false; searchInput = ''; search = false; searchPlaceholder = '';">
     <mat-icon>close</mat-icon>
   </button>
@@ -24,13 +25,15 @@
       <mat-icon class="searchBarIcon">search</mat-icon>
     </button>
 
-    <button mat-icon-button class="searchBarButton"
+    <button id="sort-button"
+            mat-icon-button class="searchBarButton"
             *ngIf="!searchBox.value && comments && comments.length > 0 && !search"
             [matMenuTriggerFor]="sortMenu" matTooltip="{{ 'comment-list.sort-comments' | translate }}">
       <mat-icon class="searchBarIcon">swap_vert</mat-icon>
     </button>
 
-    <button mat-icon-button class="searchBarButton"
+    <button id="filter-button"
+            mat-icon-button class="searchBarButton"
             *ngIf="!searchBox.value && comments && comments.length > 0 && !search"
             [matMenuTriggerFor]="filterMenu" matTooltip="{{ 'comment-list.filter-comments' | translate }}">
       <mat-icon class="searchBarIcon">filter_list</mat-icon>
@@ -83,7 +86,7 @@
   </mat-menu>
 </div>
 
-<button mat-icon-button class="scrollTop" [ngClass]="{'visible': scrollExtended}" (click)="scrollToTop()">
+<button mat-icon-button class="scrollTop" [ngClass]="{'visible': scrollExtended}" (click)="scrollToTop()" tabIndex="-1">
   <mat-icon>arrow_upward</mat-icon>
 </button>
 
@@ -94,7 +97,7 @@
 
 <div *ngIf="comments && comments.length < 1 && !isLoading" fxLayout="row" fxLayoutAlign="center center"
      class="no-comments">
-  <h4>{{ 'comment-page.no-comments' | translate }}</h4>
+  <p>{{ 'comment-page.no-comments' | translate }}</p>
 </div>
 
 <div class="visually-hidden">

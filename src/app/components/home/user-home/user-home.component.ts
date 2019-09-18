@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, AfterContentInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../../../services/util/language.service';
@@ -8,13 +8,15 @@ import { User } from '../../../models/user';
 import { AuthenticationService } from '../../../services/http/authentication.service';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { EventService } from '../../../services/util/event.service';
+import { KeyboardUtils } from '../../../utils/keyboard';
+import { KeyboardKey } from '../../../utils/keyboard/keys';
 
 @Component({
   selector: 'app-user-home',
   templateUrl: './user-home.component.html',
   styleUrls: [ './user-home.component.scss' ]
 })
-export class UserHomeComponent implements OnInit, OnDestroy {
+export class UserHomeComponent implements OnInit, OnDestroy, AfterContentInit {
   user: User;
   creatorRole: UserRole = UserRole.CREATOR;
   participantRole: UserRole = UserRole.PARTICIPANT;
@@ -33,18 +35,24 @@ export class UserHomeComponent implements OnInit, OnDestroy {
     langService.langEmitter.subscribe(lang => translateService.use(lang));
   }
 
+  ngAfterContentInit(): void {
+    setTimeout( () => {
+      document.getElementById('live_announcer-button').focus();
+    }, 700);
+  }
   ngOnInit() {
     this.translateService.use(localStorage.getItem('currentLang'));
     this.authenticationService.watchUser.subscribe(newUser => this.user = newUser);
-    this.announce();
     this.listenerFn = this._r.listen(document, 'keyup', (event) => {
-      if (event.keyCode === 49 && this.eventService.focusOnInput === false) {
+      if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit1) === true && this.eventService.focusOnInput === false) {
         document.getElementById('session_id-input').focus();
-      } else if (event.keyCode === 51 && this.eventService.focusOnInput === false) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit3) === true && this.eventService.focusOnInput === false) {
         document.getElementById('create_session-button').focus();
-      } else if ((event.keyCode === 57 || event.keyCode === 27) && this.eventService.focusOnInput === false) {
+      } else if (
+        KeyboardUtils.isKeyEvent(event, KeyboardKey.Escape, KeyboardKey.Digit9) === true && this.eventService.focusOnInput === false
+      ) {
         this.announce();
-      } else if (event.keyCode === 27 && this.eventService.focusOnInput === true) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Escape) === true && this.eventService.focusOnInput === true) {
         document.getElementById('session_enter-button').focus();
       }
     });
@@ -55,6 +63,7 @@ export class UserHomeComponent implements OnInit, OnDestroy {
   }
 
   public announce() {
+    this.liveAnnouncer.clear();
     this.liveAnnouncer.announce('Du befindest dich auf deiner Benutzer-Seite. ' +
       'Drücke die Taste 1 um einen Sitzungs-Code einzugeben, die Taste 2 um auf das Sitzungs-Menü zu gelangen, ' +
       'die Taste 3 um eine neue Sitzung zu erstellen, die Taste 0 um zurück zur Startseite zu gelangen, ' +

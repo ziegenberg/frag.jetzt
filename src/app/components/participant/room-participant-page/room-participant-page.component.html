@@ -24,11 +24,12 @@
       </div>
       <mat-divider></mat-divider>
       <mat-card-content *ngIf="room.description" fxLayoutAlign="center">
-        <h3>{{room.description.trim()}}</h3>
+        <p>{{room.description.trim()}}</p>
       </mat-card-content>
       <mat-grid-list cols="1" rowHeight="2:1">
         <mat-grid-tile>
-          <button id="question_answer-button" mat-icon-button routerLink="/participant/room/{{ room.shortId }}/comments" aria-labelledby="question_answer">
+          <button id="question_answer-button" mat-icon-button [disableRipple]="true"
+                  routerLink="/participant/room/{{ room.shortId }}/comments" aria-labelledby="question_answer">
             <mat-icon matBadge="{{commentCounter}}" matBadgeColor="primary" class="main-icon"
                       [ngClass]="{'desktop' : deviceType === 'desktop'}">question_answer
             </mat-icon>
@@ -47,6 +48,7 @@
     </mat-card>
 
   </div>
+  <button id="live_announcer-button" tabIndex="-1" (click)="announce()" class="visually-hidden">{{ 'room-page.live-announcer' | translate }}</button>
 </div>
 
 <!--Hidden Div's for a11y-Descriptions-->

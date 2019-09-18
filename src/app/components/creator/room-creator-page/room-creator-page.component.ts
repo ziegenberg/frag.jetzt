@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, OnDestroy } from '@angular/core';
+import { Component, OnInit, Renderer2, OnDestroy, AfterContentInit } from '@angular/core';
 import { RoomService } from '../../../services/http/room.service';
 import { ActivatedRoute } from '@angular/router';
 import { RoomPageComponent } from '../../shared/room-page/room-page.component';
@@ -17,13 +17,15 @@ import { ModeratorsComponent } from '../_dialogs/moderators/moderators.component
 import { CommentSettingsComponent } from '../_dialogs/comment-settings/comment-settings.component';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { EventService } from '../../../services/util/event.service';
+import { KeyboardUtils } from '../../../utils/keyboard';
+import { KeyboardKey } from '../../../utils/keyboard/keys';
 
 @Component({
   selector: 'app-room-creator-page',
   templateUrl: './room-creator-page.component.html',
   styleUrls: ['./room-creator-page.component.scss']
 })
-export class RoomCreatorPageComponent extends RoomPageComponent implements OnInit, OnDestroy {
+export class RoomCreatorPageComponent extends RoomPageComponent implements OnInit, OnDestroy, AfterContentInit {
   room: Room;
   updRoom: Room;
   commentThreshold: number;
@@ -51,26 +53,35 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
     langService.langEmitter.subscribe(lang => translateService.use(lang));
   }
 
+  ngAfterContentInit(): void {
+    setTimeout( () => {
+      document.getElementById('live_announcer-button').focus();
+    }, 700);
+  }
+
   ngOnInit() {
     window.scroll(0, 0);
     this.translateService.use(localStorage.getItem('currentLang'));
     this.route.params.subscribe(params => {
       this.initializeRoom(params['roomId']);
     });
-    this.announce();
     this.listenerFn = this._r.listen(document, 'keyup', (event) => {
-      if (event.keyCode === 49 && this.eventService.focusOnInput === false) {
+      if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit1) === true && this.eventService.focusOnInput === false) {
         document.getElementById('question_answer-button').focus();
-      } else if (event.keyCode === 51 && this.eventService.focusOnInput === false) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit3) === true && this.eventService.focusOnInput === false) {
         document.getElementById('gavel-button').focus();
-      } else if (event.keyCode === 52 && this.eventService.focusOnInput === false) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit4) === true && this.eventService.focusOnInput === false) {
         document.getElementById('settings-menu').focus();
-      } else if ((event.keyCode === 56) && this.eventService.focusOnInput === false) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit8) === true && this.eventService.focusOnInput === false) {
+        this.liveAnnouncer.clear();
         this.liveAnnouncer.announce('Aktueller Sitzungs-Name: ' + this.room.name + '. ' +
                                     'Aktueller Sitzungs-Code: ' + this.room.shortId.slice(0, 8));
-      } else if ((event.keyCode === 57 || event.keyCode === 27) && this.eventService.focusOnInput === false) {
+      } else if (
+        KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit9, KeyboardKey.Escape) === true &&
+        this.eventService.focusOnInput === false
+      ) {
         this.announce();
-      } else if (event.keyCode === 27 && this.eventService.focusOnInput === true) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Escape) === true && this.eventService.focusOnInput === true) {
         this.eventService.makeFocusOnInputFalse();
       }
     });
@@ -82,6 +93,7 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
   }
 
   public announce() {
+    this.liveAnnouncer.clear();
     this.liveAnnouncer.announce('Du befindest dich in der von dir erstellten Sitzung. ' +
       'Drücke die Taste 1 um auf die Fragen-Übersicht zu gelangen, ' +
       'die Taste 2 um das Sitzungs-Menü zu öffnen, die Taste 3 um in die Moderationsübersicht zu gelangen, ' +
@@ -89,8 +101,6 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
       'die Taste 8 um den aktuellen Sitzungs-Code zu hören, die Taste 0 um auf den Zurück-Button zu gelangen, ' +
       'oder die Taste 9 um diese Ansage zu wiederholen.', 'assertive');
   }
-
-
 
   afterRoomLoadHook() {
     if (this.moderationEnabled) {
