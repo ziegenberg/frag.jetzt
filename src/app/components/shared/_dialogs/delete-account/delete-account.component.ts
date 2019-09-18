@@ -5,6 +5,7 @@ import { RoomService } from '../../../../services/http/room.service';
 import { Room } from '../../../../models/room';
 import { DialogConfirmActionButtonType } from '../../dialog/dialog-action-buttons/dialog-action-buttons.component';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-delete-account',
@@ -25,7 +26,8 @@ export class DeleteAccountComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<RoomEditComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
               private roomService: RoomService,
-              private liveAnnouncer: LiveAnnouncer) { }
+              private liveAnnouncer: LiveAnnouncer,
+              private translationService: TranslateService, ) { }
 
   ngOnInit() {
     this.announce();
@@ -37,12 +39,17 @@ export class DeleteAccountComponent implements OnInit {
   }
 
   public announce() {
-    const text: string = document.getElementById('delete-account').innerText;
+    const lang: string = this.translationService.currentLang;
 
     // current live announcer content must be cleared before next read
     this.liveAnnouncer.clear();
 
-    this.liveAnnouncer.announce(text);
+    if (lang === 'de') {
+      this.liveAnnouncer.announce('Willst du dein Konto mit allen Sitzungen unwiderruflich löschen?', 'assertive');
+    } else {
+      this.liveAnnouncer.announce('Do you really want to irrevocably delete your account with the associated sessions?', 'assertive');
+    }
+
   }
 
 
