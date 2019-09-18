@@ -184,7 +184,8 @@
     "settings-direct-send": "Send Questions directly to participants",
     "sure": "Are you sure?",
     "threshold": "Threshold for visible questions: ",
-    "update": "Update"
+    "update": "Update",
+    "update-description": "Save changes"
   },
   "session": {
     "a11y-description": "Enter a description for the session",

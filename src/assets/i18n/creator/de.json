@@ -183,7 +183,8 @@
     "settings-direct-send": "Fragen sofort sichtbar schalten",
     "sure": "Bist du sicher?",
     "threshold": "Schwellenwert für sichtbare Fragen: ",
-    "update": "Speichern"
+    "update": "Speichern",
+    "update-description": "Speichert die Änderungen"
   },
   "session": {
     "a11y-description": "Gib eine Beschreibung für die Sitzung ein.",
