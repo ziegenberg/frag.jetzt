@@ -108,6 +108,7 @@ export class RoomListComponent implements OnInit {
       }
       return 0;
     });
+    this.updateTable();
   }
 
   applyFilter(filterValue: string): void {
