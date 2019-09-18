@@ -1,7 +1,7 @@
 export const arsnova = {
 
   '--primary' : '#263238',
-  '--primary-variant': '#4f5b62',
+  '--primary-variant': '#c0d6e4',
 
   '--secondary': '#FF6D00',
   '--secondary-variant': '#619790',
