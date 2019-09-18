@@ -8,17 +8,17 @@
     "title": "Cookies"
   },
   "overlay": {
-    "cancel": "Change settings",
-    "cancel-description": "Open the cookie setting dialog",
-    "message": "You have declined cookie usage for this app, thus you can not use it for the time being.",
-    "title": "Cannot use app"
+    "cancel": "Accept cookies after all?",
+    "cancel-description": "Accept cookies after all?",
+    "message": "You have rejected the use of cookies. Without cookies the app will not work.",
+    "title": "Use not possible"
   },
   "data-protection": {
     "cancel": "Reject",
     "cancel-description": "Reject the app's privacy policy and close dialog",
     "consent": "Accept",
     "consent-description": "Accept the app's privacy policy and close dialog",
-    "title": "Privacy"
+    "title": "Data Protection & Privacy"
   },
   "delete-account": {
     "cancel": "Cancel",
@@ -28,17 +28,17 @@
   },
   "demo": {
     "cancel": "Close",
-    "cancel-description": "Close the introduction dialog"
+    "cancel-description": "Close the introduction"
   },
   "footer": {
-    "accessibility-data_protection": "Open the privacy statement in a new dialog.",
-    "accessibility-demo": "Show the demo video in a new dialog.",
-    "accessibility-help": "Open the help text in a new dialog.",
-    "accessibility-imprint": "Open the imprint in a new dialog.",
-    "accessibility-language": "Open the language selection menu.",
-    "accessibility-style": "Open the display menu in a new dialog.",
+    "accessibility-data_protection": "Open the privacy statement.",
+    "accessibility-demo": "Open the introduction.",
+    "accessibility-help": "Open help.",
+    "accessibility-imprint": "Open the imprint.",
+    "accessibility-language": "Open the language selector.",
+    "accessibility-style": "Open the display selector.",
     "demo": "Introduction",
-    "dsgvo": "Privacy",
+    "dsgvo": "Data Protection",
     "english": "English",
     "german": "German",
     "help": "Help",
@@ -52,11 +52,11 @@
     "accessibility-back": "Go back to the previous page",
     "accessibility-login": "Open the login window",
     "accessibility-session": "Open the session menu. Here you can view the sessions you have attended or log out of your account.",
-    "account-deleted": "Your account has been deleted successfully.",
+    "account-deleted": "Your account has been deleted.",
     "back": "Back",
     "delete": "Delete",
     "delete-account": "Delete account",
-    "id": "ID",
+    "id": "Key",
     "logged-out": "Logging out successful",
     "login": "Login",
     "logout": "Log out",
@@ -76,20 +76,22 @@
   },
   "home-page": {
     "accessibility-create": "Create a new session",
-    "accessibility-join-button": "Enter the room with the specified session ID.",
-    "accessibility-join-input": "Here you can enter the session ID of the room you want to join.",
+    "accessibility-join-button": "Enter the session with the specified session key.",
+    "accessibility-join-input": "Here you can enter the session key of the session you want to join.",
     "create-session": "New session",
     "created-1": "Session '",
     "created-2": "' successfully created",
-    "exactly-8": "A session ID has exactly 8 digits.",
+    "exactly-8": "A session key has exactly 8 digits.",
+    "accessibility-join-input": "Here you can enter the  key of the session you want to join. Your lecturer will tell you the session key.",
+    "live-announcer": "Welcome to fragpunktjetzt. To get information about key combinations press the Enter key or call the announcement later with the Escape key.",
+    "live-announcer-user": "You are now on the user page. To get information about key combinations press the Enter key or call the announcement later with the Escape key.",
     "install": "Install",
-    "join-demo-session": "Join public session",
     "no-empty-name": "Please enter a name.",
-    "no-room-found": "No session found with this ID",
-    "only-numbers": "A session ID only contains digits.",
-    "please-enter": "Your lecturer will tell you the session ID.",
+    "no-room-found": "No session found with this key",
+    "only-numbers": "A session key only contains digits.",
+    "please-enter": "Ask the lecturer for the key.",
     "room-name-input": "Enter the name of the session you want to create here.",
-    "session-id": "Session ID",
+    "session-id": "Session key",
     "update-available": "An update is available."
   },
   "imprint": {
@@ -140,8 +142,8 @@
     "email-required": "E-mail required",
     "forgot-password": "Forgot the password?",
     "input-incorrect": "Please check your data.",
-    "key": "Reset key",
-    "key-required": "Reset key required",
+    "key": "Password reset key",
+    "key-required": "Password reset key required",
     "new-password": "New password",
     "new-password-successful": "The new password has been set.",
     "reset-password": "Reset password",
@@ -180,16 +182,16 @@
     "create-room-description": "Create new session"
   },
   "room-list": {
-    "creator-role": "Room creator",
+    "creator-role": "Session creator",
     "entry": "Entry ",
-    "filter": "Here you can filter your visited sessions",
-    "filter-message": "Filter by Name or Session ID",
-    "join-message-template": "Join Session {{session}} with ID {{id}} and role {{role}}",
+    "filter": "Here you can filter your visited sessions.",
+    "filter-message": "Filter by Name or Code",
+    "join-message-template": "Join the session {{session}} with code {{id}} and in the role {{role}}",
     "moderator-role": "Moderator",
     "no-room-history": "You haven't joined any sessions yet.",
-    "panel-join-button": "Join Session",
-    "panel-session-id": "Session ID",
-    "panel-session-name": "Name",
+    "panel-join-button": "",
+    "panel-session-id": "Code",
+    "panel-session-name": "Session",
     "panel-user-role": "Role",
     "participant-role": "Participant",
     "session-history": "Your session history contains {count}} sessions.",
@@ -199,7 +201,7 @@
   "session": {
     "create-session": "Create session",
     "description": "Session description",
-    "join": "join session",
+    "join": "Join session",
     "max-ls": "Max. characters:",
     "session-name": "Session name"
   }

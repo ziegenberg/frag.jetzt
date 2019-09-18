@@ -1,13 +1,15 @@
-import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, AfterContentInit } from '@angular/core';
 import { EventService } from '../../../services/util/event.service';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { KeyboardUtils } from '../../../utils/keyboard';
+import { KeyboardKey } from '../../../utils/keyboard/keys';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit, OnDestroy {
+export class HomePageComponent implements OnInit, OnDestroy, AfterContentInit {
 
   deviceType: string;
   listenerFn: () => void;
@@ -19,19 +21,26 @@ export class HomePageComponent implements OnInit, OnDestroy {
   ) {
   }
 
+  ngAfterContentInit(): void {
+    setTimeout( () => {
+      document.getElementById('live_announcer-button').focus();
+    }, 500);
+  }
+
   ngOnInit() {
     this.deviceType = localStorage.getItem('deviceType');
-    this.announce();
     this.listenerFn = this._r.listen(document, 'keyup', (event) => {
-      if (event.keyCode === 49 && this.eventService.focusOnInput === false) {
+      if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit1) === true && this.eventService.focusOnInput === false) {
         document.getElementById('session_id-input').focus();
-      } else if (event.keyCode === 51 && this.eventService.focusOnInput === false) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit3) === true && this.eventService.focusOnInput === false) {
         document.getElementById('new_session-button').focus();
-      } else if (event.keyCode === 52 && this.eventService.focusOnInput === false) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Digit4) === true && this.eventService.focusOnInput === false) {
         document.getElementById('language-menu').focus();
-      } else if ((event.keyCode === 57 || event.keyCode === 27) && this.eventService.focusOnInput === false) {
+      } else if (
+        KeyboardUtils.isKeyEvent(event, KeyboardKey.Escape, KeyboardKey.Digit9) === true && this.eventService.focusOnInput === false
+      ) {
         this.announce();
-      } else if (event.keyCode === 27 && this.eventService.focusOnInput === true) {
+      } else if (KeyboardUtils.isKeyEvent(event, KeyboardKey.Escape) === true && this.eventService.focusOnInput === true) {
         document.getElementById('session_enter-button').focus();
         this.eventService.makeFocusOnInputFalse();
       }
@@ -44,7 +53,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   public announce() {
-    // this.liveAnnouncer.announce('Willkommen auf dieser Seite' + document.getElementById('announcer_text').textContent, 'assertive');
+    this.liveAnnouncer.clear();
     this.liveAnnouncer.announce('Du befindest dich auf der Startseite von fragpunktjetzt. ' +
       'Drücke die Taste 1 um einen Sitzungs-Code einzugeben, die Taste 2 um in die Benutzer-Anmeldung ' +
       'oder das Sitzungs-Menü zu gelangen, die Taste 3 um eine neue Sitzung zu erstellen, ' +
