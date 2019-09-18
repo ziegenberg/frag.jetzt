@@ -71,12 +71,6 @@
     "vote-down": "Vote down",
     "vote-up": "Vote up"
   },
-  "delete-account": {
-    "cancel": "Cancel",
-    "cancel-description": "Cancel account deletion",
-    "delete": "Delete",
-    "delete-description": "Delete your Account"
-  },
   "home-page": {
     "exactly-8": "A session ID is a combination of exactly 8 digits.",
     "no-room-found": "No session found with this ID",

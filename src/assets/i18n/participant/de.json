@@ -71,12 +71,7 @@
     "vote-down": "Frage abwerten",
     "vote-up": "Frage aufwerten"
   },
-  "delete-account": {
-    "cancel": "Abbrechen",
-    "cancel-description": "Löschung des Kontos abbrechen",
-    "delete": "Löschen",
-    "delete-description": "Konto löschen"
-  },
+
   "home-page": {
     "exactly-8": "Ein Sitzungs-Code hat genau 8 Ziffern.",
     "no-room-found": "Es wurde keine Sitzung mit diesem Sitzungs-Code gefunden.",

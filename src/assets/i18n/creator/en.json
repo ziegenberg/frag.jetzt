@@ -60,6 +60,7 @@
     "error-both-fields": "Please fill in all fields.",
     "error-comment": "Please ask a question.",
     "error-title": "Please enter a title.",
+    "exit-description": "Exit Comment-Presentation Mode",
     "export": "Export",
     "export-description": "Export",
     "mark-correct": "Mark as correct",
@@ -75,6 +76,7 @@
     "search-box-input-description": "Here you can search for questions.",
     "semicolon": "Standard CSV",
     "send": "Send",
+    "send-description": "Send question",
     "vote-down": "Vote down",
     "vote-up": "Vote up"
   },

@@ -18,6 +18,12 @@
     "cancel": "Schließen",
     "cancel-description": "Schließt die Einführung"
   },
+  "delete-account": {
+    "cancel": "Abbrechen",
+    "cancel-description": "Löschung des Kontos abbrechen",
+    "delete": "Löschen",
+    "delete-description": "Konto löschen"
+  },
   "footer": {
     "accessibility-data_protection": "Öffnet die Datenschutzerklärung.",
     "accessibility-demo": "Öffnet die Einführung zu frag.jetzt.",

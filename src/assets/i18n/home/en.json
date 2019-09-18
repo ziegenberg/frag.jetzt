@@ -18,6 +18,12 @@
     "cancel": "Close",
     "cancel-description": "Close the introduction dialog"
   },
+  "delete-account": {
+    "cancel": "Cancel",
+    "cancel-description": "Cancel account deletion",
+    "delete": "Delete",
+    "delete-description": "Delete your Account"
+  },
   "footer": {
     "accessibility-data_protection": "Open the privacy statement in a new dialog.",
     "accessibility-demo": "Show the demo video in a new dialog.",
