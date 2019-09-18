@@ -45,16 +45,19 @@
     <button mat-menu-item matTooltip="{{ 'comment-list.vote-asc' | translate }}"
             (click)="sortComments(votedesc)" aria-labelledby="keyboard_arrow_up">
       <mat-icon [ngClass]="{votedesc: 'up'}[currentSort]">keyboard_arrow_up</mat-icon>
+      <span>{{ 'comment-list.sort-vote-asc' | translate }}</span>
     </button>
 
     <button mat-menu-item matTooltip="{{ 'comment-list.vote-desc' | translate }}"
             (click)="sortComments(voteasc)" aria-labelledby="keyboard_arrow_down">
       <mat-icon [ngClass]="{voteasc: 'down'}[currentSort]">keyboard_arrow_down</mat-icon>
+      <span>{{ 'comment-list.sort-vote-desc' | translate }}</span>
     </button>
 
     <button mat-menu-item matTooltip="{{ 'comment-list.time' | translate }}"
             (click)="sortComments(time)" aria-labelledby="access_time">
       <mat-icon [ngClass]="{time: 'unread-icon'}[currentSort]">access_time</mat-icon>
+      <span>{{ 'comment-list.sort-list-time' | translate }}</span>
     </button>
   </mat-menu>
 
