@@ -12,6 +12,8 @@
 
   <div *ngIf="tableDataSource.data.length > 0">
 
+    <button (click)="sortTable();">SORT</button>
+
     <!-- filter input -->
     <mat-form-field class="filterWrapper">
       <input (focus)="eventService.makeFocusOnInputTrue()" (blur)="eventService.makeFocusOnInputFalse()" matInput (keyup)="applyFilter($event.target.value)"

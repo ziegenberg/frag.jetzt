@@ -69,7 +69,7 @@ export class RoomListComponent implements OnInit {
         });
       }
       return roomWithRole;
-    }).sort((a, b) => 0 - (a.name < b.name ? 1 : -1));
+    });
     this.isLoading = false;
 
     this.updateTable();
@@ -97,6 +97,19 @@ export class RoomListComponent implements OnInit {
 
   updateTable(): void {
     this.tableDataSource = new MatTableDataSource(this.roomsWithRole);
+  }
+
+  sortTable(): void {
+    this.roomsWithRole.sort((a,b)=>{
+      if(a.name<b.name){
+        return -1;
+      }
+      else if(a.name>b.name){
+        return 1;
+      }
+      return 0;
+    });
+    this.updateTable();
   }
 
   applyFilter(filterValue: string): void {
