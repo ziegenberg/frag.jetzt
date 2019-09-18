@@ -107,8 +107,8 @@ export class RoomListComponent implements OnInit {
 
   delete(room: Room) {
     this.roomService.deleteRoom(room.id).subscribe(e => {
-      this.roomsWithRole = this.roomsWithRole.filter(e => {
-        return e.id !== room.id;
+      this.roomsWithRole = this.roomsWithRole.filter(a => {
+        return a.id !== room.id;
       });
       this.updateTable();
     });
