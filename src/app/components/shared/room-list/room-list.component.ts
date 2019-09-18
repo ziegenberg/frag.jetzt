@@ -100,16 +100,14 @@ export class RoomListComponent implements OnInit {
   }
 
   sortTable(): void {
-    this.roomsWithRole.sort((a,b)=>{
-      if(a.name<b.name){
+    this.roomsWithRole.sort((a, b) => {
+      if (a.name < b.name) {
         return -1;
-      }
-      else if(a.name>b.name){
+      } else if (a.name > b.name) {
         return 1;
       }
       return 0;
     });
-    this.updateTable();
   }
 
   applyFilter(filterValue: string): void {
