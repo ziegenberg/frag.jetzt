@@ -103,7 +103,10 @@ export class AuthenticationService extends BaseHttpService {
       ));
       this.http.post<ClientAuthentication>(connectionUrl, {}, this.httpOptions).pipe(
         tap(_ => ''),
-        catchError(this.handleError<ClientAuthentication>('refreshLogin'))
+        catchError(_ => {
+          this.dataStoreService.remove(this.STORAGE_KEY);
+          return of(null);
+        })
       ).subscribe(nu => {
         this.setUser(new User(
           nu.userId,
