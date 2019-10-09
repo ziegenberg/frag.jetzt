@@ -38,11 +38,6 @@ export class AuthenticationService extends BaseHttpService {
     private http: HttpClient
   ) {
     super();
-    if (dataStoreService.has(this.STORAGE_KEY)) {
-      // Load user data from local data store if available
-      const user: User = JSON.parse(dataStoreService.get(this.STORAGE_KEY));
-      const wasGuest = (user.authProvider === AuthProvider.ARSNOVA_GUEST) ? true : false;
-    }
     if (localStorage.getItem(this.ROOM_ACCESS)) {
       // Load user data from local data store if available
       const creatorAccess = JSON.parse(localStorage.getItem(this.ROOM_ACCESS));
