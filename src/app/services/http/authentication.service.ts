@@ -74,7 +74,7 @@ export class AuthenticationService extends BaseHttpService {
    * - "activation": account exists but needs activation with key
    */
   login(email: string, password: string, userRole: UserRole): Observable<string> {
-    const connectionUrl: string = this.apiUrl.base + this.apiUrl.auth + this.apiUrl.login + '?refresh=true';
+    const connectionUrl: string = this.apiUrl.base + this.apiUrl.auth + this.apiUrl.login + this.apiUrl.registered;
 
     return this.checkLogin(this.http.post<ClientAuthentication>(connectionUrl, {
       loginId: email,
@@ -115,7 +115,14 @@ export class AuthenticationService extends BaseHttpService {
   }
 
   guestLogin(userRole: UserRole): Observable<string> {
-    this.refreshLogin();
+    let wasGuest = false;
+    if (this.dataStoreService.has(this.STORAGE_KEY)) {
+      const user: User = JSON.parse(this.dataStoreService.get(this.STORAGE_KEY));
+      wasGuest = user.isGuest;
+    }
+    if (wasGuest) {
+      this.refreshLogin();
+    }
     if (!this.isLoggedIn()) {
       const connectionUrl: string = this.apiUrl.base + this.apiUrl.auth + this.apiUrl.login + this.apiUrl.guest;
 
