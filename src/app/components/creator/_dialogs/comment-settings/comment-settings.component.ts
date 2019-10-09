@@ -103,7 +103,6 @@ export class CommentSettingsComponent implements OnInit {
           valueFields += Object.values(element).slice(3).join(delimiter) + '\r\n';
         });
         csv = keyFields + valueFields;
-        console.log(csv);
         const myBlob = new Blob([csv], { type: 'text/csv' });
         const link = document.createElement('a');
         const fileName = 'comments_' + date + '.csv';
