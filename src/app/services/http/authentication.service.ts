@@ -115,9 +115,14 @@ export class AuthenticationService extends BaseHttpService {
   }
 
   guestLogin(userRole: UserRole): Observable<string> {
-    const connectionUrl: string = this.apiUrl.base + this.apiUrl.auth + this.apiUrl.login + this.apiUrl.guest;
+    this.refreshLogin();
+    if (!this.isLoggedIn()) {
+      const connectionUrl: string = this.apiUrl.base + this.apiUrl.auth + this.apiUrl.login + this.apiUrl.guest;
 
-    return this.checkLogin(this.http.post<ClientAuthentication>(connectionUrl, null, this.httpOptions), userRole, true);
+      return this.checkLogin(this.http.post<ClientAuthentication>(connectionUrl, null, this.httpOptions), userRole, true);
+    } else {
+      return of('true');
+    }
   }
 
   register(email: string, password: string): Observable<boolean> {
@@ -174,6 +179,7 @@ export class AuthenticationService extends BaseHttpService {
     // Destroy the persisted user data
     // Actually don't destroy it because we want to preserve guest accounts in local storage
     // this.dataStoreService.remove(this.STORAGE_KEY);
+    this.dataStoreService.set('loggedin', 'false');
     this.user.next(undefined);
   }
 
@@ -182,8 +188,9 @@ export class AuthenticationService extends BaseHttpService {
   }
 
   private setUser(user: User): void {
-    this.user.next(user);
     this.dataStoreService.set(this.STORAGE_KEY, JSON.stringify(user));
+    this.dataStoreService.set('loggedin', 'true');
+    this.user.next(user);
   }
 
   isLoggedIn(): boolean {
@@ -214,6 +221,7 @@ export class AuthenticationService extends BaseHttpService {
           result.token,
           userRole,
           isGuest));
+          this.dataStoreService.set('loggedin', 'true');
         return 'true';
       } else {
         return 'false';
