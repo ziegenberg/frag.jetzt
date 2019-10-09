@@ -1,4 +1,4 @@
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { User } from '../../models/user';
 import { Observable ,  of ,  BehaviorSubject } from 'rxjs';
@@ -7,9 +7,11 @@ import { DataStoreService } from '../util/data-store.service';
 import { EventService } from '../util/event.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ClientAuthentication } from '../../models/client-authentication';
+import { AuthProvider } from '../../models/auth-provider';
+import { BaseHttpService } from './base-http.service';
 
 @Injectable()
-export class AuthenticationService {
+export class AuthenticationService extends BaseHttpService {
   private readonly STORAGE_KEY: string = 'USER';
   private readonly ROOM_ACCESS: string = 'ROOM_ACCESS';
   private user = new BehaviorSubject<User>(undefined);
@@ -35,9 +37,11 @@ export class AuthenticationService {
     public eventService: EventService,
     private http: HttpClient
   ) {
+    super();
     if (dataStoreService.has(this.STORAGE_KEY)) {
       // Load user data from local data store if available
-      this.user.next(JSON.parse(dataStoreService.get(this.STORAGE_KEY)));
+      const user: User = JSON.parse(dataStoreService.get(this.STORAGE_KEY));
+      const wasGuest = (user.authProvider === AuthProvider.ARSNOVA_GUEST) ? true : false;
     }
     if (localStorage.getItem(this.ROOM_ACCESS)) {
       // Load user data from local data store if available
@@ -75,12 +79,41 @@ export class AuthenticationService {
    * - "activation": account exists but needs activation with key
    */
   login(email: string, password: string, userRole: UserRole): Observable<string> {
-    const connectionUrl: string = this.apiUrl.base + this.apiUrl.auth + this.apiUrl.login + this.apiUrl.registered;
+    const connectionUrl: string = this.apiUrl.base + this.apiUrl.auth + this.apiUrl.login + '?refresh=true';
 
     return this.checkLogin(this.http.post<ClientAuthentication>(connectionUrl, {
       loginId: email,
       password: password
     }, this.httpOptions), userRole, false);
+  }
+
+  refreshLogin(): void {
+    if (this.dataStoreService.has(this.STORAGE_KEY)) {
+      // Load user data from local data store if available
+      const user: User = JSON.parse(this.dataStoreService.get(this.STORAGE_KEY));
+      const wasGuest = (user.authProvider === AuthProvider.ARSNOVA_GUEST) ? true : false;
+      const connectionUrl: string = this.apiUrl.base + this.apiUrl.auth + this.apiUrl.login + '?refresh=true';
+      this.setUser(new User(
+        user.id,
+        user.loginId,
+        user.authProvider,
+        user.token,
+        user.role,
+        wasGuest
+      ));
+      this.http.post<ClientAuthentication>(connectionUrl, {}, this.httpOptions).pipe(
+        tap(_ => ''),
+        catchError(this.handleError<ClientAuthentication>('refreshLogin'))
+      ).subscribe(nu => {
+        this.setUser(new User(
+          nu.userId,
+          nu.loginId,
+          nu.authProvider,
+          nu.token,
+          user.role,
+          wasGuest));
+      });
+    }
   }
 
   guestLogin(userRole: UserRole): Observable<string> {
@@ -141,7 +174,8 @@ export class AuthenticationService {
 
   logout() {
     // Destroy the persisted user data
-    this.dataStoreService.remove(this.STORAGE_KEY);
+    // Actually don't destroy it because we want to preserve guest accounts in local storage
+    // this.dataStoreService.remove(this.STORAGE_KEY);
     this.user.next(undefined);
   }
 
