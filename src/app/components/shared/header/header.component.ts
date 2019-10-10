@@ -132,12 +132,13 @@ export class HeaderComponent implements OnInit {
   }
 
   deleteAccount(id: string) {
-    this.userService.delete(id).subscribe();
-    this.authenticationService.logout();
-    this.translationService.get('header.account-deleted').subscribe(msg => {
-      this.notificationService.show(msg);
+    this.userService.delete(id).subscribe(_ => {
+      this.authenticationService.deleteLocal();
+      this.translationService.get('header.account-deleted').subscribe(msg => {
+        this.notificationService.show(msg);
+      });
+      this.navToHome();
     });
-    this.navToHome();
   }
 
   openDeleteUserDialog() {

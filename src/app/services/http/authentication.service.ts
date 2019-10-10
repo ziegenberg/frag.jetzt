@@ -190,6 +190,12 @@ export class AuthenticationService extends BaseHttpService {
     this.user.next(undefined);
   }
 
+  deleteLocal() {
+    this.dataStoreService.remove(this.STORAGE_KEY);
+    localStorage.clear();
+    this.user.next(undefined);
+  }
+
   getUser(): User {
     return this.user.getValue();
   }
