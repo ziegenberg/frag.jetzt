@@ -117,6 +117,7 @@ export class CommentListComponent implements OnInit {
   }
 
   scrollToTop(): void {
+    // document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
     AppComponent.scrollTop();
   }
 
