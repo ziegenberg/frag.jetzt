@@ -1,4 +1,8 @@
 <h2 tabindex="0" class="modal" mat-dialog-title>{{ 'introduction.title' | translate }}</h2>
+<h2 tabindex="0" class="overflow_hide" mat-dialog-title>
+  <ng-container *ngIf="currentLang=='en'">1 play video, 2 read transcript, 3 read content</ng-container>
+  <ng-container *ngIf="currentLang=='de'">1 lasse das video abspielen, 2 lese den text vor, 3 lese den anderen text vor</ng-container>
+</h2>
 <mat-divider></mat-divider>
 <mat-dialog-content>
   <div id="setFocus" class="intro-text" tabindex="0">
