@@ -1,12 +1,34 @@
-<h1 tabindex="0" class="modal" mat-dialog-title>{{ 'introduction.title' | translate }}</h1>
-<mat-divider></mat-divider>
-<mat-dialog-content>
-  <div id="setFocus" class="intro-text" tabindex="0">
-    <app-demo-en *ngIf="currentLang=='en'"></app-demo-en>
-    <app-demo-de *ngIf="currentLang=='de'"></app-demo-de>
+<!--
+<div class="dialog-content">
+  <h1 tabindex="0" class="modal" mat-dialog-title>{{ 'introduction.title' | translate }}</h1>
+  <mat-divider></mat-divider>
+  <mat-dialog-content>
+    <div id="setFocus" class="intro-text" tabindex="0">
+      <app-demo-en *ngIf="currentLang=='en'"></app-demo-en>
+      <app-demo-de *ngIf="currentLang=='de'"></app-demo-de>
+    </div>
+  </mat-dialog-content>
+  <app-dialog-action-buttons
+    buttonsLabelSection="introduction"
+    [cancelButtonClickAction]="buildCloseDialogActionCallback()"
+  ></app-dialog-action-buttons>
+</div>
+-->
+
+<div class="dialog-wrapper">
+  <div class="dialog-row">
+    <h1 tabindex="0" class="modal" mat-dialog-title>{{ 'introduction.title' | translate }}</h1>
   </div>
-</mat-dialog-content>
-<app-dialog-action-buttons
-  buttonsLabelSection="introduction"
-  [cancelButtonClickAction]="buildCloseDialogActionCallback()"
-></app-dialog-action-buttons>
+  <div class="dialog-fill">
+    <div id="setFocus" class="intro-text" tabindex="0">
+      <app-demo-en *ngIf="currentLang=='en'"></app-demo-en>
+      <app-demo-de *ngIf="currentLang=='de'"></app-demo-de>
+    </div>
+  </div>
+  <div class="dialog-row">
+    <app-dialog-action-buttons [spacing]="false"
+      buttonsLabelSection="introduction"
+      [cancelButtonClickAction]="buildCloseDialogActionCallback()"
+    ></app-dialog-action-buttons>
+  </div>
+</div>

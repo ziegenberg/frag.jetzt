@@ -74,7 +74,7 @@ export class FooterComponent implements OnInit {
 
   showDemo() {
     const dialogRef = this.dialog.open(DemoVideoComponent, {
-      width: '80%'
+      panelClass:'full-width'
     });
     dialogRef.componentInstance.deviceType = this.deviceType;
   }
