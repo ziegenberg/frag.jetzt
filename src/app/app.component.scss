@@ -71,3 +71,15 @@ main {
 .rescale_overlay>button:first-child{
   margin-left:10px;
 }
+
+.testContainer{
+  width:200px;
+  height:200px;
+  position:fixed;
+  left:calc( 50% - 100px );
+  top:calc( 50% - 100px );
+  z-index: 1000;
+  background-color: var(--background);
+  border:1px solid rgba(127,127,127,0.5);
+
+}

@@ -28,6 +28,7 @@ import { PresentCommentComponent } from './_dialogs/present-comment/present-comm
 import { DeleteAccountComponent } from './_dialogs/delete-account/delete-account.component';
 import { DialogActionButtonsComponent } from './dialog/dialog-action-buttons/dialog-action-buttons.component';
 import { MatRippleModule } from '@angular/material';
+import { IoSliderComponent } from './io/range/io-slider/io-slider.component';
 
 @NgModule({
   imports: [
@@ -62,7 +63,8 @@ import { MatRippleModule } from '@angular/material';
     CreateCommentComponent,
     PresentCommentComponent,
     DeleteAccountComponent,
-    DialogActionButtonsComponent
+    DialogActionButtonsComponent,
+    IoSliderComponent
   ],
   exports: [
     RoomJoinComponent,
@@ -83,7 +85,8 @@ import { MatRippleModule } from '@angular/material';
     PresentCommentComponent,
     CommentComponent,
     DialogActionButtonsComponent,
-    UserBonusTokenComponent
+    UserBonusTokenComponent,
+    IoSliderComponent
   ],
   entryComponents: [
     RoomCreateComponent,
