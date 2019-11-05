@@ -59,6 +59,7 @@ import { OverlayComponent } from './components/home/_dialogs/overlay/overlay.com
 import { DemoDeComponent } from '../assets/i18n/demo/demo-de';
 import { DemoEnComponent } from '../assets/i18n/demo/demo-en';
 import { ArsModule } from '../../projects/ars/src/lib/ars.module';
+import { QrCodeDialogComponent } from './components/shared/_dialogs/qr-code-dialog/qr-code-dialog.component';
 
 export function dialogClose(dialogResult: any) {
 }
@@ -103,7 +104,8 @@ export function initializeApp(appConfig: AppConfig) {
     UserActivationComponent,
     DemoVideoComponent,
     CookiesComponent,
-    OverlayComponent
+    OverlayComponent,
+    QrCodeDialogComponent
   ],
   imports: [
     AppRoutingModule,

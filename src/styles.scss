@@ -109,3 +109,18 @@ address {
   z-index: 1000;
   background-color: var(--surface);
 }
+
+.filledDialog{
+  width:calc( 100% - 50px);
+  min-width:calc( 100% - 50px);
+  max-width:calc( 100% - 50px);
+  height:calc( 100% - 50px);
+  margin:25px;
+  padding:0;
+}
+
+.imgWrp img{
+  width:calc( 100% - 35px );
+  height:calc( 100% - 35px );
+  image-rendering: crisp-edges;
+}
