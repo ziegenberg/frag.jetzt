@@ -55,7 +55,7 @@ export class QrCodeDialogComponent implements OnInit, AfterViewInit {
     this.render.setStyle(this.imgWrp.nativeElement, 'background-image', 'url(' + base + ')');
   }
 
-  private close() {
+  public close() {
     this.dialog.closeAll();
   }
 }
