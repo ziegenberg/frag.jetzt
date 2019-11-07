@@ -185,12 +185,11 @@ export class HeaderComponent implements OnInit {
 
   public showQRDialog() {
     const dialogRef = this.dialog.open(QrCodeDialogComponent, {
-      panelClass: 'filledDialog'
+      panelClass: 'screenDialog'
     });
     const qrDialog: QrCodeDialogComponent = dialogRef.componentInstance;
     qrDialog.setQRCode(this.getQRCode());
     dialogRef.afterClosed().subscribe(res => {
-      console.log('closed');
     });
   }
 

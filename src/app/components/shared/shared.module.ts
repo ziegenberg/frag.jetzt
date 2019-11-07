@@ -31,6 +31,7 @@ import { DialogActionButtonsComponent } from './dialog/dialog-action-buttons/dia
 import { MatRippleModule } from '@angular/material';
 import { QrCodeDialogComponent } from './_dialogs/qr-code-dialog/qr-code-dialog.component';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { ArsModule } from '../../../../projects/ars/src/lib/ars.module';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     ChartsModule,
     SharedRoutingModule,
     MatRippleModule,
-    NgxQRCodeModule
+    NgxQRCodeModule,
+    ArsModule
   ],
   declarations: [
     RoomJoinComponent,
