@@ -24,9 +24,12 @@
     </mat-icon>
   </span>
     <h2 id="shortId-header" *ngIf="router.url.includes('comments')"
-        fxLayoutAlign="center center" (click)="showQRDialog();">
+        fxLayoutAlign="center center">
       {{'header.id' | translate}}: {{ shortId.slice(0, 4) }} {{  shortId.slice(4, 8) }}
     </h2>
+    <button mat-icon-button (click)="showQRDialog();">
+      <mat-icon class="header-icons">face</mat-icon>
+    </button>
     <span class="fill-remaining-space"></span>
 
     <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
