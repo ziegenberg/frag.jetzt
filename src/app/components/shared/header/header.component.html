@@ -27,7 +27,7 @@
         fxLayoutAlign="center center">
       {{'header.id' | translate}}: {{ shortId.slice(0, 4) }} {{  shortId.slice(4, 8) }}
     </h2>
-    <button mat-icon-button (click)="showQRDialog();">
+    <button mat-icon-button *ngIf="router.url.includes('room')" (click)="showQRDialog();">
       <mat-icon class="header-icons">face</mat-icon>
     </button>
     <span class="fill-remaining-space"></span>
