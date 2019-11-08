@@ -24,8 +24,8 @@ export class AppComponent implements OnInit {
     sessionStorage.setItem('currentLang', this.translationService.getBrowserLang());
     for (const icon of this.icons) {
       this.matIconRegistry.addSvgIcon(
-        icon,
-        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/' + icon + '.svg')
+        'qr-icon',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('src/assets/icons/qrcode.svg')
       );
     }
   }
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
   public static scrollTop() {
     const sc: HTMLElement = document.getElementById('scroll_container');
     if (AppComponent.scrollAnimation) {
-      sc.scrollTo({ top: 0, behavior: 'smooth' });
+      sc.scrollTo({top: 0, behavior: 'smooth'});
     } else {
       sc.scrollTop = 0;
     }
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
         install = msg;
       });
       this.translationService.get('home-page.update-available').subscribe(msg => {
-       this.notification.show(msg, install, {
+        this.notification.show(msg, install, {
           duration: 10000
         });
       });
@@ -74,4 +74,6 @@ export class AppComponent implements OnInit {
   public getRescale(): Rescale {
     return AppComponent.rescale;
   }
+
+
 }
