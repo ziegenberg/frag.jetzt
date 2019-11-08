@@ -61,6 +61,9 @@ import { DemoDeComponent } from '../assets/i18n/demo/demo-de';
 import { DemoEnComponent } from '../assets/i18n/demo/demo-en';
 import { ArsModule } from '../../projects/ars/src/lib/ars.module';
 import { QrCodeDialogComponent } from './components/shared/_dialogs/qr-code-dialog/qr-code-dialog.component';
+import {MatIconModule} from '@angular/material/icon';
+import { DomSanitizer} from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
 
 export function dialogClose(dialogResult: any) {
 }
@@ -115,6 +118,8 @@ export function initializeApp(appConfig: AppConfig) {
     EssentialsModule,
     SharedModule,
     ThemeModule,
+    MatIconModule,
+    HttpClientModule,
     CreatorModule,
     ModeratorModule,
     MarkdownModule.forRoot({
