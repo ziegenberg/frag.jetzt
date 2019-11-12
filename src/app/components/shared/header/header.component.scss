@@ -11,6 +11,7 @@ mat-toolbar {
 
 .header-icons {
   color: var(--on-surface);
+  vertical-align: auto;
 }
 
 .moderation-enabled {
@@ -43,8 +44,10 @@ button:focus {
 }
 
 svg {
+  padding-bottom: 3px;
   path {
     fill: var(--on-surface);
+
   }
 }
 
