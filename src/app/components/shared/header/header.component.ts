@@ -184,6 +184,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public showQRDialog() {
+    document.body.requestFullscreen();
     const dialogRef = this.dialog.open(QrCodeDialogComponent, {
       panelClass: 'screenDialog'
     });
@@ -191,6 +192,7 @@ export class HeaderComponent implements OnInit {
     qrDialog.setQRCode(this.getQRCode());
     dialogRef.afterClosed().subscribe(res => {
     });
+    document.exitFullscreen();
   }
 
 }

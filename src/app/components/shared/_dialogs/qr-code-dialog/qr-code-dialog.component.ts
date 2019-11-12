@@ -57,5 +57,6 @@ export class QrCodeDialogComponent implements OnInit, AfterViewInit {
 
   public close() {
     this.dialog.closeAll();
+    document.exitFullscreen();
   }
 }

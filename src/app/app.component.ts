@@ -34,7 +34,8 @@ export class AppComponent implements OnInit {
 
   icons = [
     'beamer',
-    'meeting_room'
+    'meeting_room',
+    'qrcode'
   ];
 
   title = 'frag.jetzt';
