@@ -13,6 +13,11 @@ mat-toolbar {
   color: var(--on-surface);
 }
 
+::ng-deep .qrcode svg > path{
+  fill: var(--on-surface) !important;
+  color: var(--on-surface) !important;
+}
+
 .moderation-enabled {
   color: var(--on-surface);
   margin-left: 5px;
