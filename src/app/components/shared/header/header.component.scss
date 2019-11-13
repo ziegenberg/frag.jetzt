@@ -14,8 +14,8 @@ mat-toolbar {
 }
 
 ::ng-deep .qrcode svg > path{
-  fill: var(--on-surface) !important;
-  color: var(--on-surface) !important;
+  fill: var(--on-surface);
+  color: var(--on-surface);
 }
 
 .moderation-enabled {
