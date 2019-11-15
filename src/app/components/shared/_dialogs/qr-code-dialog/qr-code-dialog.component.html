@@ -1,12 +1,12 @@
-
-
 <ars-screen>
   <div class="qr_content" #imageWrapper>
     <ngx-qrcode></ngx-qrcode>
   </div>
   <div class="qr_header">
     <button mat-icon-button (click)="close();">
-      <mat-icon>arrow_back</mat-icon>
+      <mat-icon>close</mat-icon>
     </button>
+    <h2 class="qrheader" style="color: black!important;" >https://frag.jetzt
+      <br>Sitzung: {{qrCode.substring(28, 32)}} {{qrCode.substring(32, 36)}}</h2>
   </div>
 </ars-screen>

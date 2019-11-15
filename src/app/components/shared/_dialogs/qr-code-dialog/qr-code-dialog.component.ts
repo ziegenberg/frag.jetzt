@@ -22,10 +22,10 @@ import { NgxQRCodeComponent } from 'ngx-qrcode2';
 export class QrCodeDialogComponent implements OnInit, AfterViewInit {
 
   @ViewChild(NgxQRCodeComponent) code: NgxQRCodeComponent;
-  @ViewChild('imageWrapper')imgWrp: ElementRef;
+  @ViewChild('imageWrapper') imgWrp: ElementRef;
 
   private img: HTMLImageElement;
-  private qrCode = '';
+  qrCode = '';
 
   confirmButtonType: DialogConfirmActionButtonType = DialogConfirmActionButtonType.Primary;
 
@@ -34,7 +34,8 @@ export class QrCodeDialogComponent implements OnInit, AfterViewInit {
     private dialogRef: MatDialogRef<QrCodeDialogComponent>,
     private ref: ElementRef,
     private render: Renderer2
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
   }
