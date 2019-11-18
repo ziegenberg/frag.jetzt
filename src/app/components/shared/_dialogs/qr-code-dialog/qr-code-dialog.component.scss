@@ -8,6 +8,10 @@
   background-color: #FFFFFF;
 }
 
+.qr_header > h2{
+  color:black;
+}
+
 .qr_header > button {
   margin-right: 16px;
   margin-top: 12px;
@@ -25,8 +29,8 @@
   height: calc(100% - 64px);
   position: absolute;
   left: 0px;
-  image-rendering: pixelated;
   top: 64px;
+  image-rendering: pixelated;
   background-color: #FFFFFF;
 }
 
@@ -34,30 +38,10 @@
   display: none;
 }
 
-a {
-  color: blue;
-}
-
-//mobile devices
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .qrheader {
-    padding-left: 11%;
-    padding-top: 35%
-  }
-}
-
-//tablets
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .qrheader {
-    padding-left: 11%;
-    padding-top: 20%
-  }
-}
-
-//desktops
-@media only screen and (min-width: 1224px) {
-  .qrheader {
-    padding-left: 25em;
-    padding-top: 3em
-  }
+.qr_text{
+  float:left;
+  position:fixed;
+  left:50%;
+  top:0px;
+  transform:translate(-50%);
 }

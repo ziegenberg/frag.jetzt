@@ -23,6 +23,7 @@ export class QrCodeDialogComponent implements OnInit, AfterViewInit {
 
   @ViewChild(NgxQRCodeComponent) code: NgxQRCodeComponent;
   @ViewChild('imageWrapper') imgWrp: ElementRef;
+  @ViewChild('text') text: ElementRef;
 
   private img: HTMLImageElement;
   qrCode = '';
@@ -41,6 +42,24 @@ export class QrCodeDialogComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    window.addEventListener('resize', e => {
+      this.onresize();
+    });
+    this.onresize();
+  }
+
+  private onresize() {
+    const width = this.imgWrp.nativeElement.offsetWidth;
+    const height = this.imgWrp.nativeElement.offsetHeight;
+    if (width > height) {this.setPosition(height); } else { this.setPosition(width); }
+  }
+
+  private setPosition(offset: number) {
+    this.render.setStyle(
+      this.text.nativeElement,
+      'margin-left',
+      (-offset / 2) + (this.text.nativeElement.offsetWidth / 2) + (offset / 10) + 'px'
+    );
   }
 
   public setQRCode(url: string) {
