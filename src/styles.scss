@@ -20,7 +20,7 @@ body{
   height:100%;
   overflow:hidden;
 }
-
+/*
 ::-webkit-scrollbar{
   width: 12px;
   background-color: var(--on-secondary);
@@ -34,7 +34,7 @@ body{
 ::-webkit-scrollbar-track-piece {
   background-color: var(--surface);
 }
-
+*/
 .dark {
   @include angular-material-theme($dark-theme);
 }
