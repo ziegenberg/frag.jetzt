@@ -1,0 +1,39 @@
+<ars-style-typography-material>
+  <ars-screen class="dialog">
+    <div class="dialog-align-vertical" #vertAlign>
+      <div class="dialog-align-horizontal" #hortAlign>
+        <div class="dialog-container-header">
+          <h1 class="dialog-typo-title">
+            {{title}}
+          </h1>
+        </div>
+        <div class="dialog-container-content" #containerContent>
+          <p class="typo-page-p">
+            {{description}}
+          </p>
+        </div>
+        <div class="dialog-container-footer">
+          <button *ngFor="let button of btn" (click)="onButtonClick(button);">
+            {{button.name}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </ars-screen>
+</ars-style-typography-material>
+
+<!--
+<div class="dialog-container">
+  <ars-row [height]="50" class="dialog-container-header">
+    <h1 class="typo-page-h dialog-container-header-title">Hallo</h1>
+  </ars-row>
+  <ars-row class="dialog-container-content">
+    <h1 class="typo-page-h">Hallo</h1>
+    <h1 class="typo-page-h">Hallo</h1>
+    <h1 class="typo-page-h">Hallo</h1>
+    <h1 class="typo-page-h">Hallo</h1>
+    <h1 class="typo-page-h">Hallo</h1>
+  </ars-row>
+  <ars-row [height]="50" class="dialog-container-footer"></ars-row>
+</div>
+-->

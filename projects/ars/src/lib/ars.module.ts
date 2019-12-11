@@ -12,6 +12,8 @@ import { FrameTestComponent } from './components/test/layout/frame/frame-test/fr
 import { RespComponent } from './components/layout/base/resp/resp.component';
 import { ScrollDirective } from './components/layout/base/scroll/ScrollDirective';
 import { MaterialTypographyComponent } from './components/style/typography/material-typography/material-typography.component';
+import { DialogBaseComponent } from './components/content/dialog/dialog-base/dialog-base.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { MaterialTypographyComponent } from './components/style/typography/mater
     FrameTestComponent,
     RespComponent,
     ScrollDirective,
-    MaterialTypographyComponent
+    MaterialTypographyComponent,
+    DialogBaseComponent
   ],
   imports: [
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    CommonModule
   ],
   exports: [
     ArsComponent,
@@ -40,6 +44,9 @@ import { MaterialTypographyComponent } from './components/style/typography/mater
     WrapperDirective,
     FrameTestComponent,
     ScrollDirective
+  ],
+  entryComponents: [
+    DialogBaseComponent
   ]
 })
 export class ArsModule { }
