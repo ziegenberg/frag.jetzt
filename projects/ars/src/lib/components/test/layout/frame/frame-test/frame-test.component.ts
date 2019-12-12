@@ -25,16 +25,20 @@ export class FrameTestComponent implements OnInit,AfterViewInit {
   createDialog(){
     const dialog:DialogInstance<DialogBaseComponent>=DialogBuilder.createDialog();
     const instance=dialog.instance;
-    dialog.createEscape();
-    instance.description='test';
-    instance.width=800;
+    instance.title='Use Google\'s location service?';
+    instance.description='Material Design UIs are displayed in an environment that expresses three-dimensional (3D) space using light, surfaces, and cast shadows. All elements in the Material environment move horizontally, vertically, and at varying depths along the z-axis. Depth is depicted by placing elements at various points along the positive z-axis extending towards the viewer.';
+    instance.width=500;
     instance
-      .addButton('einbutton',()=>{
+      .addButton('disagree',()=>{
         console.log('ok');
       })
-      .addButton('zweibutton',()=>{
+      .addButton('agree',()=>{
         console.log('notok');
       });
+    instance.onAfterViewInit.subscribe(()=>{
+      dialog.setLastFocus(document.activeElement);
+      instance.trapFocus();
+    });
   }
 
 }

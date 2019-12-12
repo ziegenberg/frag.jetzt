@@ -1,10 +1,25 @@
-import { AfterViewInit, Component, ElementRef, Inject, Injector, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Inject,
+  Injector,
+  Input,
+  OnInit,
+  Output,
+  Renderer2,
+  ViewChild
+} from '@angular/core';
 import { ColComponent } from '../../../layout/frame/col/col.component';
 import { FillComponent } from '../../../layout/frame/fill/fill.component';
+import { CdkTrapFocus } from '@angular/cdk/a11y';
 
 export interface DialogButton{
 
   name:string;
+  ariaLabel:string;
+  title:string;
   color?:string;
   evt:VoidFunction;
 
@@ -17,6 +32,8 @@ export interface DialogButton{
 })
 export class DialogBaseComponent implements OnInit,AfterViewInit {
 
+  @Output() onAfterViewInit:EventEmitter<void>=new EventEmitter<void>();
+  @Output() onRequestClose:EventEmitter<void>=new EventEmitter<void>();
   @Input() width:number=500;
   @Input() fill:boolean=false;
   @Input() description:string;
@@ -25,16 +42,21 @@ export class DialogBaseComponent implements OnInit,AfterViewInit {
   @ViewChild('vertAlign')vertAlignRef:ElementRef;
   @ViewChild('hortAlign')hortAlignRef:ElementRef;
   @ViewChild('containerContent')contentRef:ElementRef;
+  @ViewChild(CdkTrapFocus)focusTrap:CdkTrapFocus;
 
   constructor(private ref:ElementRef,private render:Renderer2) { }
 
   ngOnInit() {
   }
 
-  public addButton(name:string,evt:VoidFunction):DialogBaseComponent{
+  public addButton(name:string,evt:VoidFunction,ariaLabel?:string,title?:string):DialogBaseComponent{
+    const ariaLabelTmp=typeof ariaLabel==='undefined'?name:ariaLabel;
+    const titleTmp=typeof title==='undefined'?name:title;
     this.btn.push({
       name:name,
-      evt:evt
+      evt:evt,
+      ariaLabel:ariaLabelTmp,
+      title:titleTmp
     });
     return this;
   }
@@ -49,6 +71,25 @@ export class DialogBaseComponent implements OnInit,AfterViewInit {
       this.render.setStyle(this.contentRef.nativeElement,'flex-grow','1');
     }
     this.render.setStyle(this.vertAlignRef.nativeElement,'width',this.width+'px');
+    this.onAfterViewInit.emit();
+  }
+
+  private closeByOverlay(e:MouseEvent){
+    if(e.target!==e.currentTarget){
+      e.cancelBubble=true;
+      return;
+    }
+    this.close();
+  }
+
+  private close(){
+    this.onRequestClose.emit();
+  }
+
+  public trapFocus():DialogBaseComponent{
+    this.focusTrap.focusTrap.enabled=true;
+    this.focusTrap.focusTrap.focusFirstTabbableElement();
+    return this;
   }
 
 }

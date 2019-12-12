@@ -1,4 +1,7 @@
 
+$dialog-padding-base:24px;
+$dialog-button-space-between:12px;
+
 .dialog{
   background-color:rgba(0,0,0,0.5);
   z-index:3;
@@ -28,50 +31,52 @@
     width:100%;
     height:100%;
     &-header{
-      height:50px;
       display:flex;
       flex-direction:column;
       justify-content:center;
       flex-shrink:0;
       box-sizing: border-box;
-      padding-left:16px;
-      padding-right:16px;
-      &-title{
-      }
+      padding-left:$dialog-padding-base;
+      padding-right:$dialog-padding-base;
+      padding-top:$dialog-padding-base;
+      padding-bottom:10px;
     }
     &-content{
       width:100%;
       display:flex;
       flex-direction:column;
       overflow-y:auto;
-      border-top:1px solid rgba(0,0,0,0.2);
-      border-bottom:1px solid rgba(0,0,0,0.2);
       box-sizing: border-box;
-      padding: 5px 16px;
+      padding-left:$dialog-padding-base;
+      padding-right:$dialog-padding-base;
+      padding-bottom:$dialog-padding-base;
+      padding-top:10px;
     }
     &-footer{
-      height:50px;
+      height:60px;
       flex-shrink:0;
+      display:flex;
+      flex-direction:row;
+      justify-content:flex-end;
+      &-btn{
+        >*{
+          padding-left:$dialog-button-space-between;
+          padding-right:$dialog-button-space-between;
+        }
+        >:first-child{
+          padding-left:$dialog-padding-base;
+        }
+        >:last-child{
+          padding-right:$dialog-padding-base;
+        }
+      }
     }
   }
   &-typo{
     &-title{
       font-size:18px;
+      font-weight:500;
+      line-height:24px;
     }
   }
-}
-
-.row{
-  width:100%;
-  height:50px;
-  flex-shrink: 0;
-}
-
-.fill{
-  width:100%;
-  padding-top:5px;
-  padding-bottom:5px;
-  display:flex;
-  flex-direction:column;
-  overflow-y:auto;
 }

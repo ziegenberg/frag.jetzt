@@ -22,7 +22,13 @@ export class DialogBuilder{
     const portal:ComponentPortal<DialogBaseComponent>=new ComponentPortal<DialogBaseComponent>(DialogBaseComponent,null,);
     const component:ComponentRef<DialogBaseComponent>=dialog.attach(portal);
     const instance:DialogBaseComponent=component.instance;
-    return new DialogInstance<DialogBaseComponent>(dialog,portal,component,instance);
+    const dialogInstance=new DialogInstance<DialogBaseComponent>(dialog,portal,component,instance);
+    instance.onRequestClose.subscribe(()=>{
+      dialogInstance.close();
+    });
+    dialogInstance.setLastFocus();
+    dialogInstance.createEscape();
+    return dialogInstance;
   }
 
   private constructor(public overlay:Overlay) {}
