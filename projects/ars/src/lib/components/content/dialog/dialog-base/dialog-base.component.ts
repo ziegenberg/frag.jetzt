@@ -49,6 +49,26 @@ export class DialogBaseComponent implements OnInit,AfterViewInit {
   ngOnInit() {
   }
 
+  public setTitle(title:string):DialogBaseComponent{
+    this.title=title;
+    return this;
+  }
+
+  public setDescription(description:string):DialogBaseComponent{
+    this.description=description;
+    return this;
+  }
+
+  public setWidth(width:number):DialogBaseComponent{
+    this.width=width;
+    return this;
+  }
+
+  public setOnAfterViewInit(e:VoidFunction):DialogBaseComponent{
+    this.onAfterViewInit.subscribe(()=>e());
+    return this;
+  }
+
   public addButton(name:string,evt:VoidFunction,ariaLabel?:string,title?:string):DialogBaseComponent{
     const ariaLabelTmp=typeof ariaLabel==='undefined'?name:ariaLabel;
     const titleTmp=typeof title==='undefined'?name:title;

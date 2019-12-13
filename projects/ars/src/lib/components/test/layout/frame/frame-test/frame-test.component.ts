@@ -25,9 +25,9 @@ export class FrameTestComponent implements OnInit,AfterViewInit {
   createDialog(){
     const dialog:DialogInstance<DialogBaseComponent>=DialogBuilder.createDialog();
     const instance=dialog.instance;
+    /*
     instance.title='Use Google\'s location service?';
     instance.description='Material Design UIs are displayed in an environment that expresses three-dimensional (3D) space using light, surfaces, and cast shadows. All elements in the Material environment move horizontally, vertically, and at varying depths along the z-axis. Depth is depicted by placing elements at various points along the positive z-axis extending towards the viewer.';
-    instance.width=500;
     instance
       .addButton('disagree',()=>{
         console.log('ok');
@@ -39,6 +39,25 @@ export class FrameTestComponent implements OnInit,AfterViewInit {
       dialog.setLastFocus(document.activeElement);
       instance.trapFocus();
     });
+     */
+    dialog.instance
+      .setTitle('Use Google\'s location service?')
+      .setDescription(
+        'Material Design UIs are displayed in an environment that ' +
+        'expresses three-dimensional (3D) space using light, surfaces, ' +
+        'and cast shadows. All elements in the Material environment move ' +
+        'horizontally, vertically, and at varying depths along the z-axis. ' +
+        'Depth is depicted by placing elements at various points along the ' +
+        'positive z-axis extending towards the viewer.')
+      .addButton('agree',()=>{
+        console.log('ok');
+      })
+      .addButton('disagree',()=>{
+        console.log('not ok');
+      })
+      .setOnAfterViewInit(()=>{
+        dialog.instance.trapFocus();
+      });
   }
 
 }
