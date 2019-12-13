@@ -2,7 +2,7 @@
   <ars-style-button-material>
     <ars-screen class="dialog" cdkTrapFocus (click)="closeByOverlay($event);">
       <div class="dialog-limbo">
-        <div tabindex="0">Dialog. Tab to continue. Escape to close dialog</div>
+        <div tabindex="0" #dialogLimbo>Dialog. Tab to continue. Escape to close dialog</div>
       </div>
       <div class="dialog-align-vertical" #vertAlign>
         <div class="dialog-align-horizontal" #hortAlign>

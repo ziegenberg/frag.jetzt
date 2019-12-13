@@ -21,6 +21,8 @@ import { QrCodeDialogComponent } from '../_dialogs/qr-code-dialog/qr-code-dialog
 import { BonusTokenService } from '../../../services/http/bonus-token.service';
 import { BonusToken } from '../../../models/bonus-token';
 import { AuthProvider } from '../../../models/auth-provider';
+import { DialogBuilder } from '../../../../../projects/ars/src/lib/models/util/dialog/DialogBuilder';
+import { DebugBorder } from '../../../../../projects/ars/src/lib/models/debug/DebugBorder';
 
 @Component({
   selector: 'app-header',
@@ -187,10 +189,31 @@ export class HeaderComponent implements OnInit {
   }
 
   openUserBonusTokenDialog() {
-    const dialogRef = this.dialog.open(UserBonusTokenComponent, {
-      width: '600px'
+    // DebugBorder.border('c');
+    this.bonusTokenService.getTokensByUserId(this.user.id).subscribe(list=>{
+      const dialog=DialogBuilder.createDialog();
+      let description="";
+      if(list.length==0)description="No Bonustoken.";
+      else {
+        list.forEach(f=>{
+          description+=f.token+' ';
+        });
+      }
+      dialog.instance
+        .setTitle("Bonustoken")
+        .setDescription(description)
+        .addButton("got it",()=>{
+          dialog.close();
+        })
+        .setOnAfterViewInit(()=>{
+          dialog.instance.trapFocus();
+        });
+      dialog.instance.trapFocus();
     });
-    dialogRef.componentInstance.userId = this.user.id;
+    // const dialogRef = this.dialog.open(UserBonusTokenComponent, {
+    //   width: '600px'
+    // });
+    // dialogRef.componentInstance.userId = this.user.id;
   }
 
   cookiesDisabled(): boolean {

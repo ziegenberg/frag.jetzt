@@ -41,6 +41,7 @@ export class DialogBaseComponent implements OnInit,AfterViewInit {
   @Input() btn:DialogButton[]=[];
   @ViewChild('vertAlign')vertAlignRef:ElementRef;
   @ViewChild('hortAlign')hortAlignRef:ElementRef;
+  @ViewChild('dialogLimbo')dialogLimboRef:ElementRef;
   @ViewChild('containerContent')contentRef:ElementRef;
   @ViewChild(CdkTrapFocus)focusTrap:CdkTrapFocus;
 
@@ -108,7 +109,9 @@ export class DialogBaseComponent implements OnInit,AfterViewInit {
 
   public trapFocus():DialogBaseComponent{
     this.focusTrap.focusTrap.enabled=true;
-    this.focusTrap.focusTrap.focusFirstTabbableElement();
+    setTimeout(()=>{
+      this.dialogLimboRef.nativeElement.focus();
+    },0);
     return this;
   }
 
