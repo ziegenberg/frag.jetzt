@@ -1,6 +1,8 @@
 
 $snap-width:600px;
 $snap-width-micro:300px;
+$header-color:#212121;
+$paragraph-color:#616161;
 
 :host ::ng-deep {
   body{
@@ -23,7 +25,7 @@ $snap-width-micro:300px;
   }
 
   a{
-    color:#212121;
+    color:$paragraph-color;
   }
 
   .typo{
@@ -31,7 +33,7 @@ $snap-width-micro:300px;
       &-h{
         font-size:3.75em;
         line-height:1.1em;
-        color:#212121;
+        color:$header-color;
         hyphens:auto;
         @media screen and (max-width:$snap-width){
           font-size:3.55em;
@@ -48,7 +50,7 @@ $snap-width-micro:300px;
       &-p{
         font-size:1.25em;
         line-height:1.5em;
-        color:#616161;
+        color:$paragraph-color;
         hyphens:auto;
         @media screen and (max-width:$snap-width){
           font-size:1.6em;
@@ -59,7 +61,7 @@ $snap-width-micro:300px;
       &-h{
         font-size:2em;
         line-height:1em;
-        color:#212121;
+        color:$header-color;
         hyphens:auto;
         &.space{
           &-page-p{
@@ -72,7 +74,7 @@ $snap-width-micro:300px;
       &-h{
         font-size:1.25em;
         line-height:1.2em;
-        color:#212121;
+        color:$header-color;
         hyphens:auto;
         @media screen and (max-width:$snap-width){
           font-size:1.8em;
@@ -89,7 +91,7 @@ $snap-width-micro:300px;
       &-p{
         font-size:1em;
         line-height:1.5em;
-        color:#616161;
+        color:$paragraph-color;
         hyphens:auto;
         @media screen and (max-width:$snap-width){
           font-size:16px;

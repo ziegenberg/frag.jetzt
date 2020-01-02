@@ -22,7 +22,8 @@
       width:100%;
       display:flex;
       flex-direction:column;
-      overflow-y:auto;
+      overflow-y:scroll;
+      -webkit-overflow-scrolling:touch;
       box-sizing:border-box;
     }
     &-footer{
