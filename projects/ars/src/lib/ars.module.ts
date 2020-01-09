@@ -18,6 +18,9 @@ import { DialogBoxContentComponent } from './components/content/dialog/dialog-bo
 import { MaterialDialogComponent } from './components/style/dialog/material-dialog/material-dialog.component';
 import { CommonModule } from '@angular/common';
 import { DialogFullscreenComponent } from './components/content/dialog/dialog-fullscreen/dialog-fullscreen.component';
+import { DialogTestComponent } from './components/test/dialog-test/dialog-test.component';
+import { DiaOverlayComponent } from './components/test/dialog/dia-overlay/dia-overlay.component';
+import { DiaContentComponent } from './components/test/dialog/dia-content/dia-content.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { DialogFullscreenComponent } from './components/content/dialog/dialog-fu
     DialogBoxComponent,
     DialogBoxContentComponent,
     MaterialDialogComponent,
-    DialogFullscreenComponent
+    DialogFullscreenComponent,
+    DialogTestComponent,
+    DiaOverlayComponent,
+    DiaContentComponent
   ],
   imports: [
     MatIconModule,
@@ -57,13 +63,16 @@ import { DialogFullscreenComponent } from './components/content/dialog/dialog-fu
     ColComponent,
     FillComponent,
     DialogFullscreenComponent,
-    MaterialDialogComponent
+    MaterialDialogComponent,
+    DialogTestComponent
   ],
   entryComponents: [
     DialogOverlayComponent,
     DialogBoxComponent,
     DialogBoxContentComponent,
-    DialogFullscreenComponent
+    DialogFullscreenComponent,
+    DiaOverlayComponent,
+    DiaContentComponent
   ]
 })
 export class ArsModule { }
