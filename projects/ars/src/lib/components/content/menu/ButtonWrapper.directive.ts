@@ -46,8 +46,6 @@ export class ButtonWrapperDirective implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
 
-    console.log(this.btn);
-
     // init direction of all buttons
     // when btn-wrp is col => menu must be row => horizontal-menu => all buttons fill height
     // when btn-wrp is row => menu must be col => vertical-menu => all buttons fill width
