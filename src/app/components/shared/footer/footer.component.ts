@@ -155,8 +155,13 @@ export class FooterComponent implements OnInit {
   }
 
   updateScale(theme: Theme) {
-    AppComponent.rescale.setInitialScale(theme.scale);
-    AppComponent.rescale.setDefaultScale(theme.scale);
+    if (this.deviceType === 'mobile') {
+      AppComponent.rescale.setInitialScale(1);
+      AppComponent.rescale.setDefaultScale(1);
+    } else {
+      AppComponent.rescale.setInitialScale(theme.scale);
+      AppComponent.rescale.setDefaultScale(theme.scale);
+    }
   }
 
   getLanguage(): string {
