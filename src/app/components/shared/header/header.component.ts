@@ -19,6 +19,9 @@ import { UserBonusTokenComponent } from '../../participant/_dialogs/user-bonus-t
 import { RemindOfTokensComponent } from '../../participant/_dialogs/remind-of-tokens/remind-of-tokens.component';
 import { QrCodeDialogComponent } from '../_dialogs/qr-code-dialog/qr-code-dialog.component';
 import { BonusTokenService } from '../../../services/http/bonus-token.service';
+import { SwPush } from '@angular/service-worker';
+import { filter, switchMap, tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-header',
@@ -32,6 +35,7 @@ export class HeaderComponent implements OnInit {
   deviceType: string;
   isSafari = 'false';
   moderationEnabled: boolean;
+  canRegister = false;
 
   constructor(public location: Location,
               private authenticationService: AuthenticationService,
@@ -42,7 +46,9 @@ export class HeaderComponent implements OnInit {
               private userService: UserService,
               public eventService: EventService,
               private bonusTokenService: BonusTokenService,
-              private _r: Renderer2
+              private _r: Renderer2,
+              private swPush: SwPush,
+              private httpClient: HttpClient
   ) {
   }
 
@@ -119,6 +125,10 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
+    this.swPush.subscription.pipe(tap(sub => this.canRegister = !sub && Notification.permission !== 'denied'),
+      filter(sub => !!sub),
+      switchMap(sub => this.httpClient.post('/api/push', sub.toJSON()))
+    ).subscribe();
   }
 
   getTime(time: Date) {
@@ -235,6 +245,12 @@ export class HeaderComponent implements OnInit {
     qrDialog.setQRCode(this.getQRCode());
     dialogRef.afterClosed().subscribe(res => {
       Rescale.exitFullscreen();
+    });
+  }
+
+  async registerForPush() {
+    await this.swPush.requestSubscription({
+      serverPublicKey: 'BH7orZkFMI7qr9oqisrfq3jaExYTqpHKfEUZ6gCIFLcYlL5UvdJ65q1R2Z0ys8_KgKpmJvcIdZYu8CFWjqQ3ROI'
     });
   }
 

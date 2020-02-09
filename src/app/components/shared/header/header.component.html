@@ -38,6 +38,10 @@
     </button>
     <span class="fill-remaining-space"></span>
 
+    <button [disabled]="cookiesDisabled()" mat-icon-button (click)="registerForPush()">
+      <mat-icon class="header-icons">notifications</mat-icon>
+    </button>
+
     <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
       <button mat-menu-item *ngIf="user" routerLink="/user" tabindex="0">
         <mat-icon class="sessions">people</mat-icon>
