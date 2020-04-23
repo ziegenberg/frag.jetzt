@@ -148,10 +148,18 @@
 </div>
 
 <div *ngIf="!isLoading">
-  <app-comment *ngFor="let current of hideCommentsList ? filteredComments : comments" [comment]="current"
-                [parseVote]="getVote(current)" [userRole]="userRole" [moderator]="false"
-               (clickedOnTag)="clickedOnTag($event)" (clickedUserNumber)="clickedUserNumber($event)">
-              </app-comment>
+  <ars-row [height]="600">
+    <cdk-virtual-scroll-viewport [itemSize]="300" style="width:100%;height:100%;">
+      <app-comment *cdkVirtualFor="let current of hideCommentsList?filteredComments:comments;templateCacheSize:0"
+                   [comment]="current" [parseVote]="getVote(current)" [userRole]="userRole"
+                   [moderator]="false" (clickedOnTag)="clickedOnTag($event)" (clickedUserNumber)="clickedUserNumber($event)">
+      </app-comment>
+    </cdk-virtual-scroll-viewport>
+  </ars-row>
+<!--  <app-comment *ngFor="let current of hideCommentsList ? filteredComments : comments" [comment]="current"-->
+<!--               [parseVote]="getVote(current)" [userRole]="userRole" [moderator]="false"-->
+<!--               (clickedOnTag)="clickedOnTag($event)" (clickedUserNumber)="clickedUserNumber($event)">-->
+<!--  </app-comment>-->
 </div>
 <!-- No Questions Present -->
 <div *ngIf="comments && comments.length < 1 && !isLoading" fxLayout="row" fxLayoutAlign="center center"

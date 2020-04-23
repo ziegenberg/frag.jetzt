@@ -26,6 +26,7 @@ import { CommentAnswerComponent } from './comment-answer/comment-answer.componen
 import { MarkdownModule } from 'ngx-markdown';
 import { MatRippleModule } from '@angular/material/core';
 import { QRCodeModule } from 'angularx-qrcode';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { QRCodeModule } from 'angularx-qrcode';
     MatRippleModule,
     ArsModule,
     MarkdownModule,
-    QRCodeModule
+    QRCodeModule,
+    ScrollingModule
   ],
   declarations: [
     RoomJoinComponent,
