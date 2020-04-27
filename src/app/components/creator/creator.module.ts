@@ -22,24 +22,26 @@ import { MarkdownModule } from 'ngx-markdown';
 import { DeleteAnswerComponent } from './_dialogs/delete-answer/delete-answer.component';
 import { QuestionWallComponent } from '../shared/questionwall/question-wall/question-wall.component';
 import { ArsModule } from '../../../../projects/ars/src/lib/ars.module';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
-  imports: [
+  imports:[
     CommonModule,
     CreatorRoutingModule,
     EssentialsModule,
     SharedModule,
     ModeratorModule,
     TranslateModule.forChild({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (HttpLoaderFactory),
-        deps: [HttpClient]
+      loader:{
+        provide:TranslateLoader,
+        useFactory:(HttpLoaderFactory),
+        deps:[HttpClient]
       },
-      isolate: true
+      isolate:true
     }),
     MarkdownModule,
-    ArsModule
+    ArsModule,
+    ScrollingModule
   ],
   declarations: [
     RoomCreatorPageComponent,

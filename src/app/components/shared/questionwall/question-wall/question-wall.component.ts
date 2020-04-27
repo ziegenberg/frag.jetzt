@@ -35,6 +35,7 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
   hasFilter = false;
   filterTitle = 'Test';
   filterDesc = 'test';
+  init = false;
 
   public wrap<E>(e: E, action: (e: E) => void) {
     action(e);
@@ -74,6 +75,7 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
         const comment = new QuestionWallComment(c, true);
         this.comments.push(comment);
       });
+      this.init = true;
     });
     this.roomService.getRoom(this.roomId).subscribe(e => {
       this.room = e;
@@ -126,11 +128,16 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   getDOMComments() {
-    return Array.from(document.getElementsByClassName('questionwall-comment-anchor'));
+    const tmp = Array.from(document.getElementsByClassName('questionwall-comment-anchor'));
+    console.log(tmp);
+    return tmp;
   }
 
   getDOMCommentFocus() {
-    return this.getDOMComments()[this.getCommentFocusIndex()];
+    // return this.getDOMComments()[this.getCommentFocusIndex()];
+    const tmp = this.getDOMComments().find(x => x.id === this.commentFocus.comment.id);
+    console.log('FOCUS', tmp);
+    return tmp;
   }
 
   getCommentFocusIndex() {
@@ -202,11 +209,10 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
     } else {
       commentList.sort(fun);
     }
-    setTimeout(() => {
-      if (commentList.length > 1) {
-        this.focusComment(commentList[commentList.length - 1]);
-      }
-    }, 0);
+    if (commentList.length > 1) {
+      console.log(this.getCurrentCommentList()[this.getCurrentCommentList().length - 1]);
+      this.focusComment(this.getCurrentCommentList()[this.getCurrentCommentList().length - 1]);
+    }
   }
 
   getCurrentCommentList() {
