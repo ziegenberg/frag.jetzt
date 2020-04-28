@@ -1,4 +1,5 @@
 import { Comment } from '../../../models/comment';
+import { EventEmitter } from '@angular/core';
 
 export class QuestionWallComment {
 
@@ -24,6 +25,7 @@ export class QuestionWallComment {
 
   public date: Date;
   public timeAgo: string;
+  public action: EventEmitter<void> = new EventEmitter<void>();
 
   public static updateTimeFormat(lang: string) {
     this.currentTimeFormat = this['TIME_FORMAT_' + lang.toUpperCase()];

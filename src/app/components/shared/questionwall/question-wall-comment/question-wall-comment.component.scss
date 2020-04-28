@@ -1,0 +1,21 @@
+:host{
+  &-icon{
+    font-family:'Material Icons', serif;
+    font-weight:normal;
+    font-style:normal;
+    font-size:18px;
+    line-height:18px;
+    padding:0;
+    margin:0;
+    color:var(--ars-header-color);
+  }
+  p,h1,h2,h3,h4,h5{
+    font-family:Roboto, 'sans-serif';
+    padding:0;
+    margin:0;
+    color:var(--ars-header-color);
+  }
+  .comment-outer{
+    border-bottom:solid 1px var(--ars-border-color);
+  }
+}

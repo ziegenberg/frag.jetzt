@@ -26,6 +26,7 @@ import { CommentAnswerComponent } from './comment-answer/comment-answer.componen
 import { MarkdownModule } from 'ngx-markdown';
 import { MatRippleModule } from '@angular/material/core';
 import { QRCodeModule } from 'angularx-qrcode';
+import { QuestionWallCommentComponent } from './questionwall/question-wall-comment/question-wall-comment.component';
 
 @NgModule({
   imports: [
@@ -57,7 +58,8 @@ import { QRCodeModule } from 'angularx-qrcode';
     DialogActionButtonsComponent,
     QrCodeDialogComponent,
     RemoveFromHistoryComponent,
-    CommentAnswerComponent
+    CommentAnswerComponent,
+    QuestionWallCommentComponent
   ],
   exports: [
     RoomJoinComponent,
@@ -72,7 +74,8 @@ import { QRCodeModule } from 'angularx-qrcode';
     PresentCommentComponent,
     CommentComponent,
     DialogActionButtonsComponent,
-    UserBonusTokenComponent
+    UserBonusTokenComponent,
+    QuestionWallCommentComponent
   ]
 })
 export class SharedModule {

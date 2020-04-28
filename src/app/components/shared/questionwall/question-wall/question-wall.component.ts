@@ -13,6 +13,7 @@ import { LanguageService } from '../../../../services/util/language.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Rescale } from '../../../../models/rescale';
 import { QuestionWallKeyEventSupport } from '../QuestionWallKeyEventSupport';
+import { QuestionWallCommentComponent } from '../question-wall-comment/question-wall-comment.component';
 
 @Component({
   selector: 'app-question-wall',
@@ -35,6 +36,8 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
   hasFilter = false;
   filterTitle = 'Test';
   filterDesc = 'test';
+  init = false;
+  _this = this;
 
   public wrap<E>(e: E, action: (e: E) => void) {
     action(e);
@@ -74,6 +77,7 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
         const comment = new QuestionWallComment(c, true);
         this.comments.push(comment);
       });
+      this.init = true;
     });
     this.roomService.getRoom(this.roomId).subscribe(e => {
       this.room = e;
@@ -141,20 +145,20 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.comments.length === 0) {
       return;
     } else if (!this.commentFocus) {
-      this.focusComment(this.comments[0]);
+      // this.focusComment(this.comments[0]);
     } else {
       const cursor = this.getCommentFocusIndex();
       if (cursor + fx >= this.comments.length || cursor + fx < 0) {
         return;
       } else {
-        this.focusComment(this.comments[cursor + fx]);
+        this.comments[cursor + fx].action.emit();
       }
     }
   }
 
   pushIncommingComment(comment: Comment): QuestionWallComment {
     const qwComment = new QuestionWallComment(comment, false);
-    this.comments.push(qwComment);
+    this.comments = [...this.comments, qwComment];
     this.unreadComments++;
     return qwComment;
   }
@@ -165,7 +169,15 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
       comment.old = true;
       this.unreadComments--;
     }
-    this.getDOMCommentFocus().scrollIntoView({
+  }
+
+  focusCommentComponent(comment: QuestionWallCommentComponent) {
+    this.focusComment(comment.comment);
+    this.scrollIntoView(comment.ref.nativeElement);
+  }
+
+  scrollIntoView(element: Element) {
+    element.scrollIntoView({
       behavior: 'smooth',
       block: 'center'
     });
@@ -241,6 +253,10 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
 
   toggleFilter() {
     this.hasFilter = !this.hasFilter;
+  }
+
+  execTask(task: (q: QuestionWallComponent) => void) {
+    task(this);
   }
 
 }

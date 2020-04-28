@@ -46,7 +46,32 @@
       <ars-fill>
       </ars-fill>
     </ars-fill>
-    <ars-col [width]="450" [overflow]="'auto'" class="questionwall-list" #colComponent>
+    <ars-col [width]="450" ars-flex-box class="questionwall-list">
+      <ars-row>
+        <ars-row *ngIf="hasFilter" [height]="50" class="questionwall-list-filter">
+          <ars-style-btn-material style="width:100%;height:100%;" ars-flex-box>
+            <ars-col>
+              <p>{{filterTitle}} {{filterDesc}}</p>
+            </ars-col>
+            <ars-fill>
+            </ars-fill>
+            <ars-col>
+              <button (click)="deactivateFilter()">deactivate</button>
+            </ars-col>
+          </ars-style-btn-material>
+        </ars-row>
+      </ars-row>
+      <ars-fill *ngIf="init">
+        <cdk-virtual-scroll-viewport [itemSize]="100" style="width:100%;height:100%;">
+          <app-question-wall-comment *cdkVirtualFor="let comment of hasFilter?commentsFilter:comments"
+                                     [comment]="comment" (action)="execTask($event);">
+          </app-question-wall-comment>
+        </cdk-virtual-scroll-viewport>
+      </ars-fill>
+      <ars-fill *ngIf="!init">
+        <p>LOADING</p>
+      </ars-fill>
+      <!--
       <ars-row *ngIf="hasFilter" class="questionwall-list-filter" [height]="45">
         <ars-style-btn-material style="width:100%;height:100%;" ars-flex-box>
           <ars-col ars-btn-wrp [xp]="48">
@@ -74,13 +99,6 @@
               <ars-col>
                 <p class="questionwall-comment-notification">{{comment.old?'':'NEW'}}</p>
               </ars-col>
-              <ars-col>
-<!--                <ars-style-btn-material>-->
-<!--                  <ars-col ars-btn-wrp [xp]="16" [extraStart]="true" class="questionwall-comment-btn">-->
-<!--                    <button ars-btn><i>{{comment.comment.favorite?'star':'star_border'}}</i></button>-->
-<!--                  </ars-col>-->
-<!--                </ars-style-btn-material>-->
-              </ars-col>
             </ars-row>
             <ars-row
               (click)="focusComment(comment)"
@@ -99,6 +117,7 @@
           </ars-row>
         </ars-row>
       </ars-row>
+      -->
     </ars-col>
   </ars-fill>
     <ars-row [height]="50" class="questionwall-footer">

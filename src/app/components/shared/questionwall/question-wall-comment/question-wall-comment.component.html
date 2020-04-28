@@ -1,0 +1,23 @@
+<ars-row class="comment-outer" (click)="focusComment()">
+  <ars-row [height]="50">
+    <ars-style-btn-material style="width:100%;height:100%;">
+      <ars-col ars-btn-wrp [xp]="32">
+        <button ars-btn (click)="filterUser()"><i>person</i><p>{{comment.comment.userNumber}}</p></button>
+        <button ars-btn><p>{{comment.timeAgo}}</p></button>
+      </ars-col>
+    </ars-style-btn-material>
+  </ars-row>
+  <ars-row>
+    <ars-row style="box-sizing:border-box;padding:8px 16px;">
+      <p>{{comment.comment.body}}</p>
+    </ars-row>
+  </ars-row>
+  <ars-row [height]="50">
+    <ars-style-btn-material style="width:100%;height:100%;">
+      <ars-col ars-btn-wrp [xp]="16" [extra]="true">
+        <button ars-btn (click)="like()"><i>thumb_up</i><p style="padding-left:8px">{{comment.comment.score}}</p></button>
+        <button ars-btn (click)="dislike()"><i>thumb_down</i></button>
+      </ars-col>
+    </ars-style-btn-material>
+  </ars-row>
+</ars-row>
