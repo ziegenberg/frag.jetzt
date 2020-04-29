@@ -150,6 +150,20 @@
         color:var(--ars-paragraph-color);
       }
     }
+    &-spinner{
+      &-out{
+        width:100px;
+        height:100px;
+        position:relative;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+      }
+      &-in{
+        float:left;
+        position:relative;
+      }
+    }
   }
 
 }

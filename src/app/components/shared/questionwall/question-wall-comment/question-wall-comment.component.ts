@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { QuestionWallComment } from '../QuestionWallComment';
 import { QuestionWallComponent } from '../question-wall/question-wall.component';
 import { Subscription } from 'rxjs';
@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './question-wall-comment.component.html',
   styleUrls: ['./question-wall-comment.component.scss']
 })
-export class QuestionWallCommentComponent implements OnInit, OnDestroy {
+export class QuestionWallCommentComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() comment: QuestionWallComment;
   @Output() action: EventEmitter<(q: QuestionWallComponent) => void> = new EventEmitter<(q: QuestionWallComponent) => void>();
@@ -22,6 +22,10 @@ export class QuestionWallCommentComponent implements OnInit, OnDestroy {
     this.inputSup = this.comment.action.subscribe(() => {
       this.focusComment();
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.comment.onInit.emit();
   }
 
   ngOnDestroy() {

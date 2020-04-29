@@ -39,6 +39,8 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
   init = false;
   _this = this;
 
+  unloadedComments: QuestionWallComment[] = [];
+
   public wrap<E>(e: E, action: (e: E) => void) {
     action(e);
   }
@@ -72,7 +74,7 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
     QuestionWallComment.updateTimeFormat(localStorage.getItem('currentLang'));
     this.translateService.use(localStorage.getItem('currentLang'));
     this.commentService.getAckComments(this.roomId).subscribe(e => {
-      e.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+      e.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
       e.forEach(c => {
         const comment = new QuestionWallComment(c, true);
         this.comments.push(comment);
@@ -108,7 +110,7 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      Rescale.requestFullscreen();
+      // Rescale.requestFullscreen();
     }, 10);
     document.getElementById('header_rescale').style.display = 'none';
     document.getElementById('footer_rescale').style.display = 'none';
@@ -158,9 +160,29 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
 
   pushIncommingComment(comment: Comment): QuestionWallComment {
     const qwComment = new QuestionWallComment(comment, false);
-    this.comments = [...this.comments, qwComment];
+    // this.comments = [...this.comments, qwComment];
+    this.unloadedComments.push(qwComment);
     this.unreadComments++;
     return qwComment;
+  }
+
+  loadUnreadComments() {
+    this.comments = [...this.unloadedComments, ...this.comments];
+    this.unloadedComments = [];
+  }
+
+  loadNextUnreadComment() {
+    const pop = this.unloadedComments.pop();
+    pop.onInit.subscribe(() => {
+      try {
+        setTimeout(() => {
+          pop.action.emit();
+        }, 0);
+      } catch (e) {
+        console.error(e);
+      }
+    });
+    this.comments = [pop, ...this.comments];
   }
 
   focusComment(comment: QuestionWallComment) {
@@ -214,9 +236,13 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
     } else {
       commentList.sort(fun);
     }
+    if (this.hasFilter) {
+      this.commentsFilter = [...commentList];
+    } else {
+      this.comments = [...commentList];
+    }
     setTimeout(() => {
       if (commentList.length > 1) {
-        this.focusComment(commentList[commentList.length - 1]);
       }
     }, 0);
   }
