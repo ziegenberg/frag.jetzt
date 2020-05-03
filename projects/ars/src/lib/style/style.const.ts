@@ -5,7 +5,8 @@ export const light = {
   'ars-button-color-light': '#727272',
   'ars-background-color': '#fcfcfc',
   'ars-foreground-color': '#FFFFFF',
-  'ars-border-color': '#DDDDDD'
+  'ars-border-color': '#DDDDDD',
+  'ars-border-color-focus': '#c7c7c7'
 };
 
 export const dark = {
@@ -15,5 +16,6 @@ export const dark = {
   'ars-button-color-light': '#909090',
   'ars-background-color': '#212121',
   'ars-foreground-color': '#292929',
-  'ars-border-color': '#2E2E2E'
+  'ars-border-color': '#2E2E2E',
+  'ars-border-color-focus': '#393939'
 };

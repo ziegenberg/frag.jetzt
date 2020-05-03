@@ -17,6 +17,23 @@
   }
   .comment-outer{
     border-bottom:solid 1px var(--ars-border-color);
+    >:first-child{
+      padding-top:8px;
+    }
+    >:last-child{
+      padding-bottom:8px;
+    }
+  }
+  .comment-foc{
+    box-shadow:inset 0px 0px 0px 1px var(--ars-border-color-focus);
+  }
+  .comment-unfoc{
+    box-shadow:inset 0 0 0 0;
+  }
+  .comment-btn{
+    *{
+      color:var(--ars-button-color-light);
+    }
   }
   .comment-notification{
     font-size:12px;

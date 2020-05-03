@@ -124,11 +124,15 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   nextComment() {
-    this.moveComment(1);
+    let list=this.getCurrentCommentList();
+    let idx=list.indexOf(this.commentFocus);
+    console.log(list.length,idx);
+    if(idx+1<list.length){
+      list[idx+1].action.emit();
+    }
   }
 
   prevComment() {
-    this.moveComment(-1);
   }
 
   getDOMComments() {
@@ -143,24 +147,8 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
     return this.getCurrentCommentList().indexOf(this.commentFocus);
   }
 
-  moveComment(fx: number) {
-    if (this.comments.length === 0) {
-      return;
-    } else if (!this.commentFocus) {
-      // this.focusComment(this.comments[0]);
-    } else {
-      const cursor = this.getCommentFocusIndex();
-      if (cursor + fx >= this.comments.length || cursor + fx < 0) {
-        return;
-      } else {
-        this.comments[cursor + fx].action.emit();
-      }
-    }
-  }
-
   pushIncommingComment(comment: Comment): QuestionWallComment {
     const qwComment = new QuestionWallComment(comment, false);
-    // this.comments = [...this.comments, qwComment];
     this.unloadedComments.push(qwComment);
     this.unreadComments++;
     return qwComment;
@@ -283,6 +271,10 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
 
   execTask(task: (q: QuestionWallComponent) => void) {
     task(this);
+  }
+  
+  scrollToTop() {
+    document.getElementById('questionwall-virtual-scroll').scrollTop=0;
   }
 
 }

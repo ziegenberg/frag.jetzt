@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class QuestionWallCommentComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() comment: QuestionWallComment;
+  @Input() commentFocus: QuestionWallComment;
   @Output() action: EventEmitter<(q: QuestionWallComponent) => void> = new EventEmitter<(q: QuestionWallComponent) => void>();
 
   inputSup: Subscription;
