@@ -136,6 +136,7 @@
     "filter-favorite": "Favorites",
     "filter-approved": "Affirmed",
     "filter-disapproved": "Negated",
-    "filter-remove": "Remove Filter"
+    "filter-remove": "Remove Filter",
+    "a11y-introduction": "Das ist englisch"
   }
 }

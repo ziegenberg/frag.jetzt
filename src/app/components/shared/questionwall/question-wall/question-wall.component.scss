@@ -170,4 +170,11 @@
     }
   }
 
+  .liveannouncer-button{
+    opacity:0;
+    &:focus{
+      opacity:1;
+    }
+  }
+
 }

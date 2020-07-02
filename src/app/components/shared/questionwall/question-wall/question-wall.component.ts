@@ -13,6 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Rescale } from '../../../../models/rescale';
 import { QuestionWallKeyEventSupport } from '../QuestionWallKeyEventSupport';
 import { CorrectWrong } from '../../../../models/correct-wrong.enum';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-question-wall',
@@ -55,7 +56,8 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
     private roomService: RoomService,
     private wsCommentService: WsCommentServiceService,
     private langService: LanguageService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private liveAnnouncer: LiveAnnouncer
   ) {
     this.keySupport = new QuestionWallKeyEventSupport();
     this.roomId = localStorage.getItem('roomId');
@@ -103,6 +105,15 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
       key.addKeyEvent('ArrowRight', () => this.nextComment());
       key.addKeyEvent('ArrowLeft', () => this.prevComment());
       key.addKeyEvent(' ', () => this.nextComment());
+      key.addKeyEvent('1', () => this.liveAnnouncer.announce(
+        ''
+      ));
+      key.addKeyEvent('2', () => this.liveAnnouncer.announce(
+        ''
+      ));
+      key.addKeyEvent('3', () => this.liveAnnouncer.announce(
+        ''
+      ));
     });
   }
 

@@ -4,6 +4,7 @@
       <ars-fill ars-flex-box>
         <ars-col ars-btn-wrp [xp]="16" [yp]="0" [extra]="true">
           <button ars-btn (click)="leave()" matRipple><i>arrow_back</i></button>
+          <button aria-describedby="something" class="liveannouncer-button" ars-btn matRipple><i>info</i><p>Hilfe zu Barrierefreiheit</p></button>
         </ars-col>
       </ars-fill>
       <ars-col>
@@ -170,3 +171,7 @@
       </ars-style-btn-material>
     </ars-row>
 </ars-screen>
+
+<div style="visibility:hidden;">
+  <p id="something">{{ 'question-wall.a11y-introduction' | translate}}</p>
+</div>

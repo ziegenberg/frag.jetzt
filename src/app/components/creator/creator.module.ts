@@ -23,25 +23,27 @@ import { DeleteAnswerComponent } from './_dialogs/delete-answer/delete-answer.co
 import { QuestionWallComponent } from '../shared/questionwall/question-wall/question-wall.component';
 import { ArsModule } from '../../../../projects/ars/src/lib/ars.module';
 import { MatRippleModule } from '@angular/material/core';
+import { A11yModule } from '@angular/cdk/a11y';
 
 @NgModule({
-  imports: [
+  imports:[
     CommonModule,
     CreatorRoutingModule,
     EssentialsModule,
     SharedModule,
     ModeratorModule,
     TranslateModule.forChild({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (HttpLoaderFactory),
-        deps: [HttpClient]
+      loader:{
+        provide:TranslateLoader,
+        useFactory:(HttpLoaderFactory),
+        deps:[HttpClient]
       },
-      isolate: true
+      isolate:true
     }),
     MarkdownModule,
     ArsModule,
-    MatRippleModule
+    MatRippleModule,
+    A11yModule
   ],
   declarations: [
     RoomCreatorPageComponent,
