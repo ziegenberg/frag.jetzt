@@ -75,3 +75,31 @@ main {
 .rescale_overlay>button:first-child{
   margin-left:10px;
 }
+.a11y-box{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index:1000;
+  overflow:visible;
+  visibility:hidden;
+  >button{
+    width:1px;
+    height:1px;
+    float:left;
+    position:absolute;
+    overflow:hidden;
+    left:-50px;
+    top:-50px;
+    visibility:visible;
+    background-color:white;
+    mat-icon{
+      padding-right:8px;
+    }
+    &:focus{
+      width:200px;
+      height:50px;
+      left:0;
+      top:0;
+    }
+  }
+}

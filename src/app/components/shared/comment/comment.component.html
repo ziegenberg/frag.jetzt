@@ -21,7 +21,7 @@
       <span class="fill-remaining-space"></span>
 
       <button mat-icon-button *ngIf="(isCreator || isModerator || comment.answer) && !inAnswerView"
-              (click)="answerComment()" tabindex="0">
+              (click)="answerComment()" tabindex="0" attr.ar>
         <mat-icon class="not-marked" [ngClass]="{'answered-icon' : comment.answer}"
                   matTooltip="{{comment.answer ? ('comment-page.has-answer' | translate) :
                   ('comment-page.answer' | translate) }}">
