@@ -6,6 +6,7 @@ import { Rescale } from './models/rescale';
 import { CustomIconService } from './services/util/custom-icon.service';
 import { MatomoInjector } from 'ngx-matomo';
 import { environment } from '../environments/environment';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ export class AppComponent implements OnInit {
               private update: SwUpdate,
               private matomoInjector: MatomoInjector,
               public notification: NotificationService,
-              private customIconService: CustomIconService) {
+              private customIconService: CustomIconService,
+              private liveAnnouncer: LiveAnnouncer) {
     translationService.setDefaultLang(this.translationService.getBrowserLang());
     sessionStorage.setItem('currentLang', this.translationService.getBrowserLang());
     customIconService.init();
@@ -65,6 +67,16 @@ export class AppComponent implements OnInit {
 
   public getRescale(): Rescale {
     return AppComponent.rescale;
+  }
+
+  public playAudioGuide() {
+    this.liveAnnouncer.announce(
+      'put stuff here'
+    );
+  }
+
+  public createFeedback() {
+
   }
 
 
