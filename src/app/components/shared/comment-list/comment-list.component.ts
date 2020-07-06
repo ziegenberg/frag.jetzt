@@ -89,14 +89,8 @@ export class CommentListComponent implements OnInit, OnDestroy {
     this.currentSort = this.votedesc;
     this.roomService.getRoom(this.roomId).subscribe( room => {
       this.room = room;
-      if (this.room && this.room.extensions && this.room.extensions['comments']) {
-        if (this.room.extensions['comments'].enableModeration !== null) {
-          this.moderationEnabled = this.room.extensions['comments'].enableModeration;
-        }
-        if (this.room.extensions['comments'].directSend !== null) {
-          this.directSend = this.room.extensions['comments'].directSend;
-        }
-      }
+      this.moderationEnabled = this.room.moderated;
+      this.directSend = this.room.directSend;
       this.commentService.getAckComments(this.roomId)
         .subscribe(comments => {
           this.comments = comments;
@@ -159,17 +153,15 @@ export class CommentListComponent implements OnInit, OnDestroy {
   }
 
   getComments(): void {
-    if (this.room && this.room.extensions && this.room.extensions['comments']) {
-      if (this.room.extensions['comments'].enableThreshold) {
-        this.thresholdEnabled = true;
-      } else {
-        this.thresholdEnabled = false;
-      }
+    if (this.room.threshold) {
+      this.thresholdEnabled = true;
+    } else {
+      this.thresholdEnabled = false;
     }
     this.isLoading = false;
     let commentThreshold;
     if (this.thresholdEnabled) {
-      commentThreshold = this.room.extensions['comments'].commentThreshold;
+      commentThreshold = this.room.threshold;
       if (this.hideCommentsList) {
         this.filteredComments = this.filteredComments.filter( x => x.score >= commentThreshold );
       } else {
@@ -276,9 +268,11 @@ export class CommentListComponent implements OnInit, OnDestroy {
     dialogRef.componentInstance.user = this.user;
     dialogRef.componentInstance.roomId = this.roomId;
     let tags;
-    if (this.room.extensions && this.room.extensions['tags'] && this.room.extensions['tags'].tags) {
+    tags = [];
+    // ToDo: FIX
+    /*if (this.room.extensions && this.room.extensions['tags'] && this.room.extensions['tags'].tags) {
       tags = this.room.extensions['tags'].tags;
-    }
+    }*/
     dialogRef.componentInstance.tags = tags;
     dialogRef.afterClosed()
       .subscribe(result => {

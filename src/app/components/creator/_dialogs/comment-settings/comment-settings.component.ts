@@ -45,29 +45,13 @@ export class CommentSettingsComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.editRoom.extensions && this.editRoom.extensions['comments']) {
-      const commentExtension = this.editRoom.extensions['comments'];
-      if (commentExtension.enableThreshold !== null) {
-        if (commentExtension.commentThreshold) {
-          this.commentThreshold = commentExtension.commentThreshold;
-        } else {
-          this.commentThreshold = -100;
-        }
-        this.settingThreshold = commentExtension.enableThreshold;
-      }
-
-      if (commentExtension.enableTags !== null) {
-        this.tagsEnabled = commentExtension.enableTags;
-        this.tags = commentExtension.tags;
-      }
-
-      if (this.editRoom.extensions['comments'].enableModeration !== null) {
-        this.enableCommentModeration = this.editRoom.extensions['comments'].enableModeration;
-      }
+    if (this.editRoom.threshold !== null) {
+      this.commentThreshold = this.editRoom.threshold;
+      this.settingThreshold = true;
     }
-    this.commentSettingsService.get(this.roomId).subscribe(settings => {
-      this.directSend = settings.directSend;
-    });
+    this.tags = [];
+    this.enableCommentModeration = this.editRoom.moderated;
+    this.directSend = this.editRoom.directSend;
   }
 
   onSliderChange(event: any) {

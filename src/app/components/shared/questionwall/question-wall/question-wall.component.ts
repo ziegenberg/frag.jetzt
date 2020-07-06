@@ -83,7 +83,9 @@ export class QuestionWallComponent implements OnInit, AfterViewInit, OnDestroy {
     });
     this.roomService.getRoom(this.roomId).subscribe(e => {
       this.room = e;
-      this.tags = e.extensions['tags']['tags'];
+      // ToDo: Fix
+      // this.tags = e.extensions['tags']['tags'];
+      this.tags = [];
     });
     this.wsCommentService.getCommentStream(this.roomId).subscribe(e => {
       this.commentService.getComment(JSON.parse(e.body).payload.id).subscribe(comment => {
